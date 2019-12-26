@@ -1,5 +1,9 @@
 import discord
+import json
 #Add mode modules as we add more
+
+with open("config.json", "r") as read_file:
+    env = json.load(read_file)
 
 client = discord.Client()
 
@@ -19,4 +23,4 @@ async def on_message(message):
         await message.channel.send('https://gbf.wiki/Main_Page')
 
 # Actual bot ID do NOT change
-client.run('NjU5NjA5NjA1MTE4MzYxNjA1.XgQzxw.xkp_RnIr9mR-LTkqx9ULQfmHxAU')
+client.run(env['token'])
