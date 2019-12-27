@@ -4,7 +4,8 @@ import json
 #Add mode modules as we add more
 
 #testing purposes
-data = {}
+number = {}
+strings = {}
 
 with open("config.json", "r") as read_file:
     env = json.load(read_file)
@@ -30,12 +31,28 @@ async def on_message(message):
         await message.channel.send(message.author)
 
     if message.content == '$inc':
-        if message.author in data:
-            data[message.author] += 1
+        if message.author in number:
+            number[message.author] += 1
             await message.channel.send(data[message.author])
         else:
-            data[message.author] = 0
+            number[message.author] = 0
             await message.channel.send(data[message.author])
+
+    if message.content.startswith('$add '):
+        if message.author in strings:
+            strings[message.author].append(message.content[5:])
+            await message.channel.send(strings[message.author])
+        else:
+            strings[message.author] = []
+            strings[message.author].append(message.content[5:])
+            await message.channel.send(strings[message.author])
+
+    if message.content == '$clear':
+        strings[message.author] = []
+        await message.channel.send('Cleared')
+
+    if message.content == '$list':
+        await message.channel.send(strings[message.author])
 
     #if message.content.startswith('$calculator'):
     #    await message.channel.send(calc)
