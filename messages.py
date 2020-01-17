@@ -53,3 +53,37 @@ arc_calc_3 = discord.Embed(
     color = discord.Color.orange(),
 )
 arc_calc_3.set_footer(text='Hit c to cancel')
+
+add_1 = discord.Embed(
+    title = 'What are you adding?',
+    description = '0 : Character\n'
+    '1 : Weapon \n'
+    '2 : Summon',
+    color = discord.Color.blue(),
+)
+add_1.set_footer(text='Hit c to cancel')
+
+add_2 = discord.Embed(
+    title = 'What are you adding?',
+    description = 'Type the name of what you are adding',
+    color = discord.Color.blue(),
+)
+add_2.set_footer(text='Hit c to cancel')
+
+add_3 = discord.Embed(
+    title = 'Too many characters!',
+    description = 'Remove some characters before you add more',
+    color = discord.Color.red(),
+)
+
+add_3 = discord.Embed(
+    title = 'Too many weapons!',
+    description = 'Remove some weapons before you add more',
+    color = discord.Color.red(),
+)
+
+add_3 = discord.Embed(
+    title = 'Too many summons!',
+    description = 'Remove some summons before you add more',
+    color = discord.Color.red(),
+)

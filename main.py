@@ -5,9 +5,11 @@ import exceptions
 import calculator
 import messages
 import json
+import teams
 #Add mode modules as we add more
 
 uncap_targets = {}
+global_teams = {}
 
 with open("config.json", "r") as read_file:
     env = json.load(read_file)
@@ -103,85 +105,66 @@ async def calcarcarum(ctx):
         await ctx.send(embed=materials)
 
 @client.command()
-async def editteam(ctx):
+async def displayteam(ctx):
     await asyncio.sleep(1)
-    try:
-        team = [[None],[None],[None]]
-        channel = ctx.channel
-        author = ctx.author
-        ctx.send("Current team:")
-        ctx.send(team)
+    channel = ctx.channel
+    author = ctx.author
 
-        def check(m):
+    if not(author in global_teams):
+        global_teams[author]=[[None],[None][None]]
+    
+    await ctx.send(global_teams[author])
+#Note: with this implementation, the hashmap will permamently have an object for each author, or something like that
+
+#To Add: emote to show successfully added something
+@client.command()
+asymc def add(ctx):
+    await asyncio.sleep(1)
+    channel = ctx.channel
+    author = ctx.author
+
+    sent = await ctx.send(embed=messages.add_1)
+    def check(m):
             return (m.channel == channel and m.author == author and
             (m.content == '0' or m.content == '1'
-            or m.content == '2' or m.content == '3' or m.content == '4' or
-            m.content == '5' or m.content == '6' or m.content == '7' or
-            m.content == '8' or m.content == '9' or m.content == 'c'
-            or m.content == '$calcarcarum'))
+            or m.content == '2' or m.content == 'c'))
+    start = await client.wait_for('message', timeout=20.0,check=check)
+    await asyncio.sleep(0.5)
+    await sent.delete()
+    await start.delete()
+    if start.content == 'c':
+        raise exceptions.Cancel()
 
-        summon = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        if summon.content == 'c':
-            raise exceptions.Cancel()
+    sent = await ctx.send(embed=messages.add_2)
+    toaddname = await client.wait_for('message', timeout=30.0, check=check)
+    await asyncio.sleep(0.5)
+    await sent.delete()
+    await start.delete()
+    if toaddname.content = 'c':
+        raise exceptions.Cancel()
+    
+    if start.content == '0':
+        if (len(global_teams[author][0]) >= 6):
+            await ctx.send(embed=messages.add_3)
+            raise exceptions.TooMany
+        else:
+            global_teams[author][0].append(toaddname)
 
-        if summon.content == '$editteam':
-            ctx.send("Resetting...")
-            raise exceptions.Override()
+    if start.content == '1':
+        #the cap of 10 does NOt account for auxillary dual wielding
+        if (len(global_teams[author][1]) >= 10):
+            await ctx.send(embed=messages.add_4)
+            raise exceptions.TooMany
+        else:
+            global_teams[author][1].append(toaddname)
 
-        sent = await ctx.send(embed=messages.arc_calc_2)
+    if start.content == '2':
+        if (len(global_teams[author][2]) >= 6):
+            await ctx.send(embed=messages.add_4)
+            raise exceptions.TooMany
+        else:
+            global_teams[author][2].append(toaddname)
 
-        def check(m):
-            return (m.channel == channel and m.author == author and
-            (m.content == '0' or m.content == '1'
-            or m.content == '2' or m.content == '3' or m.content == '4' or
-            m.content == '5' or m.content == '6' or m.content == '7' or
-            m.content == '8' or m.content == '9' or m.content == '10'
-            or m.content == '11' or m.content == 'c'
-            or m.content == '$calcarcarum'))
-
-        start = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        await sent.delete()
-        await start.delete()
-        if start.content == 'c':
-            raise exceptions.Cancel()
-
-        if start.content == '$calcarcarum':
-            raise exceptions.Override()
-
-        sent = await ctx.send(embed=messages.arc_calc_3)
-        end = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        await sent.delete()
-        await end.delete()
-        if end.content == 'c':
-            await ctx.send('Command Cancelled')
-
-        if end.content == '$calcarcarum':
-            raise exceptions.Override()
-
-    except asyncio.TimeoutError:
-        await sent.delete()
-        await ctx.send('Timed out. Do **$calcarcarum** to try again.')
-
-    except exceptions.Cancel:
-        await ctx.send('Command Cancelled')
-
-    except exceptions.Override:
-        await ctx.send('Overriding previous command...')
-
-    else:
-        summon = int(summon.content)
-        start = int(start.content)
-        end = int(end.content) + 1
-
-        materials = discord.Embed(
-            title = 'Total Materials Needed',
-            description = calculator.arcarum(summon,start,end),
-            color = discord.Color.orange()
-        )
-        await ctx.send(embed=materials)
 
 # Actual bot ID do NOT change
 client.run(env['token'])
