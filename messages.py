@@ -93,3 +93,10 @@ add_4 = discord.Embed(
     description = '',
     color = discord.Color.blue(),
 )
+
+remove_1 = discord.Embed(
+    title = 'What are you removing?',
+    description = 'Type the name of what you are removing',
+    color = discord.Color.blue(),
+)
+remove_1.set_footer(text='Hit c to cancel')
