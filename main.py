@@ -196,7 +196,7 @@ async def remove(ctx):
 
         sent1 = await ctx.send(embed=messages.remove_1)
         def check(m):
-            return ((m.content == '$remove') or not(startsWith('$')))
+            return ((m.content == '$remove') or not(m.startsWith('$')))
         start = await client.wait_for('message', timeout=20.0,check=check)
         await asyncio.sleep(0.5)
         await sent1.delete()
