@@ -130,7 +130,6 @@ async def add(ctx):
     start = await client.wait_for('message', timeout=20.0,check=check)
     await asyncio.sleep(0.5)
     await sent.delete()
-    await start.delete()
     if start.content == 'c':
         raise exceptions.Cancel()
 
@@ -138,7 +137,6 @@ async def add(ctx):
     toaddname = await client.wait_for('message', timeout=30.0, check=check)
     await asyncio.sleep(0.5)
     await sent.delete()
-    await start.delete()
     if toaddname.content == 'c':
         raise exceptions.Cancel()
     
@@ -147,7 +145,7 @@ async def add(ctx):
             await ctx.send(embed=messages.add_3)
             raise exceptions.TooMany
         else:
-            global_teams[author][0].append(toaddname)
+            global_teams[author][0].append(toaddname.content)
 
     if start.content == '1':
         #the cap of 10 does NOt account for auxillary dual wielding
@@ -155,14 +153,14 @@ async def add(ctx):
             await ctx.send(embed=messages.add_4)
             raise exceptions.TooMany
         else:
-            global_teams[author][1].append(toaddname)
+            global_teams[author][1].append(toaddname.content)
 
     if start.content == '2':
         if (len(global_teams[author][2]) >= 6):
             await ctx.send(embed=messages.add_4)
             raise exceptions.TooMany
         else:
-            global_teams[author][2].append(toaddname)
+            global_teams[author][2].append(toaddname.content)
 
 
 # Actual bot ID do NOT change
