@@ -109,7 +109,8 @@ async def editteam(ctx):
         team = [[None],[None],[None]]
         channel = ctx.channel
         author = ctx.author
-        sent = await ctx.send(team)
+        ctx.send("Current team:")
+        ctx.send(team)
 
         def check(m):
             return (m.channel == channel and m.author == author and
@@ -121,8 +122,6 @@ async def editteam(ctx):
 
         summon = await client.wait_for('message', timeout=45.0,check=check)
         await asyncio.sleep(0.5)
-        await sent.delete()
-        await summon.delete()
         if summon.content == 'c':
             raise exceptions.Cancel()
 
