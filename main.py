@@ -193,6 +193,7 @@ async def add(ctx):
     except exceptions.Override:
         await ctx.send('Canceling previous command...')
 
+#remove will skip because dynamic size evaluation for lists pepega
 @client.command()
 async def remove(ctx):
     await asyncio.sleep(1)
@@ -237,6 +238,7 @@ async def clearteam(ctx):
     channel = ctx.channel
     author = ctx.author
     global_teams[author] = [[None], [None], [None]]
+    sent = await ctx.send("Cleared your team!")
 
 
 
