@@ -20,88 +20,94 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 @client.command()
-async def wiki(ctx):
-    await ctx.send(messages.wiki)
+async def wiki(ctx, *args):
+    if not args:
+        await ctx.send(messages.wiki)
+    else:
+        return
 
-@client.command()
-async def calcarcarum(ctx):
-    await asyncio.sleep(1)
-    try:
-        channel = ctx.channel
-        author = ctx.author
-        sent = await ctx.send(embed=messages.arc_calc_1)
+@client.command() # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @. add a shortcut to it like $ca
+async def calcarcarum(ctx, *args):
+    if not args:
+        await asyncio.sleep(1)
+        try:
+            channel = ctx.channel
+            author = ctx.author
+            sent = await ctx.send(embed=messages.arc_calc_1)
 
-        def check(m):
-            return (m.channel == channel and m.author == author and
-            (m.content == '0' or m.content == '1'
-            or m.content == '2' or m.content == '3' or m.content == '4' or
-            m.content == '5' or m.content == '6' or m.content == '7' or
-            m.content == '8' or m.content == '9' or m.content == 'c'
-            or m.content == '$calcarcarum'))
+            def check(m):
+                return (m.channel == channel and m.author == author and
+                (m.content == '0' or m.content == '1'
+                or m.content == '2' or m.content == '3' or m.content == '4' or
+                m.content == '5' or m.content == '6' or m.content == '7' or
+                m.content == '8' or m.content == '9' or m.content == 'c'
+                or m.content == '$calcarcarum'))
 
-        summon = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        await sent.delete()
-        await summon.delete()
-        if summon.content == 'c':
-            raise exceptions.Cancel()
+            summon = await client.wait_for('message', timeout=45.0,check=check)
+            await asyncio.sleep(0.5)
+            await sent.delete()
+            await summon.delete()
+            if summon.content == 'c':
+                raise exceptions.Cancel()
 
-        if summon.content == '$calcarcarum':
-            raise exceptions.Override()
+            if summon.content == '$calcarcarum':
+                raise exceptions.Override()
 
-        sent = await ctx.send(embed=messages.arc_calc_2)
+            sent = await ctx.send(embed=messages.arc_calc_2)
 
-        def check(m):
-            return (m.channel == channel and m.author == author and
-            (m.content == '0' or m.content == '1'
-            or m.content == '2' or m.content == '3' or m.content == '4' or
-            m.content == '5' or m.content == '6' or m.content == '7' or
-            m.content == '8' or m.content == '9' or m.content == '10'
-            or m.content == '11' or m.content == 'c'
-            or m.content == '$calcarcarum'))
+            def check(m):
+                return (m.channel == channel and m.author == author and
+                (m.content == '0' or m.content == '1'
+                or m.content == '2' or m.content == '3' or m.content == '4' or
+                m.content == '5' or m.content == '6' or m.content == '7' or
+                m.content == '8' or m.content == '9' or m.content == '10'
+                or m.content == '11' or m.content == 'c'
+                or m.content == '$calcarcarum'))
 
-        start = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        await sent.delete()
-        await start.delete()
-        if start.content == 'c':
-            raise exceptions.Cancel()
+            start = await client.wait_for('message', timeout=45.0,check=check)
+            await asyncio.sleep(0.5)
+            await sent.delete()
+            await start.delete()
+            if start.content == 'c':
+                raise exceptions.Cancel()
 
-        if start.content == '$calcarcarum':
-            raise exceptions.Override()
+            if start.content == '$calcarcarum':
+                raise exceptions.Override()
 
-        sent = await ctx.send(embed=messages.arc_calc_3)
-        end = await client.wait_for('message', timeout=45.0,check=check)
-        await asyncio.sleep(0.5)
-        await sent.delete()
-        await end.delete()
-        if end.content == 'c':
+            sent = await ctx.send(embed=messages.arc_calc_3)
+            end = await client.wait_for('message', timeout=45.0,check=check)
+            await asyncio.sleep(0.5)
+            await sent.delete()
+            await end.delete()
+            if end.content == 'c':
+                await ctx.send('Command Cancelled')
+
+            if end.content == '$calcarcarum':
+                raise exceptions.Override()
+
+        except asyncio.TimeoutError:
+            await sent.delete()
+            await ctx.send('Timed out. Do **$calcarcarum** to try again.')
+
+        except exceptions.Cancel:
             await ctx.send('Command Cancelled')
 
-        if end.content == '$calcarcarum':
-            raise exceptions.Override()
+        except exceptions.Override:
+            await ctx.send('Overriding previous command...')
 
-    except asyncio.TimeoutError:
-        await sent.delete()
-        await ctx.send('Timed out. Do **$calcarcarum** to try again.')
+        else:
+            summon = int(summon.content)
+            start = int(start.content)
+            end = int(end.content) + 1
 
-    except exceptions.Cancel:
-        await ctx.send('Command Cancelled')
-
-    except exceptions.Override:
-        await ctx.send('Overriding previous command...')
-
+            materials = discord.Embed(
+                title = 'Total Materials Needed',
+                description = calculator.arcarum(summon,start,end),
+                color = discord.Color.orange()
+            )
+            await ctx.send(embed=materials)
     else:
-        summon = int(summon.content)
-        start = int(start.content)
-        end = int(end.content) + 1
-
-        materials = discord.Embed(
-            title = 'Total Materials Needed',
-            description = calculator.arcarum(summon,start,end),
-            color = discord.Color.orange()
-        )
-        await ctx.send(embed=materials)
+        return
 
 @client.command()
 async def team(ctx):
