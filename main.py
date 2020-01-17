@@ -149,7 +149,7 @@ async def add(ctx):
                 await ctx.send(embed=messages.add_3)
                 raise exceptions.TooMany
             else:
-                if(global_teams[author][0] == None)
+                if(global_teams[author][0][0] == None):
                     global_teams[author][0] = [toaddname.content]
                 else:
                     global_teams[author][0].append(toaddname.content)
@@ -160,7 +160,7 @@ async def add(ctx):
                 await ctx.send(embed=messages.add_4)
                 raise exceptions.TooMany
             else:
-                if(global_teams[author][1] == None)
+                if(global_teams[author][1][0] == None):
                     global_teams[author][1] = [toaddname.content]
                 else:
                     global_teams[author][1].append(toaddname.content)
@@ -170,7 +170,7 @@ async def add(ctx):
                 await ctx.send(embed=messages.add_4)
                 raise exceptions.TooMany
             else:
-                if(global_teams[author][2] == None)
+                if(global_teams[author][2][0] == None):
                     global_teams[author][2] = [toaddname.content]
                 else:
                     global_teams[author][2].append(toaddname.content)
