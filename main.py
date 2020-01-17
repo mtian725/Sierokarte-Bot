@@ -102,5 +102,34 @@ async def calcarcarum(ctx):
         )
         await ctx.send(embed=materials)
 
+@client.command()
+async def edit_team(ctx):
+    await asyncio.sleep(1)
+    try:
+        team = [[None],[None],[None]]
+        channel = ctx.channel
+        author = ctx.author
+        sent = await ctx.send(team)
+
+        def check(m):
+            return (m.channel == channel and m.author == author and
+            (m.content == '0' or m.content == '1'
+            or m.content == '2' or m.content == '3' or m.content == '4' or
+            m.content == '5' or m.content == '6' or m.content == '7' or
+            m.content == '8' or m.content == '9' or m.content == 'c'
+            or m.content == '$teamadd'))
+
+        summon = await client.wait_for('message', timeout=45.0,check=check)
+        await asyncio.sleep(0.5)
+        await sent.delete()
+        await summon.delete()
+        if summon.content == 'c':
+            raise exceptions.Cancel()
+
+        if summon.content == '$edit_team':
+            ctx.send("Resetting...")
+            raise exceptions.Override()
+
+
 # Actual bot ID do NOT change
 client.run(env['token'])
