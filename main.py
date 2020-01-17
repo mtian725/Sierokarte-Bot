@@ -5,7 +5,6 @@ import exceptions
 import calculator
 import messages
 import json
-import teams
 #Add mode modules as we add more
 
 uncap_targets = {}
