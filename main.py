@@ -193,6 +193,7 @@ async def add(ctx):
     except exceptions.Override:
         await ctx.send('Overriding previous command...')
 
+#remove will skip because dynamic size evaluation for lists pepega
 @client.command()
 async def remove(ctx):
     await asyncio.sleep(1)
