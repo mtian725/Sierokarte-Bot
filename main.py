@@ -237,6 +237,7 @@ async def clearteam(ctx):
     channel = ctx.channel
     author = ctx.author
     global_teams[author] = [[None], [None], [None]]
+    sent = await ctx.send("Cleared your team!")
 
 
 
