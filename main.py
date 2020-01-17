@@ -26,7 +26,7 @@ async def wiki(ctx, *args):
     else:
         return
 
-@client.command(aliases=['cs']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
+@client.command(aliases=['ca']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
 async def calcarcarum(ctx, *args):
     if not args:
         await asyncio.sleep(1)
@@ -41,7 +41,7 @@ async def calcarcarum(ctx, *args):
                 or m.content == '2' or m.content == '3' or m.content == '4' or
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == 'c'
-                or m.content == '$calcarcarum'))
+                or m.content.startswith('$'))
 
             summon = await client.wait_for('message', timeout=45.0,check=check)
             await asyncio.sleep(0.5)
@@ -50,7 +50,7 @@ async def calcarcarum(ctx, *args):
             if summon.content == 'c':
                 raise exceptions.Cancel()
 
-            if summon.content == '$calcarcarum':
+            if m.content.startswith('$'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_2)
@@ -62,7 +62,7 @@ async def calcarcarum(ctx, *args):
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == '10'
                 or m.content == '11' or m.content == 'c'
-                or m.content == '$calcarcarum'))
+                or m.content.startswith('$'))
 
             start = await client.wait_for('message', timeout=45.0,check=check)
             await asyncio.sleep(0.5)
@@ -71,7 +71,7 @@ async def calcarcarum(ctx, *args):
             if start.content == 'c':
                 raise exceptions.Cancel()
 
-            if start.content == '$calcarcarum':
+            if m.content.startswith('$'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_3)
@@ -82,7 +82,7 @@ async def calcarcarum(ctx, *args):
             if end.content == 'c':
                 await ctx.send('Command Cancelled')
 
-            if end.content == '$calcarcarum':
+            if m.content.startswith('$'):
                 raise exceptions.Override()
 
         except asyncio.TimeoutError:
@@ -93,7 +93,7 @@ async def calcarcarum(ctx, *args):
             await ctx.send('Command Cancelled')
 
         except exceptions.Override:
-            await ctx.send('Overriding previous command...')
+            await ctx.send('Canceling previous command...')
 
         else:
             summon = int(summon.content)
@@ -191,7 +191,7 @@ async def add(ctx):
         await ctx.send('Command Cancelled')
 
     except exceptions.Override:
-        await ctx.send('Overriding previous command...')
+        await ctx.send('Canceling previous command...')
 
 @client.command()
 async def remove(ctx):
@@ -230,7 +230,7 @@ async def remove(ctx):
         await ctx.send('Command Cancelled')
 
     except exceptions.Override:
-        await ctx.send('Overriding previous command...')
+        await ctx.send('Canceling previous command...')
 
 @client.command()
 async def clearteam(ctx):
