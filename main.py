@@ -127,7 +127,7 @@ async def add(ctx):
         def check(m):
                 return (m.channel == channel and m.author == author and
                 (m.content == '0' or m.content == '1'
-                or m.content == '2' or m.content == 'c' or m.content == '$add'))
+                or m.content == '2' or m.content == 'c' or ((m.content == '$add') or not(startsWith('$'))))
         start = await client.wait_for('message', timeout=20.0,check=check)
         await asyncio.sleep(0.5)
         await sent1.delete()
@@ -138,7 +138,9 @@ async def add(ctx):
             raise exceptions.Cancel()
 
         sent2 = await ctx.send(embed=messages.add_2)
-        toaddname = await client.wait_for('message', timeout=30.0)
+        toaddname = await client.wait_for('message', timeout=30.0, check=check)
+        def check(m):
+            return not(m.content == '$add')
         await asyncio.sleep(0.5)
         await sent2.delete()
         if toaddname.content == 'c':
@@ -174,6 +176,44 @@ async def add(ctx):
                     global_teams[author][2] = [toaddname.content]
                 else:
                     global_teams[author][2].append(toaddname.content)
+
+    except asyncio.TimeoutError:
+        await sent.delete()
+        await ctx.send('Timed out. Do **$add** to try again.')
+
+    except exceptions.Cancel:
+        await ctx.send('Command Cancelled')
+
+    except exceptions.Override:
+        await ctx.send('Overriding previous command...')
+
+@client.command()
+async def remove(ctx):
+    await asyncio.sleep(1)
+    try: 
+        channel = ctx.channel
+        author = ctx.author
+
+        sent1 = await ctx.send(embed=messages.remove_1)
+        start = await client.wait_for('message', timeout=20.0,check=check)
+        def check(m):
+            return ((m.content == '$remove') or not(startsWith('$'))
+        await asyncio.sleep(0.5)
+        await sent1.delete()
+
+        if start.content == '$remove':
+            raise exceptions.Override()
+        if start.content == 'c':
+            raise exceptions.Cancel()
+
+        for(i in range (0, 3)):
+            global_teams[author][i].remove(start.content)
+
+        for(i in range (0, 3)):
+            if (len(global_teams[author][i] == 0)):
+                global_teams[author][i] = [None]
+
+
 
     except asyncio.TimeoutError:
         await sent.delete()
