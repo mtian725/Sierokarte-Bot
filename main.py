@@ -119,49 +119,62 @@ async def displayteam(ctx):
 @client.command()
 async def add(ctx):
     await asyncio.sleep(1)
-    channel = ctx.channel
-    author = ctx.author
+    try: 
+        channel = ctx.channel
+        author = ctx.author
 
-    sent = await ctx.send(embed=messages.add_1)
-    def check(m):
-            return (m.channel == channel and m.author == author and
-            (m.content == '0' or m.content == '1'
-            or m.content == '2' or m.content == 'c'))
-    start = await client.wait_for('message', timeout=20.0,check=check)
-    await asyncio.sleep(0.5)
-    await sent.delete()
-    if start.content == 'c':
-        raise exceptions.Cancel()
+        sent = await ctx.send(embed=messages.add_1)
+        def check(m):
+                return (m.channel == channel and m.author == author and
+                (m.content == '0' or m.content == '1'
+                or m.content == '2' or m.content == 'c' or m.content == '$add'))
+        start = await client.wait_for('message', timeout=20.0,check=check)
+        await asyncio.sleep(0.5)
+        await sent.delete()
 
-    sent = await ctx.send(embed=messages.add_2)
-    toaddname = await client.wait_for('message', timeout=30.0, check=check)
-    await asyncio.sleep(0.5)
-    await sent.delete()
-    if toaddname.content == 'c':
-        raise exceptions.Cancel()
-    
-    if start.content == '0':
-        if (len(global_teams[author][0]) >= 6):
-            await ctx.send(embed=messages.add_3)
-            raise exceptions.TooMany
-        else:
-            global_teams[author][0].append(toaddname.content)
+        if start.content == '$add':
+            raise exceptions.Override()
+        if start.content == 'c':
+            raise exceptions.Cancel()
 
-    if start.content == '1':
-        #the cap of 10 does NOt account for auxillary dual wielding
-        if (len(global_teams[author][1]) >= 10):
-            await ctx.send(embed=messages.add_4)
-            raise exceptions.TooMany
-        else:
-            global_teams[author][1].append(toaddname.content)
+        sent = await ctx.send(embed=messages.add_2)
+        toaddname = await client.wait_for('message', timeout=30.0, check=check)
+        await asyncio.sleep(0.5)
+        await sent.delete()
+        if toaddname.content == 'c':
+            raise exceptions.Cancel()
+        
+        if start.content == '0':
+            if (len(global_teams[author][0]) >= 6):
+                await ctx.send(embed=messages.add_3)
+                raise exceptions.TooMany
+            else:
+                global_teams[author][0].append(toaddname.content)
 
-    if start.content == '2':
-        if (len(global_teams[author][2]) >= 6):
-            await ctx.send(embed=messages.add_4)
-            raise exceptions.TooMany
-        else:
-            global_teams[author][2].append(toaddname.content)
+        if start.content == '1':
+            #the cap of 10 does NOt account for auxillary dual wielding
+            if (len(global_teams[author][1]) >= 10):
+                await ctx.send(embed=messages.add_4)
+                raise exceptions.TooMany
+            else:
+                global_teams[author][1].append(toaddname.content)
 
+        if start.content == '2':
+            if (len(global_teams[author][2]) >= 6):
+                await ctx.send(embed=messages.add_4)
+                raise exceptions.TooMany
+            else:
+                global_teams[author][2].append(toaddname.content)
+
+    except asyncio.TimeoutError:
+        await sent.delete()
+        await ctx.send('Timed out. Do **$add** to try again.')
+
+    except exceptions.Cancel:
+        await ctx.send('Command Cancelled')
+
+    except exceptions.Override:
+        await ctx.send('Overriding previous command...')
 
 # Actual bot ID do NOT change
 client.run(env['token'])
