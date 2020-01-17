@@ -124,11 +124,11 @@ async def add(ctx):
         author = ctx.author
 
         sent1 = await ctx.send(embed=messages.add_1)
-        def check(m):
+        def check1(m):
                 return (m.channel == channel and m.author == author and
                 (m.content == '0' or m.content == '1'
                 or m.content == '2' or m.content == 'c' or ((m.content == '$add') or not(startsWith('$'))))
-        start = await client.wait_for('message', timeout=20.0,check=check)
+        start = await client.wait_for('message', timeout=20.0,check=check1)
         await asyncio.sleep(0.5)
         await sent1.delete()
 
@@ -138,8 +138,8 @@ async def add(ctx):
             raise exceptions.Cancel()
 
         sent2 = await ctx.send(embed=messages.add_2)
-        toaddname = await client.wait_for('message', timeout=30.0, check=check)
-        def check(m):
+        toaddname = await client.wait_for('message', timeout=30.0, check=check2)
+        def check2(m):
             return not(m.content == '$add')
         await asyncio.sleep(0.5)
         await sent2.delete()
