@@ -206,10 +206,10 @@ async def remove(ctx):
         if start.content == 'c':
             raise exceptions.Cancel()
 
-        for(i in range (0, 3)):
+        for i in range (0, 3):
             global_teams[author][i].remove(start.content)
 
-        for(i in range (0, 3)):
+        for i in range (0, 3):
             if (len(global_teams[author][i] == 0)):
                 global_teams[author][i] = [None]
 
