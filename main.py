@@ -130,6 +130,5 @@ async def edit_team(ctx):
             ctx.send("Resetting...")
             raise exceptions.Override()
 
-
 # Actual bot ID do NOT change
 client.run(env['token'])
