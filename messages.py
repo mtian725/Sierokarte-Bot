@@ -87,3 +87,9 @@ add_3 = discord.Embed(
     description = 'Remove some summons before you add more',
     color = discord.Color.red(),
 )
+
+add_4 = discord.Embed(
+    title = 'Successfully added',
+    description = '',
+    color = discord.Color.blue(),
+)
