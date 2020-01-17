@@ -110,7 +110,7 @@ async def displayteam(ctx):
     author = ctx.author
 
     if not(author in global_teams):
-        global_teams[author]=[[None],[None][None]]
+        global_teams[author]=[[None],[None],[None]]
     
     await ctx.send(global_teams[author])
 #Note: with this implementation, the hashmap will permamently have an object for each author, or something like that
