@@ -127,7 +127,7 @@ async def add(ctx):
         def check1(m):
                 return (m.channel == channel and m.author == author and
                 (m.content == '0' or m.content == '1'
-                or m.content == '2' or m.content == 'c' or ((m.content == '$add') or not(startsWith('$')))))
+                or m.content == '2' or m.content == 'c' or (m.content == '$add')))
         start = await client.wait_for('message', timeout=20.0,check=check1)
         await asyncio.sleep(0.5)
         await sent1.delete()
