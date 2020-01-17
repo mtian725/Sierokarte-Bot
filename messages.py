@@ -14,8 +14,9 @@ arc_calc_1 = discord.Embed(
     '7 : The Moon - Haaselia\n'
     '8 : The Sun - Alanaan\n'
     '9 : Judgement - Katzelia',
-    color = discord.Color.orange()
+    color = discord.Color.orange(),
 )
+arc_calc_1.set_footer(text='Hit c to cancel')
 
 arc_calc_2 = discord.Embed(
     title = 'Pick the start step',
@@ -31,8 +32,9 @@ arc_calc_2 = discord.Embed(
     '9 : Evoker 1*\n'
     '10 : Evoker 2*\n'
     '11 : Evoker 3*\n',
-    color = discord.Color.orange()
+    color = discord.Color.orange(),
 )
+arc_calc_2.set_footer(text='Hit c to cancel')
 
 arc_calc_3 = discord.Embed(
     title = 'Pick the end step',
@@ -48,5 +50,6 @@ arc_calc_3 = discord.Embed(
     '9 : Evoker 2*\n'
     '10 : Evoker 3*\n'
     '11 : Evoker 4*\n',
-    color = discord.Color.orange()
+    color = discord.Color.orange(),
 )
+arc_calc_3.set_footer(text='Hit c to cancel')
