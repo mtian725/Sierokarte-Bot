@@ -214,7 +214,7 @@ async def remove(ctx):
 
         for i in range (0, 3):
             for j in range (0, len(global_teams[author][i])):
-                if ((global_teams[author][i][-1 * j + len(global_teams[author][i] - 1)]) == start.content)
+                if ((global_teams[author][i][-1 * j + len(global_teams[author][i] - 1)]) == start.content):
                     global_teams[author][i].pop(-1 * j + len(global_teams[author][i] - 1))
 
         for i in range (0, 3):
