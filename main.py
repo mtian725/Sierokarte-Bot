@@ -104,7 +104,7 @@ async def calcarcarum(ctx):
         await ctx.send(embed=materials)
 
 @client.command()
-async def displayteam(ctx):
+async def team(ctx):
     await asyncio.sleep(1)
     channel = ctx.channel
     author = ctx.author
@@ -137,10 +137,10 @@ async def add(ctx):
         if start.content == 'c':
             raise exceptions.Cancel()
 
-        sent = await ctx.send(embed=messages.add_2)
+        sent2 = await ctx.send(embed=messages.add_2)
         toaddname = await client.wait_for('message', timeout=30.0, check=check)
         await asyncio.sleep(0.5)
-        await sent.delete()
+        await sent2.delete()
         if toaddname.content == 'c':
             raise exceptions.Cancel()
         
