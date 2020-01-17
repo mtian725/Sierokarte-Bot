@@ -232,6 +232,12 @@ async def remove(ctx):
     except exceptions.Override:
         await ctx.send('Overriding previous command...')
 
+@client.command()
+async def clearteam(ctx):
+    channel = ctx.channel
+    author = ctx.author
+    global_teams[author] = [[None], [None], [None]]
+
 
 
 
