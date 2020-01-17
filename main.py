@@ -123,14 +123,14 @@ async def add(ctx):
         channel = ctx.channel
         author = ctx.author
 
-        sent = await ctx.send(embed=messages.add_1)
+        sent1 = await ctx.send(embed=messages.add_1)
         def check(m):
                 return (m.channel == channel and m.author == author and
                 (m.content == '0' or m.content == '1'
                 or m.content == '2' or m.content == 'c' or m.content == '$add'))
         start = await client.wait_for('message', timeout=20.0,check=check)
         await asyncio.sleep(0.5)
-        await sent.delete()
+        await sent1.delete()
 
         if start.content == '$add':
             raise exceptions.Override()
