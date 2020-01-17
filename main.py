@@ -118,7 +118,7 @@ async def displayteam(ctx):
 
 #To Add: emote to show successfully added something
 @client.command()
-asymc def add(ctx):
+async def add(ctx):
     await asyncio.sleep(1)
     channel = ctx.channel
     author = ctx.author
