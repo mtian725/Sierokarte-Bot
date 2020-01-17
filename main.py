@@ -41,7 +41,7 @@ async def calcarcarum(ctx, *args):
                 or m.content == '2' or m.content == '3' or m.content == '4' or
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == 'c'
-                or m.content.startswith('$'))
+                or m.content.startswith('$')))
 
             summon = await client.wait_for('message', timeout=45.0,check=check)
             await asyncio.sleep(0.5)
@@ -62,7 +62,7 @@ async def calcarcarum(ctx, *args):
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == '10'
                 or m.content == '11' or m.content == 'c'
-                or m.content.startswith('$'))
+                or m.content.startswith('$')))
 
             start = await client.wait_for('message', timeout=45.0,check=check)
             await asyncio.sleep(0.5)
