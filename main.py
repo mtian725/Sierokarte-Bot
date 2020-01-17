@@ -219,7 +219,7 @@ async def remove(ctx):
                     arr.pop(-1 * j + len(arr) - 1)
 
         for i in range (0, 3):
-            if (len(global_teams[author][i] == 0)):
+            if (len(global_teams[author][i]) == 0):
                 global_teams[author][i] = [None]
 
     except asyncio.TimeoutError:
