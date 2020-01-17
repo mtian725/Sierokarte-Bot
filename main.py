@@ -26,7 +26,7 @@ async def wiki(ctx, *args):
     else:
         return
 
-@client.command() # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @. add a shortcut to it like $ca
+@client.command(aliases=['calcarcarum','cs']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
 async def calcarcarum(ctx, *args):
     if not args:
         await asyncio.sleep(1)
@@ -117,7 +117,7 @@ async def team(ctx):
 
     if not(author in global_teams):
         global_teams[author]=[[None],[None],[None]]
-    
+
     await ctx.send(global_teams[author])
 #Note: with this implementation, the hashmap will permamently have an object for each author, or something like that
 
@@ -125,7 +125,7 @@ async def team(ctx):
 @client.command()
 async def add(ctx):
     await asyncio.sleep(1)
-    try: 
+    try:
         channel = ctx.channel
         author = ctx.author
 
@@ -151,7 +151,7 @@ async def add(ctx):
         await sent2.delete()
         if toaddname.content == 'c':
             raise exceptions.Cancel()
-        
+
         if start.content == '0':
             if (len(global_teams[author][0]) >= 6):
                 await ctx.send(embed=messages.add_3)
@@ -196,7 +196,7 @@ async def add(ctx):
 @client.command()
 async def remove(ctx):
     await asyncio.sleep(1)
-    try: 
+    try:
         channel = ctx.channel
         author = ctx.author
 
