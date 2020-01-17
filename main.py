@@ -103,7 +103,7 @@ async def calcarcarum(ctx):
         await ctx.send(embed=materials)
 
 @client.command()
-async def edit_team(ctx):
+async def editteam(ctx):
     await asyncio.sleep(1)
     try:
         team = [[None],[None],[None]]
@@ -117,7 +117,7 @@ async def edit_team(ctx):
             or m.content == '2' or m.content == '3' or m.content == '4' or
             m.content == '5' or m.content == '6' or m.content == '7' or
             m.content == '8' or m.content == '9' or m.content == 'c'
-            or m.content == '$teamadd'))
+            or m.content == '$calcarcarum'))
 
         summon = await client.wait_for('message', timeout=45.0,check=check)
         await asyncio.sleep(0.5)
@@ -126,31 +126,63 @@ async def edit_team(ctx):
         if summon.content == 'c':
             raise exceptions.Cancel()
 
-        if summon.content == '$edit_team':
+        if summon.content == '$editteam':
             ctx.send("Resetting...")
             raise exceptions.Override()
-        
-        except asyncio.TimeoutError:
-            await sent.delete()
-            await ctx.send('Timed out. Do **$calcarcarum** to try again.')
 
-        except exceptions.Cancel:
+        sent = await ctx.send(embed=messages.arc_calc_2)
+
+        def check(m):
+            return (m.channel == channel and m.author == author and
+            (m.content == '0' or m.content == '1'
+            or m.content == '2' or m.content == '3' or m.content == '4' or
+            m.content == '5' or m.content == '6' or m.content == '7' or
+            m.content == '8' or m.content == '9' or m.content == '10'
+            or m.content == '11' or m.content == 'c'
+            or m.content == '$calcarcarum'))
+
+        start = await client.wait_for('message', timeout=45.0,check=check)
+        await asyncio.sleep(0.5)
+        await sent.delete()
+        await start.delete()
+        if start.content == 'c':
+            raise exceptions.Cancel()
+
+        if start.content == '$calcarcarum':
+            raise exceptions.Override()
+
+        sent = await ctx.send(embed=messages.arc_calc_3)
+        end = await client.wait_for('message', timeout=45.0,check=check)
+        await asyncio.sleep(0.5)
+        await sent.delete()
+        await end.delete()
+        if end.content == 'c':
             await ctx.send('Command Cancelled')
 
-        except exceptions.Override:
-            await ctx.send('Overriding previous command...')
+        if end.content == '$calcarcarum':
+            raise exceptions.Override()
 
-        else:
-            summon = int(summon.content)
-            start = int(start.content)
-            end = int(end.content) + 1
+    except asyncio.TimeoutError:
+        await sent.delete()
+        await ctx.send('Timed out. Do **$calcarcarum** to try again.')
 
-            materials = discord.Embed(
-                title = 'Total Materials Needed',
-                description = calculator.arcarum(summon,start,end),
-                color = discord.Color.orange()
-            )
-            await ctx.send(embed=materials)
+    except exceptions.Cancel:
+        await ctx.send('Command Cancelled')
+
+    except exceptions.Override:
+        await ctx.send('Overriding previous command...')
+
+    else:
+        summon = int(summon.content)
+        start = int(start.content)
+        end = int(end.content) + 1
+
+        materials = discord.Embed(
+            title = 'Total Materials Needed',
+            description = calculator.arcarum(summon,start,end),
+            color = discord.Color.orange()
+        )
+        await ctx.send(embed=materials)
 
 # Actual bot ID do NOT change
 client.run(env['token'])
