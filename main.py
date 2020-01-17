@@ -138,9 +138,9 @@ async def add(ctx):
             raise exceptions.Cancel()
 
         sent2 = await ctx.send(embed=messages.add_2)
-        toaddname = await client.wait_for('message', timeout=30.0, check=check2)
         def check2(m):
             return not(m.content == '$add')
+        toaddname = await client.wait_for('message', timeout=30.0, check=check2)
         await asyncio.sleep(0.5)
         await sent2.delete()
         if toaddname.content == 'c':
