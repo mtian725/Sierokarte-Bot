@@ -26,7 +26,7 @@ async def wiki(ctx, *args):
     else:
         return
 
-@client.command(aliases=['calcarcarum','cs']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
+@client.command(aliases=['cs']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
 async def calcarcarum(ctx, *args):
     if not args:
         await asyncio.sleep(1)
