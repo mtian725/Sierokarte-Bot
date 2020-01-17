@@ -149,7 +149,10 @@ async def add(ctx):
                 await ctx.send(embed=messages.add_3)
                 raise exceptions.TooMany
             else:
-                global_teams[author][0].append(toaddname.content)
+                if(global_teams[author][0][0] == None)
+                    global_teams[author][0][0] = toaddname.content
+                else:
+                    global_teams[author][0].append(toaddname.content)
 
         if start.content == '1':
             #the cap of 10 does NOt account for auxillary dual wielding
@@ -157,14 +160,20 @@ async def add(ctx):
                 await ctx.send(embed=messages.add_4)
                 raise exceptions.TooMany
             else:
-                global_teams[author][1].append(toaddname.content)
+                if(global_teams[author][1][0] == None)
+                    global_teams[author][1][0] = toaddname.content
+                else:
+                    global_teams[author][1].append(toaddname.content)
 
         if start.content == '2':
             if (len(global_teams[author][2]) >= 6):
                 await ctx.send(embed=messages.add_4)
                 raise exceptions.TooMany
             else:
-                global_teams[author][2].append(toaddname.content)
+                if(global_teams[author][2][0] == None)
+                    global_teams[author][2][0] = toaddname.content
+                else:
+                    global_teams[author][2].append(toaddname.content)
 
     except asyncio.TimeoutError:
         await sent.delete()
