@@ -50,7 +50,7 @@ async def calcarcarum(ctx, *args):
             if summon.content == 'c':
                 raise exceptions.Cancel()
 
-            if m.content.startswith('$'):
+            if summon.content.startswith('$'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_2)
@@ -71,7 +71,7 @@ async def calcarcarum(ctx, *args):
             if start.content == 'c':
                 raise exceptions.Cancel()
 
-            if m.content.startswith('$'):
+            if start.content.startswith('$'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_3)
@@ -82,7 +82,7 @@ async def calcarcarum(ctx, *args):
             if end.content == 'c':
                 await ctx.send('Command Cancelled')
 
-            if m.content.startswith('$'):
+            if end.content.startswith('$'):
                 raise exceptions.Override()
 
         except asyncio.TimeoutError:
