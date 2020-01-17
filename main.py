@@ -213,9 +213,10 @@ async def remove(ctx):
             raise exceptions.Cancel()
 
         for i in range (0, 3):
-            for j in range (0, len(global_teams[author][i])):
-                if ((global_teams[author][i][-1 * j + len(global_teams[author][i] - 1)]) == start.content):
-                    global_teams[author][i].pop(-1 * j + len(global_teams[author][i] - 1))
+            arr = global_teams[author][i]
+            for j in range (0, l)):
+                if ((arr[-1 * j + len(arr - 1)]) == start.content):
+                    arr.pop(-1 * j + len(arr - 1))
 
         for i in range (0, 3):
             if (len(global_teams[author][i] == 0)):
