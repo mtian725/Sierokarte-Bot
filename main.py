@@ -140,7 +140,7 @@ async def add(ctx):
     await asyncio.sleep(0.5)
     await sent.delete()
     await start.delete()
-    if toaddname.content = 'c':
+    if toaddname.content == 'c':
         raise exceptions.Cancel()
     
     if start.content == '0':
