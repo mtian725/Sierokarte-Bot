@@ -129,6 +129,28 @@ async def edit_team(ctx):
         if summon.content == '$edit_team':
             ctx.send("Resetting...")
             raise exceptions.Override()
+        
+        except asyncio.TimeoutError:
+            await sent.delete()
+            await ctx.send('Timed out. Do **$calcarcarum** to try again.')
+
+        except exceptions.Cancel:
+            await ctx.send('Command Cancelled')
+
+        except exceptions.Override:
+            await ctx.send('Overriding previous command...')
+
+        else:
+            summon = int(summon.content)
+            start = int(start.content)
+            end = int(end.content) + 1
+
+            materials = discord.Embed(
+                title = 'Total Materials Needed',
+                description = calculator.arcarum(summon,start,end),
+                color = discord.Color.orange()
+            )
+            await ctx.send(embed=materials)
 
 # Actual bot ID do NOT change
 client.run(env['token'])
