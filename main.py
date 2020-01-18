@@ -1,11 +1,14 @@
+# Python libraries
+import json
+import asyncio
+# Discord libraries
 import discord
 from discord.ext import commands
-import asyncio
-from resources import exceptions.py
-from resources import uncap.py
-from resources import messages.py
+# Our libraries
+from resources import exceptions
+from resources import messages
+from resources import uncap
 import calculator
-import json
 #Add mode modules as we add more
 
 uncap_targets = {}
