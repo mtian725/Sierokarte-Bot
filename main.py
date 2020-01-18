@@ -124,7 +124,7 @@ async def calcarcarum(ctx, *args):
                 description = calculator.arcarum(summon,start,end,toggle),
                 color = discord.Color.orange()
             )
-            thumbnail = messages.arr_thumbnail[uncap.arcarum_summon[summon]]
+            thumbnail = messages.arc_thumbnails[uncap.arcarum_summon[summon]]
             materials.set_thumbnail(url=thumbnail)
             await ctx.send(embed=materials)
     else:
