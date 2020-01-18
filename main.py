@@ -124,6 +124,7 @@ async def calcarcarum(ctx, *args):
                 description = calculator.arcarum(summon,start,end,toggle),
                 color = discord.Color.orange()
             )
+            materials.set_thumbnail(url='https://gbf.wiki/images/8/8a/Justice_%28SSR%29.png')
             await ctx.send(embed=materials)
     else:
         return
