@@ -30,6 +30,7 @@ arc_calc_1 = discord.Embed(
     color = discord.Color.orange(),
 )
 arc_calc_1.set_footer(text='Hit c to cancel')
+arc_calc_1.set_thumbnail(url='https://media.giphy.com/media/llaRufU4fSE9LEtwrB/giphy.gif')
 
 arc_calc_2 = discord.Embed(
     title = 'Pick the start step',
