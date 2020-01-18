@@ -1,4 +1,4 @@
-import uncap
+from resources import uncap
 
 def calc_arcarum(summon, start, end):
     if start > end:
