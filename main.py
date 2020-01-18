@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import exceptions
+import uncap
 import calculator
 import messages
 import json
@@ -13,7 +14,7 @@ global_teams = {}
 with open("config.json", "r") as read_file:
     env = json.load(read_file)
 
-client = commands.Bot(command_prefix='$')
+client = commands.Bot(command_prefix='!')
 
 @client.event
 async def on_ready():
@@ -26,7 +27,7 @@ async def wiki(ctx, *args):
     else:
         return
 
-@client.command(aliases=['ca']) # add option to display steps. Make it so that the final also states from what step to what then calcuation is for. Lastly, include the user who triggers the command via @
+@client.command(aliases=['ca'])
 async def calcarcarum(ctx, *args):
     if not args:
         await asyncio.sleep(1)
@@ -41,16 +42,15 @@ async def calcarcarum(ctx, *args):
                 or m.content == '2' or m.content == '3' or m.content == '4' or
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == 'c'
-                or m.content.startswith('$')))
+                or m.content.startswith('!')))
 
             summon = await client.wait_for('message', timeout=45.0,check=check)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1.5)
             await sent.delete()
-            await summon.delete()
             if summon.content == 'c':
                 raise exceptions.Cancel()
 
-            if summon.content.startswith('$'):
+            if summon.content.startswith('!'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_2)
@@ -62,27 +62,40 @@ async def calcarcarum(ctx, *args):
                 m.content == '5' or m.content == '6' or m.content == '7' or
                 m.content == '8' or m.content == '9' or m.content == '10'
                 or m.content == '11' or m.content == 'c'
-                or m.content.startswith('$')))
+                or m.content.startswith('!')))
 
             start = await client.wait_for('message', timeout=45.0,check=check)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1.5)
             await sent.delete()
-            await start.delete()
             if start.content == 'c':
                 raise exceptions.Cancel()
 
-            if start.content.startswith('$'):
+            if start.content.startswith('!'):
                 raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_3)
             end = await client.wait_for('message', timeout=45.0,check=check)
+            await asyncio.sleep(1.5)
+            await sent.delete()
+            if end.content == 'c':
+                raise exceptions.Cancel()
+
+            if end.content.startswith('!'):
+                raise exceptions.Override()
+
+            def check(m):
+                return (m.channel == channel and m.author == author and
+                (m.content == '0' or m.content == '1' or m.content == 'c'
+                or m.content.startswith('!')))
+
+            sent = await ctx.send(embed=messages.arc_calc_4)
+            toggle = await client.wait_for('message',timeout=45.0,check=check)
             await asyncio.sleep(0.5)
             await sent.delete()
-            await end.delete()
             if end.content == 'c':
-                await ctx.send('Command Cancelled')
+                raise exceptions.Cancel()
 
-            if end.content.startswith('$'):
+            if end.content.startswith('!'):
                 raise exceptions.Override()
 
         except asyncio.TimeoutError:
@@ -99,10 +112,13 @@ async def calcarcarum(ctx, *args):
             summon = int(summon.content)
             start = int(start.content)
             end = int(end.content) + 1
+            toggle = int(toggle.content)
 
+            title = 'Total Materials Needed : '+str(author)+'\n'
+            title = title+uncap.steps[start]+' to '+uncap.steps[end]
             materials = discord.Embed(
-                title = 'Total Materials Needed',
-                description = calculator.arcarum(summon,start,end),
+                title = title,
+                description = calculator.arcarum(summon,start,end,toggle),
                 color = discord.Color.orange()
             )
             await ctx.send(embed=materials)

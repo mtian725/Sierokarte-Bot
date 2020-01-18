@@ -54,6 +54,14 @@ arc_calc_3 = discord.Embed(
 )
 arc_calc_3.set_footer(text='Hit c to cancel')
 
+arc_calc_4 = discord.Embed(
+    title = 'Do you want to see the individual steps?',
+    description = '**0** : Yes\n'
+    '**1** : No\n',
+    color = discord.Color.orange()
+)
+arc_calc_4.set_footer(text='Hit c to cancel')
+
 add_1 = discord.Embed(
     title = 'What are you adding?',
     description = '0 : Character\n'

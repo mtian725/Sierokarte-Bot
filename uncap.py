@@ -1,4 +1,19 @@
 
+steps = {
+    0:'No Summon',
+    1:'Summon 0*',
+    2:'Summon 1*',
+    3:'Summon 2*',
+    4:'Summon 3*',
+    5:'Upgrade Summon to SSR',
+    6:'Summon 4*',
+    7:'Summon 5*',
+    8:'Recruit Evoker',
+    9:'Evoker 1*',
+    10:'Evoker 2*',
+    11:'Evoker 3*',
+    12:'Evoker 4*'
+}
 arcarum_summon = {
     0:'Justice',
     1:'The Hanged Man',
