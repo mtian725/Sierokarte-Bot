@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
 import asyncio
-import exceptions
-import uncap
+import resources/exceptions
+import resources/uncap
+import resources/messages
 import calculator
-import messages
 import json
 #Add mode modules as we add more
 
