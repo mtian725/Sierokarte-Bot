@@ -14,6 +14,7 @@ steps = {
     11:'Evoker 3*',
     12:'Evoker 4*'
 }
+
 arcarum_summon = {
     0:'Justice',
     1:'The Hanged Man',

@@ -2,6 +2,19 @@ import discord
 
 wiki = 'https://gbf.wiki/Main_Page'
 
+arc_thumbnails = {
+    'Justice':'https://gbf.wiki/images/8/8a/Justice_%28SSR%29.png',
+    'The Hanged Man':'https://gbf.wiki/images/d/d4/The_Hanged_Man_%28SSR%29.png',
+    'Death':'https://gbf.wiki/images/f/fd/Death_%28SSR%29.png',
+    'Temperance':'https://gbf.wiki/images/2/23/Temperance_%28SSR%29.png',
+    'The Devil':'https://gbf.wiki/images/9/91/The_Devil_%28SSR%29.png',
+    'The Tower':'https://gbf.wiki/images/0/04/The_Tower_%28SSR%29.png',
+    'The Star':'https://gbf.wiki/images/e/e8/The_Star_%28SSR%29.png',
+    'The Moon':'https://gbf.wiki/images/e/e5/The_Moon_%28SSR%29.png',
+    'The Sun':'https://gbf.wiki/images/1/12/The_Sun_%28SSR%29.png',
+    'Judgement':'https://gbf.wiki/images/7/71/Judgement_%28SSR%29.png'
+}
+
 arc_calc_1 = discord.Embed(
     title = 'Pick a summon/evoker below to calculate',
     description = '**0** : Justice - Maria Theresa\n'
