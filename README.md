@@ -12,3 +12,13 @@ Added json module which access local json file that has the bot token
 .commands() vs using on_message() to parse through commands.
 
 Everything following the command is read as an input, which reduces the amount of work needed, but using on_massage() to read in inputs allows for more natural and intuitive inputs.
+
+# main.py
+Contains all the commands, and running it runs the Bot
+## !calcarcarum
+Can also be invoked with `!ca`. When the command is called, the user will be asked to answer 4 prompts. These prompts are:
+* Which summon
+* The start step
+* The end step
+* Whether to show individual steps.
+Each prompt is a discord embed image. The command can be cancelled at each step by either waiting 30 seconds, calling another command (even if the command does not exist), or responding with `c`.
