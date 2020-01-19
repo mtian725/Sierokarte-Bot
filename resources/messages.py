@@ -45,7 +45,7 @@ arc_calc_2 = discord.Embed(
     '**8** : Recruit Evoker\n'
     '**9** : Evoker 1*\n'
     '**10** : Evoker 2*\n'
-    '**11** : Evoker 3*\n',
+    '**11** : Evoker 3*',
     color = discord.Color.orange(),
 )
 arc_calc_2.set_footer(text='Hit c to cancel')
@@ -63,7 +63,7 @@ arc_calc_3 = discord.Embed(
     '**8** : Evoker 1*\n'
     '**9** : Evoker 2*\n'
     '**10** : Evoker 3*\n'
-    '**11** : Evoker 4*\n',
+    '**11** : Evoker 4*',
     color = discord.Color.orange(),
 )
 arc_calc_3.set_footer(text='Hit c to cancel')
@@ -71,10 +71,20 @@ arc_calc_3.set_footer(text='Hit c to cancel')
 arc_calc_4 = discord.Embed(
     title = 'Do you want to see the individual steps?',
     description = '**0** : Yes\n'
-    '**1** : No\n',
+    '**1** : No',
     color = discord.Color.orange()
 )
 arc_calc_4.set_footer(text='Hit c to cancel')
+
+eternals_1 = discord.Embed(
+    title = 'Eternal Help',
+    description = '__Pick what you are looking for:__\n'
+    '**0** : Unlock Eternals/Uncap Revenant Weapons\n'
+    '**1** : Uncap Eternal to 5*\n',
+    color = discord.Color.gold(),
+)
+eternals_1.set_footer(text='Hit c to cancel')
+eternals_1.set_image(url='https://gbf.wiki/images/6/6c/RevWep_banner.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',

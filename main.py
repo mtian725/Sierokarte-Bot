@@ -33,7 +33,7 @@ async def wiki(ctx, *args):
 @client.command(aliases=['ca'])
 async def calcarcarum(ctx, *args):
     if not args:
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
         try:
             channel = ctx.channel
             author = ctx.author
@@ -47,14 +47,10 @@ async def calcarcarum(ctx, *args):
                 m.content == '8' or m.content == '9' or m.content == 'c'
                 or m.content.startswith('!')))
 
-            summon = await client.wait_for('message', timeout=45.0,check=check)
-            await asyncio.sleep(1.5)
+            summon = await client.wait_for('message', timeout=30.0,check=check)
+            exceptions.comm_cancel(summon.content)
+            await asyncio.sleep(1.25)
             await sent.delete()
-            if summon.content == 'c':
-                raise exceptions.Cancel()
-
-            if summon.content.startswith('!'):
-                raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_2)
 
@@ -67,24 +63,16 @@ async def calcarcarum(ctx, *args):
                 or m.content == '11' or m.content == 'c'
                 or m.content.startswith('!')))
 
-            start = await client.wait_for('message', timeout=45.0,check=check)
-            await asyncio.sleep(1.5)
+            start = await client.wait_for('message', timeout=30.0,check=check)
+            exceptions.comm_cancel(start.content)
+            await asyncio.sleep(1.25)
             await sent.delete()
-            if start.content == 'c':
-                raise exceptions.Cancel()
-
-            if start.content.startswith('!'):
-                raise exceptions.Override()
 
             sent = await ctx.send(embed=messages.arc_calc_3)
-            end = await client.wait_for('message', timeout=45.0,check=check)
-            await asyncio.sleep(1.5)
+            end = await client.wait_for('message', timeout=30.0,check=check)
+            exceptions.comm_cancel(end.content)
+            await asyncio.sleep(1.25)
             await sent.delete()
-            if end.content == 'c':
-                raise exceptions.Cancel()
-
-            if end.content.startswith('!'):
-                raise exceptions.Override()
 
             def check(m):
                 return (m.channel == channel and m.author == author and
@@ -92,24 +80,20 @@ async def calcarcarum(ctx, *args):
                 or m.content.startswith('!')))
 
             sent = await ctx.send(embed=messages.arc_calc_4)
-            toggle = await client.wait_for('message',timeout=45.0,check=check)
+            toggle = await client.wait_for('message',timeout=30.0,check=check)
+            exceptions.comm_cancel(toggle.content)
             await asyncio.sleep(0.5)
             await sent.delete()
-            if end.content == 'c':
-                raise exceptions.Cancel()
-
-            if end.content.startswith('!'):
-                raise exceptions.Override()
 
         except asyncio.TimeoutError:
             await sent.delete()
-            await ctx.send('Timed out. Do **$calcarcarum** to try again.')
+            await ctx.send('Timed out')
 
         except exceptions.Cancel:
             await ctx.send('Command Cancelled')
 
         except exceptions.Override:
-            await ctx.send('Canceling previous command...')
+            await ctx.send('Cancelled previous command')
 
         else:
             summon = int(summon.content)
@@ -127,6 +111,40 @@ async def calcarcarum(ctx, *args):
             thumbnail = messages.arc_thumbnails[uncap.arcarum_summon[summon]]
             materials.set_thumbnail(url=thumbnail)
             await ctx.send(embed=materials)
+    else:
+        return
+
+@client.command(aliases=['e'])
+async def eternals(ctx, *args):
+    if not args:
+        try:
+            await asyncio.sleep(0.5)
+            channel = ctx.channel
+            author = ctx.author
+            sent = await ctx.send(embed=messages.eternals_1)
+
+            def check(m):
+                return (m.channel == channel and m.author == author and
+                (m.content == '0' or m.content == '1' or m.content == 'c'
+                or m.content.startswith('!')))
+
+            option = await client.wait_for('message',timeout=30.0,check=check)
+            await asyncio.sleep(0.5)
+            await sent.delete()
+            exceptions.comm_cancel(option.content)
+
+        except asyncio.TimeoutError:
+            await sent.delete()
+            await ctx.send('Timed out')
+
+        except exceptions.Cancel:
+            await ctx.send('Command Cancelled')
+
+        except exceptions.Override:
+            await ctx.send('Cancelled previous command')
+
+        else:
+            await ctx.send('Went Through')
     else:
         return
 
