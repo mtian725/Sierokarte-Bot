@@ -121,7 +121,7 @@ async def eternals(ctx, *args):
             await asyncio.sleep(0.5)
             channel = ctx.channel
             author = ctx.author
-            sent = await ctx.send(embed=messages.eternals_1)
+            sent = await ctx.send(embed=messages.eternals)
 
             def check(m):
                 return (m.channel == channel and m.author == author and
@@ -145,24 +145,58 @@ async def eternals(ctx, *args):
 
         else:
             if option.content == '0':
-                temp = discord.Embed(
+                sent = await ctx.send(messages.eternals_1)
+                await sent.add_reaction('⬅️')
+            else:
+                await ctx.send('Slected 1')
+                temp1 = discord.Embed(
                     title = 'Something',
                     description = 'Soemthing',
                     color = discord.Color.blue(),
                 )
-                sent = await ctx.send(embed=temp)
-                await asyncio.sleep(1)
-                await ctx.send('filler\nfiller\nfilller')
-                temp = discord.Embed(
-                    title = 'new',
-                    description = 'new',
+                temp2 = discord.Embed(
+                    title = 'Something',
+                    description = 'Soemthing',
                     color = discord.Color.blue(),
                 )
-                await sent.edit(embed=temp)
-            else:
-                await ctx.send('Slected 1')
+                await ctx.send(str(temp1.to_dict() == temp2.to_dict()))
     else:
         return
+
+# For testing purposes
+@client.command()
+async def test(ctx):
+    embedlst = messages.EmbedLinkedList()
+    temp1 = discord.Embed(
+        title = 'Temp1',
+        description = 'Something',
+        color = discord.Color.blue(),
+    )
+    temp2 = discord.Embed(
+        title = 'Temp2',
+        description = 'Something',
+        color = discord.Color.blue(),
+    )
+    temp3 = discord.Embed(
+        title = 'Temp3',
+        description = 'Something',
+        color = discord.Color.blue(),
+    )
+    temp4 = discord.Embed(
+        title = 'Temp4',
+        description = 'Something',
+        color = discord.Color.blue(),
+    )
+    embed = messages.EmbedNode(data=temp1)
+    await ctx.send(embed)
+    embedlst.append(temp1)
+    await ctx.send(embedlst)
+    embedlst.append(temp2)
+    await ctx.send(embedlst)
+    embedlst.append(temp3)
+    await ctx.send(embedlst)
+    embedlst.append(temp4)
+    await ctx.send(embedlst)
 
 @client.command()
 async def team(ctx):

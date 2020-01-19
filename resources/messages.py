@@ -1,5 +1,52 @@
 import discord
 
+class EmbedNode:
+    """
+    A node for a doubly linked list. Specifically for embeds.
+    """
+    def __init__(self, data=None, prev=None, next=None):
+        self.data=data
+        self.prev=prev
+        self.next=next
+
+    def __repr__(self):
+        return repr(self.data.to_dict())
+
+    def __eq__ (self, other):
+        return self.data.to_dict() == other.data.to_dict()
+
+class EmbedLinkedList:
+    """
+    This will be a doubly linked list that will be cyclic,
+    where the tail will point to the head. Every embed/node
+    is expected to be unique
+    """
+    def __init__(self):
+        self.head = None
+
+    def __repr__(self):
+        nodes = []
+        start = self.head
+        curr = self.head
+        nodes.append(repr(curr))
+        curr = curr.next
+        while not (curr == start):
+            nodes.append(repr(curr))
+            curr = curr.next
+        return '[' + ', '.join(nodes) +']'
+
+    def append(self, data):
+        if not self.head:
+            self.head = EmbedNode(data=data)
+            self.head.next = self.head
+            self.head.prev = self.head
+            return
+        else:
+            last = self.head.prev
+            last.next = EmbedNode(data=data,prev=last,next=self.head)
+            self.head.prev = last.next
+            return
+
 wiki = 'https://gbf.wiki/Main_Page'
 
 arc_thumbnails = {
@@ -76,15 +123,55 @@ arc_calc_4 = discord.Embed(
 )
 arc_calc_4.set_footer(text='Hit c to cancel')
 
-eternals_1 = discord.Embed(
+eternals = discord.Embed(
     title = 'Eternal Help',
     description = '__Pick what you are looking for:__\n'
     '**0** : Unlock Eternals/Uncap Revenant Weapons\n'
     '**1** : Uncap Eternal to 5*\n',
-    color = discord.Color.gold(),
+    color = discord.Color.gold()
 )
-eternals_1.set_footer(text='Hit c to cancel')
-eternals_1.set_image(url='https://gbf.wiki/images/6/6c/RevWep_banner.png')
+eternals.set_footer(text='Hit c to cancel')
+eternals.set_image(url='https://gbf.wiki/images/6/6c/RevWep_banner.png')
+
+eternals_1 = EmbedLinkedList()
+temp = discord.Embed(
+    title = 'Step 1',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 2',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 3',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 4',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 5',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 6',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+temp = discord.Embed(
+    title = 'Step 7',
+    color = discord.Color.gold()
+)
+eternals_1.append(temp)
+
+# Complete this
+eternals_2 = EmbedLinkedList()
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
