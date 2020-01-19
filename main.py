@@ -129,9 +129,9 @@ async def eternals(ctx, *args):
                 or m.content.startswith('!')))
 
             option = await client.wait_for('message',timeout=30.0,check=check)
+            exceptions.comm_cancel(option.content)
             await asyncio.sleep(0.5)
             await sent.delete()
-            exceptions.comm_cancel(option.content)
 
         except asyncio.TimeoutError:
             await sent.delete()
@@ -144,7 +144,23 @@ async def eternals(ctx, *args):
             await ctx.send('Cancelled previous command')
 
         else:
-            await ctx.send('Went Through')
+            if option.content == '0':
+                temp = discord.Embed(
+                    title = 'Something',
+                    description = 'Soemthing',
+                    color = discord.Color.blue(),
+                )
+                sent = await ctx.send(embed=temp)
+                await asyncio.sleep(1)
+                await ctx.send('filler\nfiller\nfilller')
+                temp = discord.Embed(
+                    title = 'new',
+                    description = 'new',
+                    color = discord.Color.blue(),
+                )
+                await sent.edit(embed=temp)
+            else:
+                await ctx.send('Slected 1')
     else:
         return
 
