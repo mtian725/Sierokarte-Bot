@@ -21,4 +21,5 @@ Can also be invoked with `!ca`. When the command is called, the user will be ask
 * The start step
 * The end step
 * Whether to show individual steps.
+
 Each prompt is a discord embed image. The command can be cancelled at each step by either waiting 30 seconds, calling another command (even if the command does not exist), or responding with `c`.
