@@ -77,7 +77,7 @@ arc_calc_4 = discord.Embed(
 arc_calc_4.set_footer(text='Hit c to cancel')
 
 eternals = discord.Embed(
-    title = 'Eternal Help',
+    title = 'Eternals Help',
     description = '__Pick what you are looking for:__\n'
     '**0** : Unlock Eternals/Uncap Revenant Weapons\n'
     '**1** : Uncap Eternal to 5*\n',
@@ -217,7 +217,7 @@ discord.Embed(
 discord.Embed(
     title = 'Step 3: Uncap Silver Relic to 4*',
     description = 'Once you get your Silver Relic to 3\*, you can uncap it to '
-    '4* with these resources:\n-300× of the cooresponding weapon stone\n'
+    '4* with these resources:\n-300× of the corresponding weapon stone\n'
     '-300× of **each** Elemental Quartz',
     color = discord.Color.gold()
 ),
@@ -227,7 +227,7 @@ discord.Embed(
     'Relic using:\n-1× Gold Brick\n-10× Silver Centrum\n-10× Damascus Crystal\n'
     '-5× Legendary Merit\n-30× Class Distinction\n-1× of **each** Element for '
     'the coorespond Relic Weapon\n-100× Revenant Weapon Fragment\n\n'
-    'Eternals and thier cooresponding distinction are as follows:\nAnre-Guardian\n'
+    'Eternals and thier corresponding distinction are as follows:\nAnre-Guardian\n'
 	'Tweyen-Sharpshooter\nThreo-Gladiator\nFeower-Fencer\nFif-Pilgrim\nSeox-Combatant\n'
 	'Seofon-Sword Master\nEahta-Samurai\nNiyon-Troubadour\nTien-Bandit\n',
     color = discord.Color.gold()
@@ -235,7 +235,7 @@ discord.Embed(
 discord.Embed(
     title = 'Step 4 (continue): Craft Gold Relic',
     description = 'The last items, Revenant Weapon Fragments, are acquired by '
-    'reducing the cooresponding Revenant Weapons. You already have 50 from the '
+    'reducing the corresponding Revenant Weapons. You already have 50 from the '
     'fully uncapped weapon you made to unlock the Eternal. From here there are '
     '2 options:\n1. Create and reduce another fully uncapped Revenant Weapon\n'
     '2. Create and reduce 10 element-changed Revenant Weapons\n'

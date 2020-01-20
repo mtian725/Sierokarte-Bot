@@ -23,3 +23,6 @@ Can also be invoked with `!ca`. When the command is called, the user will be ask
 * Whether to show individual steps.
 
 Each prompt is a discord embed image. The command can be cancelled at each step by either waiting 30 seconds, calling another command (even if the command does not exist), or responding with `c`.
+
+## !eternals
+Can also be invoked with `!e`. When the command is called, the user will be asked a prompt. When the user responds to the prompt, a new prompt is opened. This prompt has several emoji reactions. The user can click/tap one of the reactions to change the prompt to that corresponding step number. The prompt will stop reacting once the user does not interact with it for 25 seconds. **Because all the reactions need to be added first, clicking/tapping before all the emojis are added will result in no reaction.**
