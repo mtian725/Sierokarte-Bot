@@ -149,7 +149,7 @@ async def eternals(ctx, *args):
             if option.content == '1':
                 embeds = messages.eternals_2
 
-            sent = await ctx.send(embed=embeds[pos])
+            sent = await ctx.send(embed=embeds[0])
             await sent.add_reaction('1️⃣')
             await sent.add_reaction('2️⃣')
             await sent.add_reaction('3️⃣')
