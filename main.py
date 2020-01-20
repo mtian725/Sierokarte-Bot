@@ -153,7 +153,7 @@ async def eternals(ctx, *args):
 
             pos = 0
             sent = await ctx.send(embed=embeds[pos])
-            await sent.add_reaction('\uFE0F')
+            await sent.add_reaction('\u0031')
             while True:
               try:
                   def react_check(reaction, user):
