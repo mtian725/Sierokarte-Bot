@@ -189,6 +189,7 @@ async def eternals(ctx, *args):
                 await sent.add_reaction('6️⃣')
                 await sent.add_reaction('7️⃣')
                 await sent.add_reaction('8️⃣')
+                await sent.add_reaction('9️⃣')
                 while True:
                   try:
                       def react_check(reaction, user):
@@ -196,7 +197,8 @@ async def eternals(ctx, *args):
                           (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
                           or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
                           or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
-                          or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'))
+                          or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'
+                          or str(reaction.emoji) == '9️⃣'))
 
                       reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
                   except asyncio.TimeoutError:
@@ -216,8 +218,10 @@ async def eternals(ctx, *args):
                           pos = 5
                       elif str(reaction.emoji) == '7️⃣':
                           pos = 6
-                      else:
+                      elif str(reaction.emoji) == '8️⃣':
                           pos = 7
+                      else:
+                          pos = 8
                       await sent.edit(embed=embeds[pos])
     else:
         return

@@ -216,7 +216,7 @@ discord.Embed(
 ),
 discord.Embed(
     title = 'Step 3: Uncap Silver Relic to 4*',
-    description = 'Once you get your Silver Relic to 3*, you can uncap it to '
+    description = 'Once you get your Silver Relic to 3\*, you can uncap it to '
     '4* with these resources:\n-300× of the cooresponding weapon stone\n'
     '300× of **each** Elemental Quartz',
     color = discord.Color.gold()
@@ -230,6 +230,21 @@ discord.Embed(
     'Eternals and thier cooresponding distinction are as follows:\nAnre-Guardian\n'
 	'Tweyen-Sharpshooter\nThreo-Gladiator\nFeower-Fencer\nFif-Pilgrim\nSeox-Combatant\n'
 	'Seofon-Sword Master\nEahta-Samurai\nNiyon-Troubadour\nTien-Bandit\n',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 4 (continue): Craft Gold Relic',
+    description = 'The last items, Revenant Weapon Fragments, are acquired by '
+    'reducing the cooresponding Revenant Weapons. You already have 50 from the '
+    'fully uncapped weapon you made to unlock the Eternal. From here there are '
+    '2 options:\n1. Create and reduce another fully uncapped Revenant Weapon\n'
+    '2. Create and reduce 10 element-changed Revenant Weapons\n'
+    'Option 1 will cost another **gold brick** while option 2 will not '
+    'require a gold brick but it can be more time consuming\n\n'
+    '**__WARNING__**\nIn-between stages of the Revenant Weapon awakening **DO NOT**'
+    ' increase fragment yield until after the very last step (using the gold brick).'
+    'Furthermore, reducing a fully uncapped Silver Weapon WILL NOT give you '
+    'Revenant Weapon Fragments.',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -253,6 +268,8 @@ for e in eternals_2:
 eternals_2[0].set_thumbnail(url='https://gbf.wiki/images/2/2f/Stamp12.png')
 eternals_2[1].set_image(url='https://i.imgur.com/b2JAUoz.png')
 eternals_2[2].set_thumbnail(url='https://gbf.wiki/images/b/bf/Stamp78.png')
+eternals_2[3].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
+eternals_2[4].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
