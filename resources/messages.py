@@ -248,7 +248,10 @@ discord.Embed(
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 5',
+    title = 'Step 5: Obtain the Weapon Soul',
+    description = 'After crafting, ~~admire all the hard work, time, resources,'
+    ' and effort you put into creating this weapon, and throw those feelings '
+    'out the window as you~~ reduce the Gold Weapon to aquire the weapon soul.',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -270,6 +273,7 @@ eternals_2[1].set_image(url='https://i.imgur.com/b2JAUoz.png')
 eternals_2[2].set_thumbnail(url='https://gbf.wiki/images/b/bf/Stamp78.png')
 eternals_2[3].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 eternals_2[4].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
+eternals_2[5].set_thumbnail(url='https://gbf.wiki/images/f/ff/Stamp28.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
