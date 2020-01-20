@@ -258,25 +258,44 @@ discord.Embed(
     title = 'Step 6: Fight the Weapon',
     description = 'You can now start the Fate Episode, which is a one-on-one '
     'fight between the Eternal and their corresponding weapon. If you are'
-    ' having trouble, follow the guild below.\n\n'
-    '__One-Rift Spear__: Use Fleeting Spark whenever it\'s off cooldown, only use Spiral Spear when the boss is in Overdrive, use Arm the Bastion for the 50% trigger.\n'
-    '__Two-Crown Bow__: Its Charge Attack inflicts paralysis and is triggered at 50% and 10%. Try to save Merculight for charge attacks. Also, be careful to not lower it below 25% with 3 charge diamonds, as the charge attack will probably kill Tweyen. It is best to save The Clincher for when Two-Crown Bow is in overdrive to get it to break quickly.\n'
-    '__Three-Tiger Axe__: Hold Threo\'s Charge Attack until you can get off a second Vorpal Rage + Ground Zero combo.\n'
-    '__Four-Sky Blade__: Use skills and attack into its 50% trigger then wait out its multi-attack buff. Proceed as normal afterwards. Fairly easy if Feower triggers skill reset.\n'
-    '__Five-Soul Staff__: Since Fif lacks damage skills, you\'re reliant on her being able to multi-attack to win the fight. It can apply a def-down debuff, so make sure to clear it. Time her heal so you can get maximum effectiveness out of it and don\'t forget to use her auto-revive.\n'
-    '__Six-Ruin Fist__: Fairly straightforward fight, don\'t triple attack into counters or Charge Attacks and you should be good.\n'
-    '__Seven-Star Sword__: Press Emblema every turn in order to raise Seofon\'s DA rate. Save Infinito Creare for when the boss is in overdrive.\n'
-    '__Eight-Life Katana__: Save your charge attack until you have 200%, then use it to break the opponents overdrive. Use Open Spirit the turn before your charge attack and Dance of the Gods when appropriate and you\'ll be fine.\n'
-    '__Nine-Realm Harp__: Use all her skills turn 1. If both Comatose and Tuning land, you\'re home free.\n'
-    '__Ten-Wolf Gun__: The majority of Tien\'s damage comes from her skills. When it goes in Break mode, use Final Order + Stardust. Don\'t use her Charge Attack until the end.',
+    ' having trouble, follow the guide below.\n\n'
+    '**__One-Rift Spear__**: Use Fleeting Spark whenever it\'s off cooldown, only use Spiral Spear when the boss is in Overdrive, use Arm the Bastion for the 50% trigger.\n'
+    '**__Two-Crown Bow__**: Its Charge Attack inflicts paralysis and is triggered at 50% and 10%. Try to save Merculight for charge attacks. Also, be careful to not lower it below 25% with 3 charge diamonds, as the charge attack will probably kill Tweyen. It is best to save The Clincher for when Two-Crown Bow is in overdrive to get it to break quickly.\n'
+    '**__Three-Tiger Axe__**: Hold Threo\'s Charge Attack until you can get off a second Vorpal Rage + Ground Zero combo.\n'
+    '**__Four-Sky Blade__**: Use skills and attack into its 50% trigger then wait out its multi-attack buff. Proceed as normal afterwards. Fairly easy if Feower triggers skill reset.\n'
+    '**__Five-Soul Staff__**: Since Fif lacks damage skills, you\'re reliant on her being able to multi-attack to win the fight. It can apply a def-down debuff, so make sure to clear it. Time her heal so you can get maximum effectiveness out of it and don\'t forget to use her auto-revive.\n'
+    '**__Six-Ruin Fist__**: Fairly straightforward fight, don\'t triple attack into counters or Charge Attacks and you should be good.\n'
+    '**__Seven-Star Sword__**: Press Emblema every turn in order to raise Seofon\'s DA rate. Save Infinito Creare for when the boss is in overdrive.\n'
+    '**__Eight-Life Katana__**: Save your charge attack until you have 200%, then use it to break the opponents overdrive. Use Open Spirit the turn before your charge attack and Dance of the Gods when appropriate and you\'ll be fine.\n'
+    '**__Nine-Realm Harp__**: Use all her skills turn 1. If both Comatose and Tuning land, you\'re home free.\n'
+    '**__Ten-Wolf Gun__**: The majority of Tien\'s damage comes from her skills. When it goes in Break mode, use Final Order + Stardust. Don\'t use her Charge Attack until the end.',
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 7',
+    title = 'Step 7: Uncap Eternal to 5*',
+    description = 'You can now uncap your Eternal to 5*. The resources needed '
+    'are dependant on **Element**.\n'
+    '**Fire** - Rubeus Centrum ×30, Fire Urn ×10, Bright Spirits ×2, Fire Grimoire ×30\n'
+    '**Water** - Indicus Centrum ×30, Water Urn ×10, Murky Spirits ×2, Water Grimoire ×30\n'
+    '**Earth** - Luteus Centrum ×30, Earth Urn ×10, Murky Spirits ×2, Earth Grimoire ×30\n'
+    '**Wind** - Galbinus Centrum ×30, Wind Urn ×10, Bright Spirits ×2, Wind Grimoire ×30\n'
+    '**Light** - Niveus Centrum ×30, Light Urn ×10, Bright Spirits ×2, Fire Grimoire ×15, Wind Grimoire ×15\n'
+    '**Dark** - Ater Centrum ×30, Dark Urn ×10, Murky Spirits ×2, Water Grimoire ×15, Earth Grimoire ×15\n'
+    '__**All Eternals Will also need**__: Rainbow Prism ×100, Rupie ×100,000'
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 8',
+    title = 'Step 8: Unlock 4th Skill',
+    description = 'You have now unlocked the Fate Episode where you can unlock '
+    'your Eternal\'s 4th skill. You will have to fight as your chosen Eternal '
+    'character in against all the other Eternals. A final fate episode will '
+    'appear when the gauntlet has been cleared, forcing you to fight them again '
+    'one-on-one to unlock their new skill. Weapon skills and summon auras '
+    'don\'t take effect. A good strategy is to put your weapons with the '
+    'highest ATK and HP values in your grid, put your strongest weapon with '
+    'elemental advantage in the main hand, and choose summons based on calls '
+    'and stats.\n\nWith that done, **congratulations** you have fully unlocked '
+    'the full potential of a very powerful unit.'
     color = discord.Color.gold()
 )]
 for e in eternals_2:
@@ -288,6 +307,8 @@ eternals_2[3].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 eternals_2[4].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 eternals_2[5].set_thumbnail(url='https://gbf.wiki/images/f/ff/Stamp28.png')
 eternals_2[6].set_thumbnail(url='https://gbf.wiki/images/2/26/Stamp13.png')
+eternals_2[7].set_thumbnail(url='https://gbf.wiki/images/5/52/Stamp39.png')
+eternals_2[8].set_thumbnail(url='https://gbf.wiki/images/9/94/Stamp42.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
