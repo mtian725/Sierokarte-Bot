@@ -255,7 +255,20 @@ discord.Embed(
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 6',
+    title = 'Step 6: Fight the Weapon',
+    description = 'You can now start the Fate Episode, which is a one-on-one '
+    'fight between the Eternal and their corresponding weapon. If you are'
+    ' having trouble, follow the guild below.\n\n'
+    '__One-Rift Spear__: Use Fleeting Spark whenever it\'s off cooldown, only use Spiral Spear when the boss is in Overdrive, use Arm the Bastion for the 50% trigger.\n'
+    '__Two-Crown Bow__: Its Charge Attack inflicts paralysis and is triggered at 50% and 10%. Try to save Merculight for charge attacks. Also, be careful to not lower it below 25% with 3 charge diamonds, as the charge attack will probably kill Tweyen. It is best to save The Clincher for when Two-Crown Bow is in overdrive to get it to break quickly.\n'
+    '__Three-Tiger Axe__: Hold Threo\'s Charge Attack until you can get off a second Vorpal Rage + Ground Zero combo.\n'
+    '__Four-Sky Blade__: Use skills and attack into its 50% trigger then wait out its multi-attack buff. Proceed as normal afterwards. Fairly easy if Feower triggers skill reset.\n'
+    '__Five-Soul Staff__: Since Fif lacks damage skills, you\'re reliant on her being able to multi-attack to win the fight. It can apply a def-down debuff, so make sure to clear it. Time her heal so you can get maximum effectiveness out of it and don\'t forget to use her auto-revive.\n'
+    '__Six-Ruin Fist__: Fairly straightforward fight, don\'t triple attack into counters or Charge Attacks and you should be good.\n'
+    '__Seven-Star Sword__: Press Emblema every turn in order to raise Seofon\'s DA rate. Save Infinito Creare for when the boss is in overdrive.\n'
+    '__Eight-Life Katana__: Save your charge attack until you have 200%, then use it to break the opponents overdrive. Use Open Spirit the turn before your charge attack and Dance of the Gods when appropriate and you\'ll be fine.\n'
+    '__Nine-Realm Harp__: Use all her skills turn 1. If both Comatose and Tuning land, you\'re home free.\n'
+    '__Ten-Wolf Gun__: The majority of Tien\'s damage comes from her skills. When it goes in Break mode, use Final Order + Stardust. Don\'t use her Charge Attack until the end.',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -274,6 +287,7 @@ eternals_2[2].set_thumbnail(url='https://gbf.wiki/images/b/bf/Stamp78.png')
 eternals_2[3].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 eternals_2[4].set_thumbnail(url='https://gbf.wiki/images/7/76/Stamp155.png')
 eternals_2[5].set_thumbnail(url='https://gbf.wiki/images/f/ff/Stamp28.png')
+eternals_2[6].set_thumbnail(url='https://gbf.wiki/images/2/26/Stamp13.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
