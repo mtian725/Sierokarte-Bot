@@ -310,7 +310,49 @@ async def add(ctx):
     except exceptions.Override:
         await ctx.send('Canceling previous command...')
 
-#remove will skip because dynamic size evaluation for lists pepega
+#removeall will skip because dynamic size evaluation for lists pepega
+@client.command()
+async def removeall(ctx):
+    await asyncio.sleep(1)
+    try:
+        channel = ctx.channel
+        author = ctx.author
+
+        sent1 = await ctx.send(embed=messages.remove_1)
+        def check(m):
+            return ((m.content == '!removeall') or (m.content == 'c') or not(m.content.startswith('!')))
+        start = await client.wait_for('message', timeout=20.0,check=check)
+        await asyncio.sleep(0.5)
+        await sent1.delete()
+
+        if start.content == '!removeall':
+            raise exceptions.Override()
+        if start.content == 'c':
+            raise exceptions.Cancel()
+
+        for i in range (0, 3):
+            arr = global_teams[author][i]
+            j = 0
+            while (j < len(arr)):
+                if (arr[j] === start.content):
+                    arr.pop(j)
+                else:
+                    j = j + 1
+
+        for i in range (0, 3):
+            if (len(global_teams[author][i]) == 0):
+                global_teams[author][i] = [None]
+
+    except asyncio.TimeoutError:
+        await sent.delete()
+        await ctx.send('Timed out. Do **!removeall** to try again.')
+
+    except exceptions.Cancel:
+        await ctx.send('Command Cancelled')
+
+    except exceptions.Override:
+        await ctx.send('Canceling previous command...')
+
 @client.command()
 async def remove(ctx):
     await asyncio.sleep(1)
@@ -320,21 +362,44 @@ async def remove(ctx):
 
         sent1 = await ctx.send(embed=messages.remove_1)
         def check(m):
-            return ((m.content == '$remove') or (m.content == 'c') or not(m.content.startswith('$')))
-        start = await client.wait_for('message', timeout=20.0,check=check)
+            return ((m.content == '!removeall') or (m.content == 'c') or not(m.content.startswith('!')))
+        start = await client.wait_for('message', timeout=20.0, check=check)
         await asyncio.sleep(0.5)
         await sent1.delete()
 
-        if start.content == '$remove':
+        if start.content == '!remove':
             raise exceptions.Override()
         if start.content == 'c':
             raise exceptions.Cancel()
 
+        sent2 = await ctx.send(embed=messages.remove_2)
+        def check2(m):
+            return(m.content == '0') or m.content == '1' or m.content == '2' or m.content == '3'
+            or m.content == '4' or m.content == '5' or m.content == '6' or m.content == '7' 
+            or m.content == '8' or m.content == '9' or m.content == '10' or m.content == 'c'
+            or m.content == '!remove' )
+
+        start2 = await client.wait_for('message', timeout=20.0, check=check)
+        await asyncio.sleep(0.5)
+        await sent2.delete()
+
+        if start2.content == '!remove':
+            raise exceptions.Override()
+        if start2.content == 'c':
+            raise exceptions.Cancel()
+
+        count = start2
         for i in range (0, 3):
             arr = global_teams[author][i]
-            for j in range (0, len(arr)):
-                if ((arr[-1 * j + len(arr) - 1]) == start.content):
-                    arr.pop(-1 * j + len(arr) - 1)
+            j = 0
+            while (j < len(arr)):
+                if (count <= 0):
+                    break
+                if (arr[j] === start.content):
+                    arr.pop(j)
+                    count = count - 1
+                else:
+                    j = j + 1
 
         for i in range (0, 3):
             if (len(global_teams[author][i]) == 0):
@@ -342,7 +407,7 @@ async def remove(ctx):
 
     except asyncio.TimeoutError:
         await sent.delete()
-        await ctx.send('Timed out. Do **$add** to try again.')
+        await ctx.send('Timed out. Do **!remove** to try again.')
 
     except exceptions.Cancel:
         await ctx.send('Command Cancelled')
