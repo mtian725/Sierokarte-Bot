@@ -152,7 +152,10 @@ discord.Embed(
 for e in eternals_1:
     e.set_footer(text='Times out after being left idle for 25 seconds')
 eternals_1[0].set_image(url='https://i.imgur.com/rzqklQ3.png')
+eternals_1[1].set_thumbnail(url='https://gbf.wiki/images/f/fe/Stamp191.png')
+eternals_1[2].set_thumbnail(url='https://gbf.wiki/images/f/fe/Stamp214.png')
 eternals_1[3].set_image(url='https://i.imgur.com/39BUX5R.png')
+eternals_1[4].set_thumbnail(url='https://gbf.wiki/images/f/f3/Stamp218.png')
 eternals_1[4].add_field(name='First Upgrade', value='300× Satin Feather\n'
 '100× Untamed Flame\n100× Rough Stone\n100× Low Orb\n100× Tome\n150× Scroll\n'
 '100× Whorl\n10× Supreme Merit\n3× Blue Sky Crystal\n100× Crystal',inline=True)
