@@ -354,3 +354,10 @@ remove_1 = discord.Embed(
     color = discord.Color.blue(),
 )
 remove_1.set_footer(text='Hit c to cancel')
+
+remove_2 = discord.Embed(
+    title = 'How many are you removing?',
+    description = 'Type a number from 1 through 10',
+    color = discord.Color.blue(),
+)
+remove_2.set_footer(text='Hit c to cancel')

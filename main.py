@@ -374,10 +374,10 @@ async def remove(ctx):
 
         sent2 = await ctx.send(embed=messages.remove_2)
         def check2(m):
-            return(m.content == '0') or m.content == '1' or m.content == '2' or m.content == '3'
+            return (m.content == '1' or m.content == '2' or m.content == '3'
             or m.content == '4' or m.content == '5' or m.content == '6' or m.content == '7' 
             or m.content == '8' or m.content == '9' or m.content == '10' or m.content == 'c'
-            or m.content == '!remove' )
+            or m.content == '!remove')
 
         start2 = await client.wait_for('message', timeout=20.0, check=check)
         await asyncio.sleep(0.5)
