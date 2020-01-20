@@ -22,7 +22,7 @@ def arcarum(summon, start, end, toggle):
         for x in range(start,end):
             output = output+'__'+uncap.steps[x+1]+'__\n'
             for key,value in uncap.arcarum[target][x].items():
-                output = output + key + ' : ' + str(value) + '\n'
+                output = output + key + ' : ' + '×' +  str(value) + '\n'
 
             output = output+'\n'
 
@@ -35,6 +35,6 @@ def arcarum(summon, start, end, toggle):
             return '**Chose a start step that is the same as the end step**'
         else:
             for key,value in total.items():
-                output = output + key + ' : ' + str(value) + '\n'
+                output = output + key + ' : ' + '×' + str(value) + '\n'
 
             return output

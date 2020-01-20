@@ -1,52 +1,5 @@
 import discord
 
-class EmbedNode:
-    """
-    A node for a doubly linked list. Specifically for embeds.
-    """
-    def __init__(self, data=None, prev=None, next=None):
-        self.data=data
-        self.prev=prev
-        self.next=next
-
-    def __repr__(self):
-        return repr(self.data.to_dict())
-
-    def __eq__ (self, other):
-        return self.data.to_dict() == other.data.to_dict()
-
-class EmbedLinkedList:
-    """
-    This will be a doubly linked list that will be cyclic,
-    where the tail will point to the head. Every embed/node
-    is expected to be unique
-    """
-    def __init__(self):
-        self.head = None
-
-    def __repr__(self):
-        nodes = []
-        start = self.head
-        curr = self.head
-        nodes.append(repr(curr))
-        curr = curr.next
-        while not (curr == start):
-            nodes.append(repr(curr))
-            curr = curr.next
-        return '[' + ', '.join(nodes) +']'
-
-    def append(self, data):
-        if not self.head:
-            self.head = EmbedNode(data=data)
-            self.head.next = self.head
-            self.head.prev = self.head
-            return
-        else:
-            last = self.head.prev
-            last.next = EmbedNode(data=data,prev=last,next=self.head)
-            self.head.prev = last.next
-            return
-
 wiki = 'https://gbf.wiki/Main_Page'
 
 arc_thumbnails = {
@@ -133,45 +86,139 @@ eternals = discord.Embed(
 eternals.set_footer(text='Hit c to cancel')
 eternals.set_image(url='https://gbf.wiki/images/6/6c/RevWep_banner.png')
 
-eternals_1 = EmbedLinkedList()
-temp = discord.Embed(
-    title = 'Step 1',
+eternals_1 = [
+discord.Embed(
+    title = 'Step 1: Obtain the Revenant Weapon',
+    description = 'Get the **Revenant Weapon** from a Unite '
+    'and Fight (Guild War) event.'
+    'The Eternal that corresponds to each weapon is as follows:\n'
+    'Anre - One-Rift Spear\nTweyen - Two-Crown Bow\n'
+    'Threo - Three-Tiger Axe\nFeower - Four-Sky Blade\n'
+    'Fif - Five-Soul Staff\nSeox - Six-Ruin Fist\n'
+    'Seofon - Seven-Star Sword\nEahta - Eight-Life Katana\n'
+    'Niyon - Nine-Realm Harp\nTien - Ten-Wolf Gun',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 2',
+),
+discord.Embed(
+    title = 'Step 2: Awaken the Revenant Weapon',
+    description = 'After fully uncapping and leveling your Revenant Weapon to '
+    'level 100, go to the **Weapon Series** tab at the **shop**, go to the '
+    '**Revenant Weapon** section, and select your weapon. '
+    'Awakening will require:\n'
+    '-Shining Orb ×50 \n'
+    '-Skylight Scroll ×50 \n'
+    '-Radiant Whorl ×50 \n'
+    '-White Dragon Scale ×50 \n'
+    '-Champion Merit ×50 \n'
+    '-Crystal ×100',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 3',
+),
+discord.Embed(
+    title = 'Step 3: Change the Revenant Weapon\'s Element',
+    description = 'You will need to change the weapon\'s element this step. '
+    '**Because you will eventually duel the Eternal with the Revenant Weapon as'
+    ' your mainhand, it\'s recommended to change the element to the one that is'
+    ' strong against the eternal**. You will need:\n-Weapon Relic ×1\n'
+    '-True Animas ×3\n'
+    'To get a Weapon Relic:\n'
+    '**Go to Shop > Weapon Series > Ultima Weapons > Atma Recollection**\n'
+    '-Low Orb ×250\n-Whorl ×250\n-Flawed Prism ×250\n'
+    'Type of orb, whorl, ect. will be dependant on the weapon type you go for\n'
+    'Weapon Skill Level needs to be 10 to proceed',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 4',
+),
+discord.Embed(
+    title = 'Upgrade The Shop',
+    description = 'To upgrade further, you need to upgrade the shop. '
+    '**Only need to do this once**. The following items are needed:\n'
+    'Crimson Axe, Imperial Shotel, Crusher Glove, Main Gauche, Shining Knuckles, '
+    'Shadow Spear, Rainbow Scale Pistol, Fire Nymph Staff, Water Nymph Staff, '
+    'Earth Serpentine, Wind Talon Spear, Shining Barrel, Shadow Wand, '
+    'Spiked Club : ×1\nMithra Anima ×5\nRupie ×200,000',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 5',
+),
+discord.Embed(
+    title = 'Step 4: Upgrade the Revenant Weapon',
+    description = 'There are 6 separate upgrade to complete the weapon. '
+    'Type of orb, whorl, ect. will be dependant on the weapon type you go for.\n',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 6',
+),
+discord.Embed(
+    title = 'Final Step',
+    description = 'To unlock the Eternal, you must defeat character in a Fate'
+    ' Episode in order to recruit them. Good luck!',
     color = discord.Color.gold()
-)
-eternals_1.append(temp)
-temp = discord.Embed(
-    title = 'Step 7',
-    color = discord.Color.gold()
-)
-eternals_1.append(temp)
+)]
+for e in eternals_1:
+    e.set_footer(text='Times out after being left idle for 25 seconds')
+eternals_1[0].set_image(url='https://i.imgur.com/rzqklQ3.png')
+eternals_1[3].set_image(url='https://i.imgur.com/39BUX5R.png')
+eternals_1[4].add_field(name='First Upgrade', value='300× Satin Feather\n'
+'100× Untamed Flame\n100× Rough Stone\n100× Low Orb\n100× Tome\n150× Scroll\n'
+'100× Whorl\n10× Supreme Merit\n3× Blue Sky Crystal\n100× Crystal',inline=True)
+
+eternals_1[4].add_field(name='Second Upgrade', value='100× Fresh Water Jug\n'
+'100× Vermilion Stone\n100× Hollow Soul\n150× Low Orb\n150× Tome\n150× Whorl\n'
+'30× Dragon Scale\n50× Rainbow Prism\n3× True Anima\n5× Blue Sky Crystal\n'
+'200× Crystal',inline=True)
+
+eternals_1[4].add_field(name='Third Upgrade', value='300× Zephyr Feather\n'
+'100× Falcon Feather\n80× Foreboding Clover\n200× Low Orb\n100× High Orb\n'
+'200× Whorl\n100× Anima\n10× Supreme Merit\n7× Blue Sky Crystal\n'
+'300× Crystal',inline=True)
+
+eternals_1[4].add_field(name='Fourth Upgrade', value='100× Swirling Amber\n'
+'100× Lacrimosa\n80× Blood Amber\n250× Low Orb\n250× Whorl\n50× Dragon Scale\n'
+'150× Rainbow Prism\n3× True Anima\n10× Blue Sky Crystal\n'
+'400× Crystal',inline=True)
+
+eternals_1[4].add_field(name='Fifth Upgrade', value='20× Green Dragon Eye\n'
+'20× Resolute Reactor\n20× Fanned Fin\n20× Genesis Bud\n20× Primal Bit\n'
+'20× Black Fog Sphere\n100× Antique Cloth\n10× Supreme Merit\n'
+'15× Blue Sky Crystal\n500× Crystal\n60× Omega Unique Item',inline=True)
+
+eternals_1[4].add_field(name='Sixth Upgrade', value='3× True Fire Anima\n'
+'3× True Water Anima\n3× True Earth Anima\n3× True Wind Anima\n'
+'3× True Light Anima\n3× True Dark Anima\n250× Rainbow Prism\n'
+'30× Blue Sky Crystal\n1× Gold Brick\n500× Crystal',inline=True)
+eternals_1[5].set_image(url='https://gbf.wiki/images/7/7c/Stamp10.png')
 
 # Complete this
-eternals_2 = EmbedLinkedList()
+eternals_2 = [
+discord.Embed(
+    title = 'Step 1',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 2',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 3',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 4',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 5',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 6',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 7',
+    color = discord.Color.gold()
+),
+discord.Embed(
+    title = 'Step 8',
+    color = discord.Color.gold()
+)]
+for e in eternals_2:
+    e.set_footer(text='Times out after being left idle for 25 seconds')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
