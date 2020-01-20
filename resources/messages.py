@@ -215,11 +215,21 @@ discord.Embed(
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 3',
+    title = 'Step 3: Uncap Silver Relic to 4*',
+    description = 'Once you get your Silver Relic to 3*, you can uncap it to '
+    '4* with these resources:\n-300× of the cooresponding weapon stone\n'
+    '300× of **each** Elemental Quartz',
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 4',
+    title = 'Step 4: Craft Gold Relic',
+    description = 'The 4* Level 150 Silver Weapon is then crafted into a Gold '
+    'Relic using:\n-1× Gold Brick\n-10× Silver Centrum\n-10× Damascus Crystal\n'
+    '-5× Legendary Merit\n-30× Class Distinction\n-1× of **each** Element for '
+    'the coorespond Relic Weapon\n-100× Revenant Weapon Fragment\n\n'
+    'Eternals and thier cooresponding distinction are as follows:\nAnre-Guardian\n'
+	'Tweyen-Sharpshooter\nThreo-Gladiator\nFeower-Fencer\nFif-Pilgrim\nSeox-Combatant\n'
+	'Seofon-Sword Master\nEahta-Samurai\nNiyon-Troubadour\nTien-Bandit\n',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -242,6 +252,7 @@ for e in eternals_2:
     e.set_footer(text='Times out after being left idle for 25 seconds')
 eternals_2[0].set_thumbnail(url='https://gbf.wiki/images/2/2f/Stamp12.png')
 eternals_2[1].set_image(url='https://i.imgur.com/b2JAUoz.png')
+eternals_2[2].set_thumbnail(url='https://gbf.wiki/images/b/bf/Stamp78.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
