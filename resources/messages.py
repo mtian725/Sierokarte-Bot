@@ -281,7 +281,7 @@ discord.Embed(
     '**Wind** - Galbinus Centrum ×30, Wind Urn ×10, Bright Spirits ×2, Wind Grimoire ×30\n'
     '**Light** - Niveus Centrum ×30, Light Urn ×10, Bright Spirits ×2, Fire Grimoire ×15, Wind Grimoire ×15\n'
     '**Dark** - Ater Centrum ×30, Dark Urn ×10, Murky Spirits ×2, Water Grimoire ×15, Earth Grimoire ×15\n'
-    '__**All Eternals Will also need**__: Rainbow Prism ×100, Rupie ×100,000'
+    '__**All Eternals Will also need**__: Rainbow Prism ×100, Rupie ×100,000',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -295,7 +295,7 @@ discord.Embed(
     'highest ATK and HP values in your grid, put your strongest weapon with '
     'elemental advantage in the main hand, and choose summons based on calls '
     'and stats.\n\nWith that done, **congratulations** you have fully unlocked '
-    'the full potential of a very powerful unit.'
+    'the full potential of a very powerful unit.',
     color = discord.Color.gold()
 )]
 for e in eternals_2:
