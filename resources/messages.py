@@ -198,11 +198,20 @@ discord.Embed(
     'high raw stats, regardless of element, and summons with good call  '
     'effects and raw stats**.\nAfter defeating them, a follow-up Fate Episode'
     ' will appear, requiring a "Weapon Soul" to start. This will be acquired '
-    'in the subsiquent steps.'
+    'in the subsiquent steps.',
     color = discord.Color.gold()
 ),
 discord.Embed(
-    title = 'Step 2',
+    title = 'Step 2: Acquire 4 Silver Relics',
+    description = 'Silver Relics and Shards drop when you have an Eternal on '
+    'your team from **Angel Halo (Nightmare)**, which may appear after '
+    'completing Angel Halo(Very Hard). A few things to keep in mind:\n'
+    '-Eternal can be in front or backline\n-Will always drop at least 1 shard\n'
+    '-Drop will always coorespond with the Eternal on the team\n'
+    '-If multiple Eternals are on the team, then the drop will coorespond with '
+    'any of them\n-Drop rate buffs **do** effect the Relic drop rate\n'
+    'Random Shards also drop form Akasha (Raid)\n'
+    'Relics can be bought for 10 Shards at the shop',
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -232,6 +241,7 @@ discord.Embed(
 for e in eternals_2:
     e.set_footer(text='Times out after being left idle for 25 seconds')
 eternals_2[0].set_thumbnail(url='https://gbf.wiki/images/2/2f/Stamp12.png')
+eternals_2[1].set_image(url='https://i.imgur.com/b2JAUoz.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
