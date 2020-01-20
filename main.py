@@ -180,6 +180,45 @@ async def eternals(ctx, *args):
                       await sent.edit(embed=embeds[pos])
             if option.content == '1':
                 embeds = messages.eternals_2
+                sent = await ctx.send(embed=embeds[0])
+                await sent.add_reaction('1️⃣')
+                await sent.add_reaction('2️⃣')
+                await sent.add_reaction('3️⃣')
+                await sent.add_reaction('4️⃣')
+                await sent.add_reaction('5️⃣')
+                await sent.add_reaction('6️⃣')
+                await sent.add_reaction('7️⃣')
+                await sent.add_reaction('8️⃣')
+                while True:
+                  try:
+                      def react_check(reaction, user):
+                          return (user == author and reaction.message.id == sent.id and
+                          (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
+                          or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
+                          or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
+                          or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'))
+
+                      reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+                  except asyncio.TimeoutError:
+                      break
+                  else:
+                      if str(reaction.emoji) == '1️⃣':
+                          pos = 0
+                      elif str(reaction.emoji) == '2️⃣':
+                          pos = 1
+                      elif str(reaction.emoji) == '3️⃣':
+                          pos = 2
+                      elif str(reaction.emoji) == '4️⃣':
+                          pos = 3
+                      elif str(reaction.emoji) == '5️⃣':
+                          pos = 4
+                      elif str(reaction.emoji) == '6️⃣':
+                          pos = 5
+                      elif str(reaction.emoji) == '7️⃣':
+                          pos = 6
+                      else:
+                          pos = 7
+                      await sent.edit(embed=embeds[pos])
     else:
         return
 

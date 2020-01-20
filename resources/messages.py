@@ -189,7 +189,16 @@ eternals_1[5].set_image(url='https://gbf.wiki/images/7/7c/Stamp10.png')
 # Complete this
 eternals_2 = [
 discord.Embed(
-    title = 'Step 1',
+    title = 'Step 1: Fight the Eternal',
+    description = 'Once you get an Eternal to level 80, you will be able to '
+    'fight them in a Fate Episode. This will be a one-on-one between your '
+    'main character and the eternal, where your mainhand weapon will be set '
+    'to the Revenant Weapon.\n**Weapon skills and summon auras have no effect '
+    'in this battle, so a good approach is to bring a grid of weapons with '
+    'high raw stats, regardless of element, and summons with good call  '
+    'effects and raw stats**.\nAfter defeating them, a follow-up Fate Episode'
+    ' will appear, requiring a "Weapon Soul" to start. This will be acquired '
+    'in the subsiquent steps.'
     color = discord.Color.gold()
 ),
 discord.Embed(
@@ -222,6 +231,7 @@ discord.Embed(
 )]
 for e in eternals_2:
     e.set_footer(text='Times out after being left idle for 25 seconds')
+eternals_2[0].set_thumbnail(url='https://gbf.wiki/images/2/2f/Stamp12.png')
 
 add_1 = discord.Embed(
     title = 'What are you adding?',
