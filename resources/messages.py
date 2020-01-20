@@ -288,13 +288,11 @@ discord.Embed(
     title = 'Step 8: Unlock 4th Skill',
     description = 'You have now unlocked the Fate Episode where you can unlock '
     'your Eternal\'s 4th skill. You will have to fight as your chosen Eternal '
-    'character in against all the other Eternals. A final fate episode will '
-    'appear when the gauntlet has been cleared, forcing you to fight them again '
+    'character in against all the other Eternals. \nA final fate episode will '
+    'appear when it is cleared, forcing **you** to fight them again '
     'one-on-one to unlock their new skill. Weapon skills and summon auras '
-    'don\'t take effect. A good strategy is to put your weapons with the '
-    'highest ATK and HP values in your grid, put your strongest weapon with '
-    'elemental advantage in the main hand, and choose summons based on calls '
-    'and stats.\n\nWith that done, **congratulations** you have fully unlocked '
+    'don\'t take effect just like in **Step 1** so plan accordingly\n\nWith '
+    'that done, **congratulations** you have fully unlocked '
     'the full potential of a very powerful unit.',
     color = discord.Color.gold()
 )]
