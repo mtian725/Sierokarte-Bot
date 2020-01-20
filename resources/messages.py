@@ -218,7 +218,7 @@ discord.Embed(
     title = 'Step 3: Uncap Silver Relic to 4*',
     description = 'Once you get your Silver Relic to 3\*, you can uncap it to '
     '4* with these resources:\n-300× of the cooresponding weapon stone\n'
-    '300× of **each** Elemental Quartz',
+    '-300× of **each** Elemental Quartz',
     color = discord.Color.gold()
 ),
 discord.Embed(
