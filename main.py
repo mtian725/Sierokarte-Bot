@@ -2,15 +2,9 @@
 import json
 import asyncio
 # Google library
-try:
-    from googlesearch import search
-except ImportError:
-    print("No module named \'google\' found")
+from googlesearch import search
 # Discord libraries
-try:
-    import discord
-except ImportError:
-    print('No module named \'discord\' found')
+import discord
 from discord.ext import commands
 # Our libraries
 from resources import exceptions
