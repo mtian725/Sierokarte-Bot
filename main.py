@@ -32,7 +32,7 @@ async def wiki(ctx, *args):
     else:
         query = 'gbf.wiki ' + ' '.join(args)
         for j in search(query, tld='com', num=10, stop=1, pause=1):
-            await ctx.send(j)
+            await ctx.send(j[0:j.find('?')])
 
 @client.command(aliases=['ca'])
 async def calcarcarum(ctx, *args):
