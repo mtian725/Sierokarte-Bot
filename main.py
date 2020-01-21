@@ -26,13 +26,13 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 @client.command()
-async def test(ctx):
-    # to search
-    #search = await client.wait_for('message')
-    #query = str(search.content)
-    query = 'apples'
-    for j in search(query, tld='com', num=10, stop=5, pause=2):
-        await ctx.send(j)
+async def test(ctx, *args):
+    if not args:
+        await ctx.send('https://gbf.wiki/Main_Page')
+    else:
+        query = 'gbf.wiki ' + ' '.join(args)
+        for j in search(query, tld='com', num=10, stop=1, pause=1):
+            await ctx.send(j)
 
 @client.command()
 async def wiki(ctx, *args):
