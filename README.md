@@ -26,3 +26,12 @@ Each prompt is a discord embed image. The command can be cancelled at each step 
 
 ## !eternals
 Can also be invoked with `!e`. When the command is called, the user will be asked a prompt. When the user responds to the prompt, a new prompt is opened. This prompt has several emoji reactions. The user can click/tap one of the reactions to change the prompt to that corresponding step number. The prompt will stop reacting once the user does not interact with it for 25 seconds. **Because all the reactions need to be added first, clicking/tapping before all the emojis are added will result in no reaction.**
+
+## !wiki
+Can also be invoked with `!w`. Syntax to use the command is:
+
+`!wiki <thing you are looking up>` - Bot will respond with a url that is the closest match to your query.
+or
+`!wiki` - Bot will respond with the main page's url
+
+Uses `googlesearch` library to search.
