@@ -1,7 +1,5 @@
 import discord
 
-wiki = 'https://gbf.wiki/Main_Page'
-
 arc_thumbnails = {
     'Justice':'https://gbf.wiki/images/8/8a/Justice_%28SSR%29.png',
     'The Hanged Man':'https://gbf.wiki/images/d/d4/The_Hanged_Man_%28SSR%29.png',

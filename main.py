@@ -34,13 +34,6 @@ async def wiki(ctx, *args):
         for j in search(query, tld='com', num=10, stop=1, pause=1):
             await ctx.send(j)
 
-@client.command()
-async def wiki(ctx, *args):
-    if not args:
-        await ctx.send(messages.wiki)
-    else:
-        return
-
 @client.command(aliases=['ca'])
 async def calcarcarum(ctx, *args):
     if not args:
