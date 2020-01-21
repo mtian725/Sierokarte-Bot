@@ -28,8 +28,9 @@ async def on_ready():
 @client.command()
 async def test(ctx):
     # to search
-    search = await client.wait_for('message')
-    query = str(search.content)
+    #search = await client.wait_for('message')
+    #query = str(search.content)
+    query = 'apples'
     for j in search(query, tld='com', num=10, stop=5, pause=2):
         await ctx.send(j)
 
