@@ -31,7 +31,9 @@ Can also be invoked with `!e`. When the command is called, the user will be aske
 Can also be invoked with `!w`. Syntax to use the command is:
 
 `!wiki <thing you are looking up>` - Bot will respond with a url that is the closest match to your query.
-or
+
+**OR**
+
 `!wiki` - Bot will respond with the main page's url
 
 Uses `googlesearch` library to search.
