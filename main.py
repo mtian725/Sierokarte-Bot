@@ -410,7 +410,7 @@ async def remove(ctx):
             while (j < len(arr)):
                 if (count <= 0):
                     break
-                if (arr[j] === start.content):
+                if (arr[j] == start.content):
                     arr.pop(j)
                     count = count - 1
                 else:
