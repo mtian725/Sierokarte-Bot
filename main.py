@@ -1,8 +1,16 @@
 # Python libraries
 import json
 import asyncio
+# Google library
+try:
+    from googlesearch import search
+except ImportError:
+    print("No module named \'google\' found")
 # Discord libraries
-import discord
+try:
+    import discord
+except ImportError:
+    print('No module named \'discord\' found')
 from discord.ext import commands
 # Our libraries
 from resources import exceptions
@@ -22,6 +30,13 @@ client = commands.Bot(command_prefix='!')
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
+@client.command()
+async def test(ctx):
+    # to search
+    query = "Gbf wiki"
+    for j in search(query, tld='com', num=10, stop=1, pause=2):
+        print(j)
 
 @client.command()
 async def wiki(ctx, *args):
@@ -375,7 +390,7 @@ async def remove(ctx):
         sent2 = await ctx.send(embed=messages.remove_2)
         def check2(m):
             return (m.content == '1' or m.content == '2' or m.content == '3'
-            or m.content == '4' or m.content == '5' or m.content == '6' or m.content == '7' 
+            or m.content == '4' or m.content == '5' or m.content == '6' or m.content == '7'
             or m.content == '8' or m.content == '9' or m.content == '10' or m.content == 'c'
             or m.content == '!remove')
 
