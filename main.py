@@ -349,7 +349,7 @@ async def removeall(ctx):
             arr = global_teams[author][i]
             j = 0
             while (j < len(arr)):
-                if (arr[j] === start.content):
+                if (arr[j] == start.content):
                     arr.pop(j)
                 else:
                     j = j + 1
