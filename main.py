@@ -28,9 +28,10 @@ async def on_ready():
 @client.command()
 async def test(ctx):
     # to search
-    query = "Gbf wiki"
-    for j in search(query, tld='com', num=10, stop=10, pause=2):
-        print(j)
+    search = await client.wait_for('message')
+    query = search.content
+    for j in search(query, tld='com', num=10, stop=5, pause=2):
+        await ctx.send(j)
 
 @client.command()
 async def wiki(ctx, *args):
