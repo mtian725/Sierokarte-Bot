@@ -25,8 +25,8 @@ client = commands.Bot(command_prefix='!')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-@client.command()
-async def test(ctx, *args):
+@client.command(aliases=['w'])
+async def wiki(ctx, *args):
     if not args:
         await ctx.send('https://gbf.wiki/Main_Page')
     else:
