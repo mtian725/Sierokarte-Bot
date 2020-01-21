@@ -29,7 +29,7 @@ async def on_ready():
 async def test(ctx):
     # to search
     query = "Gbf wiki"
-    for j in search(query, tld='com', num=10, stop=1, pause=2):
+    for j in search(query, tld='com', num=10, stop=10, pause=2):
         print(j)
 
 @client.command()
