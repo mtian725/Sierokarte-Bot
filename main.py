@@ -235,7 +235,7 @@ async def eternals(ctx, *args):
 
 @client.command(aliases=['t'])
 async def time(ctx, *args):
-    await ctx.send(datetime.now(japan.strftime("%H:%M:%S")))
+    await ctx.send(datetime.now(jp_tz.strftime("%H:%M:%S")))
     #give current time in jst
     #time until day reset
 
