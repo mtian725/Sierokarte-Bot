@@ -2,6 +2,7 @@
 import json
 import asyncio
 from datetime import datetime
+from pytz import timezone
 import pytz
 # Google library
 from googlesearch import search
