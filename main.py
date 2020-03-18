@@ -239,11 +239,12 @@ async def time(ctx, *args):
     hour = jp_dt.hour
     minute = jp_dt.minute
     cycle = 'AM'
-    await ctx.send(hour + ':' + minute + ' JST (24 Hour Clock)')
+    await ctx.send(str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
     if (hour > 12):
         hour = hour - 12
         cycle = 'PM'
-    await ctx.send(hour + ':' + minute + ' ' + cycle + ' JST (12 Hour Clock)')
+    await ctx.send(str(hour) + ':' + str(minute) + ' ' + str(cycle) +
+                    ' JST (12 Hour Clock)')
 
     #give current time in jst
     #time until day reset
