@@ -41,6 +41,6 @@ Uses `googlesearch` library to search.
 ## !time
 Can also be invoked with '!t'. Will run regardless of whatever follows the command.
 3 times will be typed out in this order:
-current time in JST 24 hour clock
-current time in JST 12 hour clock
-time until next daily reset
+* current time in JST 24 hour clock
+* current time in JST 12 hour clock
+* time until next daily reset
