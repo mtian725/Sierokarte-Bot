@@ -242,21 +242,22 @@ async def time(ctx, *args):
     reset_hr = 5 - hour
     reset_min = 60 - minute
 
-    await ctx.send('' + str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
+
+    msg1 = ('' + str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
     if (hour > 12):
         hour = hour - 12
         cycle = 'PM'
-    await ctx.send('' + str(hour) + ':' + str(minute) + ' ' + str(cycle) +
+    msg2 = ('' + str(hour) + ':' + str(minute) + ' ' + str(cycle) +
                     ' JST (12 Hour Clock)')
     if reset_hr < 0:
         reset_hr = (reset_hr * -1) + 12
     if reset_min == 60:
         reset_min = 0
-    await ctx.send(str(reset_hr) + ' hours and ' + str(reset_min) +
+    msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
                     ' minutes before next daily reset')
-
-    #give current time in jst
-    #time until day reset
+    await ctx.send(msg1)
+    await ctx.send(msg2)
+    await ctx.send(msg3)
 
 @client.command()
 async def team(ctx):
