@@ -1,6 +1,8 @@
 # Python libraries
 import json
 import asyncio
+import datetime import datetime
+import pytz
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -10,6 +12,8 @@ from discord.ext import commands
 from resources import (exceptions, messages, uncap)
 import calculator
 #Add mode modules as we add more
+
+jp_tz = timezone('Japan')
 
 uncap_targets = {}
 global_teams = {}
@@ -227,6 +231,12 @@ async def eternals(ctx, *args):
                       await sent.edit(embed=embeds[pos])
     else:
         return
+
+@client.command(aliases=['t'])
+async def time(ctx, *args):
+    await ctx.send(datetime.now(japan.strftime("%H:%M:%S")))
+    #give current time in jst
+    #time until day reset
 
 @client.command()
 async def team(ctx):
