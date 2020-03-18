@@ -4,6 +4,7 @@ import asyncio
 from datetime import datetime
 from pytz import timezone
 import pytz
+import math
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -239,12 +240,13 @@ async def time(ctx, *args):
     hour = jp_dt.hour
     minute = jp_dt.minute
     cycle = 'AM'
-    await ctx.send(str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
+    await ctx.send('**' + str(hour) + ':' + str(minute) + '** JST (24 Hour Clock)')
     if (hour > 12):
-        hour = hour - 12
+        pmhour = hour - 12
         cycle = 'PM'
-    await ctx.send(str(hour) + ':' + str(minute) + ' ' + str(cycle) +
-                    ' JST (12 Hour Clock)')
+    await ctx.send('**' + str(pmhour) + ':' + str(minute) + ' ' + str(cycle) +
+                    '** JST (12 Hour Clock)')
+    await ctx.send(str(int(math.fabs(5 - hour))) + ' hours until reset')
 
     #give current time in jst
     #time until day reset
