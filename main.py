@@ -1,7 +1,7 @@
 # Python libraries
 import json
 import asyncio
-import datetime import datetime
+from datetime import datetime
 import pytz
 # Google library
 from googlesearch import search
