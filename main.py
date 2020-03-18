@@ -235,7 +235,16 @@ async def eternals(ctx, *args):
 
 @client.command(aliases=['t'])
 async def time(ctx, *args):
-    await ctx.send(datetime.now(jp_tz).strftime("%H:%M:%S")))
+    jp_dt = datetime.now(jp_tz)
+    hour = jp_dt.hour
+    minute = jp_dt.minute
+    cycle = 'AM'
+    await ctx.send(hour + ':' + minute + ' JST (24 Hour Clock)')
+    if (hour > 12):
+        hour = hour - 12
+        cycle = 'PM'
+    await ctx.send(hour + ':' + minute + ' ' + cycle ' JST (12 Hour Clock)')
+
     #give current time in jst
     #time until day reset
 
