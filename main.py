@@ -255,9 +255,7 @@ async def time(ctx, *args):
         reset_min = 0
     msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
                     ' minutes before next daily reset')
-    await ctx.send(msg1)
-    await ctx.send(msg2)
-    await ctx.send(msg3)
+    await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
 
 @client.command()
 async def team(ctx):
