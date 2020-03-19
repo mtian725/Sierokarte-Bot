@@ -319,6 +319,7 @@ async def art(ctx, *args):
                        pos = pos + 1
                    else:
                        # nothing changes
+
                    display.set_image(url = display_init + images[pos % num_images])
 
         except FileNotFoundError:
