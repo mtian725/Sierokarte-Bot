@@ -23,6 +23,38 @@ images = {
   (water,'https://gbf.wiki/images/f/f1/Aglovale%2C_Lord_of_Frost_NPC.png'),
   (grey,'https://gbf.wiki/images/d/d4/House_of_Wales_Dress_Uniform_%28Aglovale%29.png'),
   ],
+  'airitotoki' : [
+  (earth, 'https://gbf.wiki/images/c/cf/AiriTotoki_A.png'),
+  (earth, 'https://gbf.wiki/images/b/b5/AiriTotoki_B.png')
+  ],
+  'alanaan' : [
+  (fire,'https://gbf.wiki/images/f/f9/Npc_zoom_3040167000_01.png'),
+  (fire,'https://gbf.wiki/images/5/5a/Npc_zoom_3040167000_02.png')
+  ],
+  'albert' : [
+  (light,'https://gbf.wiki/images/2/22/Npc_zoom_3040045000_01.png'),
+  (light,'https://gbf.wiki/images/2/20/Npc_zoom_3040045000_02.png'),
+  (light,'https://gbf.wiki/images/4/4e/Npc_zoom_3040045000_03.png'),
+  (light,'https://gbf.wiki/images/2/23/Npc_zoom_3030177000_01.png'),
+  (light,'https://gbf.wiki/images/e/e4/Npc_zoom_3030177000_02.png')
+  ],
+  'alec' : [
+  (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_01.png'),
+  (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_02.png'),
+  (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_03.png')
+  ],
+  'aletheia' :[
+  (earth,'https://gbf.wiki/images/d/d1/Npc_zoom_3040002000_01.png'),
+  (earth,'https://gbf.wiki/images/d/d1/Npc_zoom_3040002000_02.png')
+  ],
+  'alexiel' :[
+  (earth,'https://gbf.wiki/images/9/92/Npc_zoom_3040158000_01.png'),
+  (earth,'https://gbf.wiki/images/1/11/Npc_zoom_3040158000_02.png'),
+  (earth,'https://gbf.wiki/images/6/6a/Npc_zoom_3040158000_81.png'),
+  (earth,'https://gbf.wiki/images/9/9f/Npc_zoom_3040232000_01.png'),
+  (earth,'https://gbf.wiki/images/4/40/Npc_zoom_3040232000_02.png'),
+  (earth,'https://gbf.wiki/images/e/e8/Npc_zoom_3040232000_81.png')
+  ],
   'monika' : [
   (wind,'https://i.imgur.com/3g2iFbF.png'),
   (wind,'https://i.imgur.com/qKCZeDu.png'),
