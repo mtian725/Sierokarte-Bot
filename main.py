@@ -281,7 +281,7 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        name = ''.join(args)
+        name = ''.join(args).lower()
         if name in imagelinks.images:
             num_images = len(imagelinks.images[name])
             pos = 0
@@ -296,30 +296,25 @@ async def art(ctx, *args):
             await sent.add_reaction('⬅️')
             await sent.add_reaction('➡️')
 
-            # author = ctx.author
-            #
-            # while True:
-            #     try:
-            #         def react_check(reaction, user):
-            #             return (user == author and reaction.message.id == sent.id and
-            #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
-            #
-            #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-            #     except asyncio.TimeoutError:
-            #         break
-            #     else:
-            #         if str(reaction.emoji) == '⬅️':
-            #             pos = pos - 1
-            #         if str(reaction.emoji) == '➡️':
-            #             pos = pos + 1
-            #
-            #         file = discord.File(filepath + images[pos % num_images],
-            #                             filename=images[pos % num_images])
-            #         display = discord.Embed(
-            #             title = name.upper()
-            #         )
-            #         display.set_image(url = display_init + images[pos % num_images])
-            #         await sent.edit(embed=display)
+            author = ctx.author
+
+            while True:
+                try:
+                    def react_check(reaction, user):
+                        return (user == author and reaction.message.id == sent.id and
+                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+
+                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+                except asyncio.TimeoutError:
+                    break
+                else:
+                    if str(reaction.emoji) == '⬅️':
+                        pos = pos - 1
+                    if str(reaction.emoji) == '➡️':
+                        pos = pos + 1
+
+                    display.set_image(url = imagelinks.images[name][pos % num_images])
+                    await sent.edit(embed=display)
 
             return
         else:

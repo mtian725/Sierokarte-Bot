@@ -1,9 +1,9 @@
 images = {
   'monika' : [
-  'https://imgur.com/3g2iFbF',
-  'https://imgur.com/qKCZeDu',
-  'https://imgur.com/iUkOJnJ',
-  'https://imgur.com/mEnmxIV',
-  'https://imgur.com/FTaLsbC'
+  'https://i.imgur.com/3g2iFbF.png',
+  'https://i.imgur.com/qKCZeDu.png',
+  'https://i.imgur.com/iUkOJnJ.png',
+  'https://i.imgur.com/mEnmxIV.png',
+  'https://i.imgur.com/FTaLsbC.png'
   ]
 }
