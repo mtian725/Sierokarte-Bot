@@ -1,5 +1,14 @@
 import discord
 
+help = discord.Embed(
+    title = '__Sierokarte Bot Help__',
+    color = discord.Color.blue(),
+)
+help.add_field(name='something', value='something', inline=false)
+help.add_field(name='something', value='something', inline=false)
+help.add_field(name='something', value='something', inline=false)
+help.add_field(name='something', value='something', inline=false)
+
 arc_thumbnails = {
     'Justice':'https://gbf.wiki/images/8/8a/Justice_%28SSR%29.png',
     'The Hanged Man':'https://gbf.wiki/images/d/d4/The_Hanged_Man_%28SSR%29.png',

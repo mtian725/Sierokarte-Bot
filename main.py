@@ -30,8 +30,11 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 @client.command(aliases=['h'])
-async def help(ctx):
-    return
+async def help(ctx, *args):
+    if not args:
+        await ctx.send(embed=messages.help)
+    else:
+        return
 
 @client.command(aliases=['w'])
 async def wiki(ctx, *args):
@@ -239,28 +242,31 @@ async def eternals(ctx, *args):
         return
 
 @client.command(aliases=['t'])
-async def time(ctx):
-    jp_dt = datetime.now(jp_tz)
-    hour = jp_dt.hour
-    minute = jp_dt.minute
-    cycle = 'AM'
-    reset_hr = 5 - hour
-    reset_min = 60 - minute
+async def time(ctx, *args):
+    if not args:
+        jp_dt = datetime.now(jp_tz)
+        hour = jp_dt.hour
+        minute = jp_dt.minute
+        cycle = 'AM'
+        reset_hr = 5 - hour
+        reset_min = 60 - minute
 
 
-    msg1 = ('' + str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
-    if (hour > 12):
-        hour = hour - 12
-        cycle = 'PM'
-    msg2 = ('' + str(hour) + ':' + str(minute) + ' ' + str(cycle) +
-                    ' JST (12 Hour Clock)')
-    if reset_hr < 0:
-        reset_hr = (reset_hr * -1) + 12
-    if reset_min == 60:
-        reset_min = 0
-    msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
-                    ' minutes before next daily reset')
-    await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
+        msg1 = ('' + str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
+        if (hour > 12):
+            hour = hour - 12
+            cycle = 'PM'
+        msg2 = ('' + str(hour) + ':' + str(minute) + ' ' + str(cycle) +
+                        ' JST (12 Hour Clock)')
+        if reset_hr < 0:
+            reset_hr = (reset_hr * -1) + 12
+        if reset_min == 60:
+            reset_min = 0
+        msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
+                        ' minutes before next daily reset')
+        await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
+    else:
+        return
 
 @client.command()
 async def team(ctx):
