@@ -315,10 +315,8 @@ async def art(ctx, *args):
                 else:
                    if str(reaction.emoji) == '⬅️':
                        pos = pos - 1
-                   elif str(reaction.emoji) == '➡️':
+                   if str(reaction.emoji) == '➡️':
                        pos = pos + 1
-                   else:
-                       # nothing changes
 
                    display.set_image(url = display_init + images[pos % num_images])
 
