@@ -28,6 +28,10 @@ client = commands.Bot(command_prefix='!')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
+@cliend.command(aliases=['h'])
+async def help(ctx):
+    return
+
 @client.command(aliases=['w'])
 async def wiki(ctx, *args):
     if not args:
@@ -234,7 +238,7 @@ async def eternals(ctx, *args):
         return
 
 @client.command(aliases=['t'])
-async def time(ctx, *args):
+async def time(ctx):
     jp_dt = datetime.now(jp_tz)
     hour = jp_dt.hour
     minute = jp_dt.minute

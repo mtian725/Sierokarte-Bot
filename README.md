@@ -15,6 +15,10 @@ Everything following the command is read as an input, which reduces the amount o
 
 # main.py
 Contains all the commands, and running it runs the Bot
+
+## !help
+Can also be invoked with `!h`. Will send a private message containing all the commands.
+
 ## !calcarcarum
 Can also be invoked with `!ca`. When the command is called, the user will be asked to answer 4 prompts. These prompts are:
 * Which summon
@@ -39,7 +43,7 @@ Can also be invoked with `!w`. Syntax to use the command is:
 Uses `googlesearch` library to search.
 
 ## !time
-Can also be invoked with '!t'. Will run regardless of whatever follows the command.
+Can also be invoked with `!t`. 
 3 times will be typed out in this order:
 * current time in JST 24 hour clock
 * current time in JST 12 hour clock
