@@ -300,14 +300,14 @@ async def art(ctx, *args):
 
             await sent.add_reaction('⬅️')
             await sent.add_reaction('➡️')
-            
+
             author = ctx.author
 
             while True:
                 try:
                     def react_check(reaction, user):
                         return (user == author and reaction.message.id == sent.id and
-                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️')
+                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
 
                     reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
                 except asyncio.TimeoutError:
