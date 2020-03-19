@@ -300,6 +300,8 @@ async def art(ctx, *args):
 
             await sent.add_reaction('⬅️')
             await sent.add_reaction('➡️')
+            
+            author = ctx.author
 
             while True:
                 try:
@@ -318,7 +320,7 @@ async def art(ctx, *args):
                    else:
                        # nothing changes
                    display.set_image(url = display_init + images[pos % num_images])
-                   
+
         except FileNotFoundError:
             await ctx.send('*Character not found*')
         return
