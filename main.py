@@ -297,8 +297,8 @@ async def art(ctx, *args):
         )
         test3.set_image(url = 'attachment://anna.png')
         await ctx.send(file=file3, embed=test3)
-    except Exception as e:
-        raise
+    except FileNotFoundError:
+        await ctx.send("Character not found")
     return
 
 @client.command()
