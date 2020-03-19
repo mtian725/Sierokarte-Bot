@@ -4,14 +4,13 @@ import asyncio
 from datetime import datetime
 from pytz import timezone
 import pytz
-import os
 # Google library
 from googlesearch import search
 # Discord libraries
 import discord
 from discord.ext import commands
 # Our libraries
-from resources import (exceptions, messages, uncap)
+from resources import (exceptions, messages, uncap, images)
 import calculator
 #Add mode modules as we add more
 
@@ -282,78 +281,49 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        try:
-            name = ''.join(args)
-            filepath = './images/'+ name.lower() + '/'
-            display_init = 'attachment://'
-            images = os.listdir(filepath)
-
-            num_images = len(images)
+        name = ''.join(args)
+        if name in images.images:
+            num_images = len(images.images[name])
             pos = 0
 
-            file = discord.File(filepath + images[0], filename=images[0])
             display = discord.Embed(
-                title = name.upper()
+                title = name.upper(),
+                color = discord.Color.blue(),
             )
-            display.set_image(url = display_init + images[0])
-            sent = await ctx.send(file=file, embed=display)
+            display.set_image(url = images.images[name][0])
+            sent = await ctx.send(embed=display)
 
             await sent.add_reaction('⬅️')
             await sent.add_reaction('➡️')
 
-            author = ctx.author
+            # author = ctx.author
+            #
+            # while True:
+            #     try:
+            #         def react_check(reaction, user):
+            #             return (user == author and reaction.message.id == sent.id and
+            #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+            #
+            #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+            #     except asyncio.TimeoutError:
+            #         break
+            #     else:
+            #         if str(reaction.emoji) == '⬅️':
+            #             pos = pos - 1
+            #         if str(reaction.emoji) == '➡️':
+            #             pos = pos + 1
+            #
+            #         file = discord.File(filepath + images[pos % num_images],
+            #                             filename=images[pos % num_images])
+            #         display = discord.Embed(
+            #             title = name.upper()
+            #         )
+            #         display.set_image(url = display_init + images[pos % num_images])
+            #         await sent.edit(embed=display)
 
-            while True:
-                try:
-                    def react_check(reaction, user):
-                        return (user == author and reaction.message.id == sent.id and
-                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
-
-                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-                except asyncio.TimeoutError:
-                    break
-                else:
-                    if str(reaction.emoji) == '⬅️':
-                        pos = pos - 1
-                    if str(reaction.emoji) == '➡️':
-                        pos = pos + 1
-
-                    file = discord.File(filepath + images[pos % num_images],
-                                        filename=images[pos % num_images])
-                    display = discord.Embed(
-                        title = name.upper()
-                    )
-                    display.set_image(url = display_init + images[pos % num_images])
-                    await sent.edit(embed=display)
-
-        except FileNotFoundError:
+            return
+        else:
             await ctx.send('*Character not found*')
-        return
-
-        # try:
-        #     file = discord.File('./asifbasiudb', filename="asdasfa")
-        #     test3 = discord.Embed(
-        #         title = 'Test3'
-        #     )
-        #     test3.set_image(url = 'attachment://anna.png')
-        #     await ctx.send(file=file3, embed=test3)
-        # except FileNotFoundError:
-        #     await ctx.send('*Character not found*')
-
-        # while True:
-        #   try:
-        #       def react_check(reaction, user):
-        #           return (user == author and reaction.message.id == sent.id and
-        #           (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
-        #           or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
-        #           or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
-        #           or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'
-        #           or str(reaction.emoji) == '9️⃣'))
-        #
-        #       reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-        #   except asyncio.TimeoutError:
-        #       break
-        #   else:
 
 @client.command()
 async def team(ctx):
