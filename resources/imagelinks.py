@@ -55,8 +55,56 @@ images = {
   (earth,'https://gbf.wiki/images/4/40/Npc_zoom_3040232000_02.png'),
   (earth,'https://gbf.wiki/images/e/e8/Npc_zoom_3040232000_81.png')
   ],
+  'alistair' : [
+  (water, 'https://gbf.wiki/images/f/fc/Npc_zoom_3020053000_01.png'),
+  (water, 'https://gbf.wiki/images/4/43/Npc_zoom_3020053000_02.png')
+  ],
+  'aliza' : [
+  (fire, 'https://gbf.wiki/images/b/b3/Npc_zoom_3040083000_01.png'),
+  (fire, 'https://gbf.wiki/images/e/ee/Npc_zoom_3040083000_02.png'),
+  (fire, 'https://gbf.wiki/images/1/1b/Npc_zoom_3030015000_01.png'),
+  (fire, 'https://gbf.wiki/images/9/90/Npc_zoom_3030015000_02.png'),
+  (water, 'https://gbf.wiki/images/0/06/Npc_zoom_3030242000_01.png'),
+  (water, 'https://gbf.wiki/images/8/8a/Npc_zoom_3030242000_02.png'),
+  (wind, 'https://gbf.wiki/images/5/5c/Npc_zoom_3040233000_01.png'),
+  (wind, 'https://gbf.wiki/images/c/ca/Npc_zoom_3040233000_02.png'),
+  (grey, 'https://gbf.wiki/images/7/7d/Sahara_Musafir_%28Aliza%29.png'),
+  (grey, 'https://gbf.wiki/images/e/ea/AlizaIdol.png')
+  ],
+  'almeida' : [
+  (earth, 'https://gbf.wiki/images/8/86/Npc_zoom_3030139000_01.png'),
+  (earth, 'https://gbf.wiki/images/a/a5/Npc_zoom_3030139000_02.png'),
+  (earth, 'https://gbf.wiki/images/b/b7/Npc_zoom_3030250000_01.png'),
+  (earth, 'https://gbf.wiki/images/0/0d/Npc_zoom_3030250000_02.png')
+  ],
+  'altair' : [
+  (water, 'https://gbf.wiki/images/a/ab/Npc_zoom_3040001000_01.png'),
+  (water, 'https://gbf.wiki/images/6/66/Npc_zoom_3040001000_02.png'),
+  (water, 'https://gbf.wiki/images/8/8f/Npc_zoom_3040001000_03.png'),
+  (grey, 'https://gbf.wiki/images/5/54/Altair_Tactician%27s_Livery.png')
+  ],
+  'amira' : [
+  (light, 'https://gbf.wiki/images/f/f3/Npc_zoom_3040051000_01.png'),
+  (light, 'https://gbf.wiki/images/4/4d/Npc_zoom_3040051000_02.png'),
+  (light, 'https://gbf.wiki/images/2/2a/Npc_zoom_3040051000_03.png'),
+  (light, 'https://gbf.wiki/images/2/2a/Npc_zoom_3030065000_01.png'),
+  (light, 'https://gbf.wiki/images/8/8c/Npc_zoom_3030065000_02.png'),
+  (light, 'https://gbf.wiki/images/8/83/Npc_zoom_3030065000_03.png')
+  ],
+  'anastasia' : [
+  (water, 'https://gbf.wiki/images/8/8b/Npc_zoom_3030160000_01.png'),
+  (water, 'https://gbf.wiki/images/3/31/Npc_zoom_3030160000_02.png')
+  ],
+  'andira' : [
+  (wind, 'https://gbf.wiki/images/7/7a/Npc_zoom_3040071000_01.png'),
+  (wind, 'https://gbf.wiki/images/a/a1/Npc_zoom_3040071000_02.png'),
+  (wind, 'https://gbf.wiki/images/f/fd/Npc_zoom_3040071000_03.png'),
+  (wind, 'https://gbf.wiki/images/d/d7/Npc_zoom_3030170000_01.png'),
+  (wind, 'https://gbf.wiki/images/8/85/Npc_zoom_3030170000_02.png'),
+  (grey, 'https://gbf.wiki/images/4/40/AndiraOutfit.png')
+  ],
   'monika' : [
-  (wind,'https://i.imgur.com/3g2iFbF.png'),
+  (wind,'https://i.imgur.com/3g2iFbF.png'), # fix links
   (wind,'https://i.imgur.com/qKCZeDu.png'),
   (wind,'https://i.imgur.com/iUkOJnJ.png'),
   (wind,'https://i.imgur.com/mEnmxIV.png'),
