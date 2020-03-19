@@ -318,7 +318,10 @@ async def art(ctx, *args):
                    if str(reaction.emoji) == '➡️':
                        pos = pos + 1
 
+                   file = discord.File(filepath + images[pos % num_images],
+                                        filename=images[pos % num_images])
                    display.set_image(url = display_init + images[pos % num_images])
+                   await sent.edit(file=file, embed=display)
 
         except FileNotFoundError:
             await ctx.send('*Character not found*')
