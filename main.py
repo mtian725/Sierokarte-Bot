@@ -248,18 +248,22 @@ async def time(ctx, *args):
         hour = jp_dt.hour
         minute = jp_dt.minute
         cycle = 'AM'
-        reset_hr = 5 - hour
+        reset_hr = 29 - hour
         reset_min = 60 - minute
 
+        if jp_dt.minute < 10:
+            minutes_str = '0' + str(jp_dt.minute)
+        else:
+            minutes_str = str(jp_dt.minute)
 
-        msg1 = ('' + str(hour) + ':' + str(minute) + ' JST (24 Hour Clock)')
+        msg1 = ('' + str(hour) + ':' + minutes_str + ' JST (24 Hour Clock)')
         if (hour > 12):
             hour = hour - 12
             cycle = 'PM'
-        msg2 = ('' + str(hour) + ':' + str(minute) + ' ' + str(cycle) +
+        msg2 = ('' + str(hour) + ':' + minutes_str + ' ' + cycle +
                         ' JST (12 Hour Clock)')
-        if reset_hr < 0:
-            reset_hr = (reset_hr * -1) + 12
+        if reset_hr == 24:
+            reset_hr = 0
         if reset_min == 60:
             reset_min = 0
         msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
