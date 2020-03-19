@@ -282,8 +282,8 @@ async def art(ctx, *args):
         await ctx.send('Syntax: **!art <character name>**')
     else:
         name = ''.join(args)
-        if name in images.images:
-            num_images = len(images.images[name])
+        if name in imagelinks.images:
+            num_images = len(imagelinks.images[name])
             pos = 0
 
             display = discord.Embed(
