@@ -289,7 +289,7 @@ async def art(ctx, *args):
             filename=name.lower() + ".png"
             images = os.listdir(filepath)
 
-            num_images = images.len()
+            num_images = len(images)
             pos = 0
 
             await ctx.send(name)
