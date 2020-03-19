@@ -282,12 +282,12 @@ async def art(ctx, *args):
         title = 'Test1'
     )
     test1.set_image(url = 'images/test/anna.png')
-    await ctx.send(embed=Test1)
+    await ctx.send(embed=test1)
     test2 = discord.Embed(
         title = 'Test2'
     )
     test2.set_image(url = 'images/test/narumaya.png')
-    await ctx.send(embed=Test2)
+    await ctx.send(embed=test2)
     return
 
 @client.command()
