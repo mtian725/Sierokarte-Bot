@@ -288,9 +288,9 @@ async def art(ctx, *args):
 
             display = discord.Embed(
                 title = name.upper(),
-                color = discord.Color.blue(),
+                color = imagelinks.images[name][0][0]
             )
-            display.set_image(url = imagelinks.images[name][0])
+            display.set_image(url = imagelinks.images[name][0][1])
             sent = await ctx.send(embed=display)
 
             await sent.add_reaction('⬅️')
@@ -313,7 +313,8 @@ async def art(ctx, *args):
                     if str(reaction.emoji) == '➡️':
                         pos = pos + 1
 
-                    display.set_image(url = imagelinks.images[name][pos % num_images])
+                    display.set_image(url = imagelinks.images[name][pos % num_images][1])
+                    display.color = imagelinks.images[name][pos % num_images][0]
                     await sent.edit(embed=display)
 
             return
