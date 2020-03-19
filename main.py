@@ -28,7 +28,7 @@ client = commands.Bot(command_prefix='!')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-@cliend.command(aliases=['h'])
+@client.command(aliases=['h'])
 async def help(ctx):
     return
 
