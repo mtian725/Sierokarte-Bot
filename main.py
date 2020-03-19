@@ -271,8 +271,24 @@ async def time(ctx, *args):
         msg3 = ('**' + str(reset_hr) + '** hours and **' + str(reset_min) +
                         '** minutes before next daily reset')
         await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
+
+
     else:
         return
+
+@client.command(aliases=['a'])
+async def art(ctx, *args):
+    test1 = discord.Embed(
+        title = 'Test1'
+    )
+    test1.set_image(url = 'images/test/anna.png')
+    await ctx.send(embed=Test1)
+    test2 = discord.Embed(
+        title = 'Test2'
+    )
+    test2.set_image(url = 'images/test/narumaya.png')
+    await ctx.send(embed=Test2)
+    return
 
 @client.command()
 async def team(ctx):
