@@ -324,7 +324,7 @@ async def art(ctx, *args):
                         title = name.upper()
                     )
                     display.set_image(url = display_init + images[pos % num_images])
-                    await sent.edit(file=file, embed=display)
+                    await sent.edit(embed=display)
 
         except FileNotFoundError:
             await ctx.send('*Character not found*')
