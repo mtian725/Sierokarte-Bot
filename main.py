@@ -33,8 +33,8 @@ async def wiki(ctx, *args):
     if not args:
         await ctx.send('https://gbf.wiki/Main_Page')
     else:
-        query = 'gbf.wiki ' + ' '.join(args)
-        for j in search(query, tld='com', num=10, stop=1, pause=1):
+        query = 'gbf.wiki ' + '/'.join(args)
+        for j in search(query, tld='com', num=1, stop=1, pause=0.25):
             await ctx.send(j[0:j.find('?')])
 
 @client.command(aliases=['ca'])
