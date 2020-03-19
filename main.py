@@ -291,6 +291,7 @@ async def art(ctx, *args):
                 color = imagelinks.images[name][0][0]
             )
             display.set_image(url = imagelinks.images[name][0][1])
+            display.set_footer('click image for large display')
             sent = await ctx.send(embed=display)
 
             await sent.add_reaction('⬅️')
