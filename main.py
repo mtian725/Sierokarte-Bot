@@ -10,7 +10,7 @@ from googlesearch import search
 import discord
 from discord.ext import commands
 # Our libraries
-import resources
+from resources import (exceptions, messages, uncap, imagelinks)
 import calculator
 #Add mode modules as we add more
 
@@ -290,7 +290,7 @@ async def art(ctx, *args):
                 title = name.upper(),
                 color = discord.Color.blue(),
             )
-            display.set_image(url = images.images[name][0])
+            display.set_image(url = imagelinks.images[name][0])
             sent = await ctx.send(embed=display)
 
             await sent.add_reaction('⬅️')
