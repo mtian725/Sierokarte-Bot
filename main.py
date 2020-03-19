@@ -278,16 +278,18 @@ async def time(ctx, *args):
 
 @client.command(aliases=['a'])
 async def art(ctx, *args):
+    file1 = discord.File('./images/test/anna.png', filename="anna.png")
     test1 = discord.Embed(
         title = 'Test1'
     )
-    test1.set_image(url = './images/test/anna.png')
-    await ctx.send(embed=test1)
+    test1.set_image(url = 'attachment://anna.png')
+    await ctx.send(file=file1, embed=test1)
+    file2 = discord.File('./images/test/narumaya.png', filename="narumaya.png")
     test2 = discord.Embed(
         title = 'Test2'
     )
-    test2.set_image(url = './images/test/narumaya.png')
-    await ctx.send(embed=test2)
+    test2.set_image(url = 'attachment://narumaya.png')
+    await ctx.send(file=file2, embed=test2)
     return
 
 @client.command()
