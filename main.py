@@ -312,12 +312,10 @@ async def art(ctx, *args):
             #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️')
             #
             #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+            #except asyncio.TimeoutError:
+#                break
         except FileNotFoundError:
             await ctx.send('*Character not found*')
-
-        except asyncio.TimeoutError:
-            break
-
         return
 
         # try:
