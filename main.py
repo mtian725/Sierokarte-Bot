@@ -290,6 +290,15 @@ async def art(ctx, *args):
     )
     test2.set_image(url = 'attachment://narumaya.png')
     await ctx.send(file=file2, embed=test2)
+    try:
+        file3 = discord.File('./ajsdbaskjdbkasj', filename="asdasfa")
+        test3 = discord.Embed(
+            title = 'Test3'
+        )
+        test3.set_image(url = 'attachment://anna.png')
+        await ctx.send(file=file3, embed=test3)
+    except Exception as e:
+        raise
     return
 
 @client.command()
