@@ -4,20 +4,20 @@ help = discord.Embed(
     title = '__Sierokarte Bot Help__',
     color = discord.Color.blue(),
 )
-help.add_field(name='calcarcarum',
-value='**!calcarcarum** or **!ca** : Follow the responses given and it will'+
+help.add_field(name='CALCARCARUM',
+value='**!calcarcarum** or **!ca** \n Follow the responses given and it will'+
         ' generate a list of recources needed',
 inline=False)
-help.add_field(name='eternals',
-value='**!eternals** or **!e** : Follow the initial prompt and click on the '+
+help.add_field(name='ETERNALS',
+value='**!eternals** or **!e** \n Follow the initial prompt and click on the '+
         'reacts to change pages',
 inline=False)
-help.add_field(name='wiki',
-value='**!wiki** or **!w** : Searches the item after the command and returns '+
+help.add_field(name='WIKI',
+value='**!wiki** or **!w** \n Searches the item after the command and returns '+
 'a link from the GBF wiki \n Syntax: !wiki <item>',
 inline=False)
-help.add_field(name='time',
-value='**!time** or **!t** : gives the time in JST',
+help.add_field(name='TIME',
+value='**!time** or **!t** \n gives the time in JST',
 inline=False)
 
 arc_thumbnails = {
