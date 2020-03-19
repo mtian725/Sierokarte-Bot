@@ -40,8 +40,8 @@ images = {
   ],
   'alec' : [
   (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_01.png'),
-  (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_02.png'),
-  (fire,'https://gbf.wiki/images/4/4a/Npc_zoom_3030003000_03.png')
+  (fire,'https://gbf.wiki/images/5/52/Npc_zoom_3030003000_02.png'),
+  (fire,'https://gbf.wiki/images/9/97/Npc_zoom_3030003000_03.png')
   ],
   'aletheia' :[
   (earth,'https://gbf.wiki/images/d/d1/Npc_zoom_3040002000_01.png'),
