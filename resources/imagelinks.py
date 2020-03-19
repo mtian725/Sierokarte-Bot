@@ -45,7 +45,7 @@ images = {
   ],
   'aletheia' :[
   (earth,'https://gbf.wiki/images/d/d1/Npc_zoom_3040002000_01.png'),
-  (earth,'https://gbf.wiki/images/d/d1/Npc_zoom_3040002000_02.png')
+  (earth,'https://gbf.wiki/images/a/a0/Npc_zoom_3040002000_02.png')
   ],
   'alexiel' :[
   (earth,'https://gbf.wiki/images/9/92/Npc_zoom_3040158000_01.png'),
