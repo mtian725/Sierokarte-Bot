@@ -298,18 +298,27 @@ async def art(ctx, *args):
             display.set_image(url = display_init + images[0])
             sent = await ctx.send(file=file, embed=display)
 
-            sent.add_reaction('⬅️')
-            sent.add_reaction('➡️')
+            await sent.add_reaction('⬅️')
+            await sent.add_reaction('➡️')
 
-            # while True:
-            #     try:
-            #         def react_check(reaction, user):
-            #             return (user == author and reaction.message.id == sent.id and
-            #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️')
-            #
-            #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-            #     except asyncio.TimeoutError:
-            #        break
+            while True:
+                try:
+                    def react_check(reaction, user):
+                        return (user == author and reaction.message.id == sent.id and
+                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️')
+
+                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+                except asyncio.TimeoutError:
+                   break
+                else:
+                   if str(reaction.emoji) == '⬅️':
+                       pos = pos - 1
+                   elif str(reaction.emoji) == '➡️':
+                       pos = pos + 1
+                   else:
+                       # nothing changes
+                   display.set_image(url = display_init + images[pos % num_images])
+                   
         except FileNotFoundError:
             await ctx.send('*Character not found*')
         return
