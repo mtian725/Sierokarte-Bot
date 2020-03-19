@@ -288,7 +288,6 @@ async def art(ctx, *args):
             display_init = 'attachment://'
             filename=name.lower() + ".png"
             images = os.listdir(filepath)
-            file = discord.File(filepath + filename, filename=filename)
 
             num_images = images.len()
             pos = 0
@@ -297,9 +296,10 @@ async def art(ctx, *args):
             await ctx.send(filepath)
             await ctx.send(display_init + filename)
             await ctx.send(images)
-            await ctx.send(file)
             await ctx.send(num_images)
 
+
+            # file = discord.File(filepath + filename, filename=filename)
             # display = discord.Embed(
             #     title = name.upper()
             # )
