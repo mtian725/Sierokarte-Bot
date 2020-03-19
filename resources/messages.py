@@ -4,10 +4,10 @@ help = discord.Embed(
     title = '__Sierokarte Bot Help__',
     color = discord.Color.blue(),
 )
-help.add_field(name='something', value='something', inline=false)
-help.add_field(name='something', value='something', inline=false)
-help.add_field(name='something', value='something', inline=false)
-help.add_field(name='something', value='something', inline=false)
+help.add_field(name='something', value='something', inline=False)
+help.add_field(name='something', value='something', inline=False)
+help.add_field(name='something', value='something', inline=False)
+help.add_field(name='something', value='something', inline=False)
 
 arc_thumbnails = {
     'Justice':'https://gbf.wiki/images/8/8a/Justice_%28SSR%29.png',
