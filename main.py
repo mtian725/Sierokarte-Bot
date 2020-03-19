@@ -4,6 +4,7 @@ import asyncio
 from datetime import datetime
 from pytz import timezone
 import pytz
+from os import listdir
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -281,10 +282,10 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        foldername = ''.join(args).lower()
-        filepath = './images/'+ foldername
-        await ctx.send(foldername)
+        filepath = './images/'+ ''.join(args).lower()
+        images = os.listdir(filepath)
         await ctx.send(filepath)
+        await ctx.send(images)
         # try:
         #     file = discord.File('./asifbasiudb', filename="asdasfa")
         #     test3 = discord.Embed(
