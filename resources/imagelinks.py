@@ -1,7 +1,7 @@
 import discord
 
 wind = discord.Color.from_rgb(141, 229, 95)
-fire = discord.Color.from_rgb(159, 95, 35)
+fire = discord.Color.from_rgb(195, 59, 35)
 water = discord.Color.from_rgb(76, 157, 225)
 earth = discord.Color.from_rgb(180, 119, 63)
 light = discord.Color.from_rgb(254, 236, 109)
