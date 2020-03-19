@@ -282,10 +282,14 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        filepath = './images/'+ ''.join(args).lower()
-        images = os.listdir(filepath)
-        await ctx.send(filepath)
-        await ctx.send(images)
+        try:
+            filepath = './images/'+ ''.join(args).lower()
+            images = os.listdir(filepath)
+            await ctx.send(filepath)
+            await ctx.send(images)
+        except FileNotFoundError:
+            await ctx.send('*Character not found*') 
+
         # try:
         #     file = discord.File('./asifbasiudb', filename="asdasfa")
         #     test3 = discord.Embed(
