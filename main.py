@@ -283,12 +283,42 @@ async def art(ctx, *args):
         await ctx.send('Syntax: **!art <character name>**')
     else:
         try:
-            filepath = './images/'+ ''.join(args).lower()
+            name = ''.join(args)
+            filepath = './images/'+ name.lower()
+            display_init = 'attachment://'
             images = os.listdir(filepath)
+            file = discord.File(filepath, filename=name.lower() + ".png")
+
+            num_images = images.len()
+            pos = 0
+
+            await ctx.send(name)
             await ctx.send(filepath)
+            await ctx.send(display_init + name.lower() + ".png")
             await ctx.send(images)
+            await ctx.send(file)
+            await ctx.send(num_images)
+
+            # display = discord.Embed(
+            #     title = name.upper()
+            # )
+            # display.set_image(url = anna.png')
+            # await ctx.send(file=file3, embed=test3)
+            #
+            # while True:
+            #     try:
+            #         def react_check(reaction, user):
+            #             return (user == author and reaction.message.id == sent.id and
+            #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️')
+            #
+            #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
         except FileNotFoundError:
-            await ctx.send('*Character not found*') 
+            await ctx.send('*Character not found*')
+
+        except asyncio.TimeoutError:
+            break
+
+        return
 
         # try:
         #     file = discord.File('./asifbasiudb', filename="asdasfa")
@@ -299,6 +329,22 @@ async def art(ctx, *args):
         #     await ctx.send(file=file3, embed=test3)
         # except FileNotFoundError:
         #     await ctx.send('*Character not found*')
+
+        while True:
+          try:
+              def react_check(reaction, user):
+                  return (user == author and reaction.message.id == sent.id and
+                  (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
+                  or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
+                  or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
+                  or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'
+                  or str(reaction.emoji) == '9️⃣'))
+
+              reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+          except asyncio.TimeoutError:
+              break
+          else:
+
         return
 
 @client.command()
