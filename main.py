@@ -267,7 +267,7 @@ async def time(ctx, *args):
         if reset_min == 60:
             reset_min = 0
         else:
-            reset_hour = reset_hr - 1
+            reset_hr = reset_hr - 1
         msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
                         ' minutes before next daily reset')
         await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
