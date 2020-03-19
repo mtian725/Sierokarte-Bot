@@ -286,7 +286,6 @@ async def art(ctx, *args):
             name = ''.join(args)
             filepath = './images/'+ name.lower() + '/'
             display_init = 'attachment://'
-            filename=name.lower() + ".png"
             images = os.listdir(filepath)
 
             num_images = len(images)
@@ -294,17 +293,16 @@ async def art(ctx, *args):
 
             await ctx.send(name)
             await ctx.send(filepath)
-            await ctx.send(display_init + filename)
+            await ctx.send(display_init + images[0])
             await ctx.send(images)
             await ctx.send(num_images)
 
-
-            # file = discord.File(filepath + filename, filename=filename)
-            # display = discord.Embed(
-            #     title = name.upper()
-            # )
-            # display.set_image(url = anna.png')
-            # await ctx.send(file=file3, embed=test3)
+            file = discord.File(filepath + images[0], filename=images[0])
+            display = discord.Embed(
+                title = name.upper()
+            )
+            display.set_image(url = display_init + images[0])
+            sent = await ctx.send(file=file, embed=display)
             #
             # while True:
             #     try:
