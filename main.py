@@ -278,28 +278,23 @@ async def time(ctx, *args):
 
 @client.command(aliases=['a'])
 async def art(ctx, *args):
-    file1 = discord.File('./images/test/anna.png', filename="anna.png")
-    test1 = discord.Embed(
-        title = 'Test1'
-    )
-    test1.set_image(url = 'attachment://anna.png')
-    await ctx.send(file=file1, embed=test1)
-    file2 = discord.File('./images/test/narumaya.png', filename="narumaya.png")
-    test2 = discord.Embed(
-        title = 'Test2'
-    )
-    test2.set_image(url = 'attachment://narumaya.png')
-    await ctx.send(file=file2, embed=test2)
-    try:
-        file3 = discord.File('./ajsdbaskjdbkasj', filename="asdasfa")
-        test3 = discord.Embed(
-            title = 'Test3'
-        )
-        test3.set_image(url = 'attachment://anna.png')
-        await ctx.send(file=file3, embed=test3)
-    except FileNotFoundError:
-        await ctx.send("Character not found")
-    return
+    if not args:
+        await ctx.send('Syntax: **!art <character name>**')
+    else:
+        filename = ''.join(args).lower() + '.png'
+        filepath = './images/'+ filename
+        await ctx.send(filename)
+        await ctx.send(filepath)
+        try:
+            file = discord.File('./asifbasiudb', filename="asdasfa")
+            test3 = discord.Embed(
+                title = 'Test3'
+            )
+            test3.set_image(url = 'attachment://anna.png')
+            await ctx.send(file=file3, embed=test3)
+        except FileNotFoundError:
+            await ctx.send('*Character not found*')
+        return
 
 @client.command()
 async def team(ctx):
