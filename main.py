@@ -256,11 +256,11 @@ async def time(ctx, *args):
         else:
             minutes_str = str(jp_dt.minute)
 
-        msg1 = ('' + str(hour) + ':' + minutes_str + ' JST (24 Hour Clock)')
+        msg1 = ('`' + str(hour) + ':' + minutes_str + '` JST (24 Hour Clock)')
         if (hour > 12):
             hour = hour - 12
             cycle = 'PM'
-        msg2 = ('' + str(hour) + ':' + minutes_str + ' ' + cycle +
+        msg2 = ('`' + str(hour) + ':' + minutes_str + '` ' + cycle +
                         ' JST (12 Hour Clock)')
         if reset_hr == 24:
             reset_hr = 0
@@ -268,8 +268,8 @@ async def time(ctx, *args):
             reset_min = 0
         else:
             reset_hr = reset_hr - 1
-        msg3 = (str(reset_hr) + ' hours and ' + str(reset_min) +
-                        ' minutes before next daily reset')
+        msg3 = ('**' + str(reset_hr) + '** hours and **' + str(reset_min) +
+                        '** minutes before next daily reset')
         await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
     else:
         return
