@@ -10,7 +10,7 @@ from googlesearch import search
 import discord
 from discord.ext import commands
 # Our libraries
-from resources import (exceptions, messages, uncap, images)
+import resources
 import calculator
 #Add mode modules as we add more
 
