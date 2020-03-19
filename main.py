@@ -32,7 +32,7 @@ async def on_ready():
 @client.command(aliases=['h'])
 async def help(ctx, *args):
     if not args:
-        await ctx.send(embed=messages.help)
+        await ctx.send(author, embed=messages.help)
     else:
         return
 

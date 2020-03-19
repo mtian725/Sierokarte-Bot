@@ -5,7 +5,7 @@ help = discord.Embed(
     color = discord.Color.blue(),
 )
 help.add_field(name='CALCARCARUM',
-value='**!calcarcarum** or **!ca** \n Follow the responses given and it will'+
+value='**!calcarcarum** or **!ca** \n Respond to the prompts given and it will'+
         ' generate a list of recources needed',
 inline=False)
 help.add_field(name='ETERNALS',
