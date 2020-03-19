@@ -283,7 +283,7 @@ async def art(ctx, *args):
     else:
         foldername = ''.join(args).lower()
         filepath = './images/'+ foldername
-        await ctx.send(filename)
+        await ctx.send(foldername)
         await ctx.send(filepath)
         # try:
         #     file = discord.File('./asifbasiudb', filename="asdasfa")
