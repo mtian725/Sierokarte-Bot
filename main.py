@@ -281,19 +281,19 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        filename = ''.join(args).lower() + '.png'
-        filepath = './images/'+ filename
+        foldername = ''.join(args).lower()
+        filepath = './images/'+ foldername
         await ctx.send(filename)
         await ctx.send(filepath)
-        try:
-            file = discord.File('./asifbasiudb', filename="asdasfa")
-            test3 = discord.Embed(
-                title = 'Test3'
-            )
-            test3.set_image(url = 'attachment://anna.png')
-            await ctx.send(file=file3, embed=test3)
-        except FileNotFoundError:
-            await ctx.send('*Character not found*')
+        # try:
+        #     file = discord.File('./asifbasiudb', filename="asdasfa")
+        #     test3 = discord.Embed(
+        #         title = 'Test3'
+        #     )
+        #     test3.set_image(url = 'attachment://anna.png')
+        #     await ctx.send(file=file3, embed=test3)
+        # except FileNotFoundError:
+        #     await ctx.send('*Character not found*')
         return
 
 @client.command()
