@@ -330,22 +330,20 @@ async def art(ctx, *args):
         # except FileNotFoundError:
         #     await ctx.send('*Character not found*')
 
-        while True:
-          try:
-              def react_check(reaction, user):
-                  return (user == author and reaction.message.id == sent.id and
-                  (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
-                  or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
-                  or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
-                  or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'
-                  or str(reaction.emoji) == '9️⃣'))
-
-              reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-          except asyncio.TimeoutError:
-              break
-          else:
-
-        return
+        # while True:
+        #   try:
+        #       def react_check(reaction, user):
+        #           return (user == author and reaction.message.id == sent.id and
+        #           (str(reaction.emoji) == '1️⃣' or str(reaction.emoji) == '2️⃣'
+        #           or str(reaction.emoji) == '3️⃣' or str(reaction.emoji) == '4️⃣'
+        #           or str(reaction.emoji) == '5️⃣' or str(reaction.emoji) == '6️⃣'
+        #           or str(reaction.emoji) == '7️⃣' or str(reaction.emoji) == '8️⃣'
+        #           or str(reaction.emoji) == '9️⃣'))
+        #
+        #       reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+        #   except asyncio.TimeoutError:
+        #       break
+        #   else:
 
 @client.command()
 async def team(ctx):
