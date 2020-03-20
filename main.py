@@ -285,7 +285,7 @@ async def art(ctx, *args):
         name = ''.join(args).lower()
 
         # finds the name/closest match
-        chara = imagelinks[bisect.bisect_left(imagelinks.names, name)]
+        chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
         await ctx.send(chara)
         # num_images = len(imagelinks.images[name])
