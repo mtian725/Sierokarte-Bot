@@ -128,7 +128,8 @@ images = {
   ],
   'anne' : [
   (water, 'https://gbf.wiki/images/b/bf/Npc_zoom_3040132000_01.png'),
-  (water, 'https://gbf.wiki/images/1/1a/Npc_zoom_3040132000_02.png')
+  (water, 'https://gbf.wiki/images/1/1a/Npc_zoom_3040132000_02.png'),
+  (water, 'https://gbf.wiki/images/9/95/Npc_zoom_3040132000_81.png')
   ],
   'anre' : [
   (water, 'https://gbf.wiki/images/9/98/Npc_zoom_3040030000_01.png'),
@@ -248,21 +249,38 @@ images = {
   (light, 'https://gbf.wiki/images/f/fc/Npc_zoom_3040124000_02.png')
   ],
   'barawa' : [
-  (fire, ''),
-  (fire, ''),
-  (fire, ''),
-  (fire, ''),
-  (light, ''),
-  (light, '')
+  (fire, 'https://gbf.wiki/images/f/ff/Npc_zoom_3020034000_01.png'),
+  (fire, 'https://gbf.wiki/images/d/d6/Npc_zoom_3020034000_02.png'),
+  (fire, 'https://gbf.wiki/images/3/39/Npc_zoom_3030154000_01.png'),
+  (fire, 'https://gbf.wiki/images/9/99/Npc_zoom_3030154000_02.png'),
+  (fire, 'https://gbf.wiki/images/a/a6/Npc_zoom_3030154000_81.png'),
+  (light, 'https://gbf.wiki/images/8/81/Npc_zoom_3030239000_01.png'),
+  (light, 'https://gbf.wiki/images/e/e6/Npc_zoom_3030239000_02.png')
   ],
-  '' : [
-
+  'beatrix' : [
+  (dark, 'https://gbf.wiki/images/8/8c/Npc_zoom_3040070000_01.png'),
+  (dark, 'https://gbf.wiki/images/c/c8/Npc_zoom_3040070000_02.png'),
+  (fire, 'https://gbf.wiki/images/2/29/Npc_zoom_3030163000_01.png'),
+  (fire, 'https://gbf.wiki/images/1/17/Npc_zoom_3030163000_02.png'),
+  (earth, 'https://gbf.wiki/images/c/c6/Npc_zoom_3030261000_01.png'),
+  (earth, 'https://gbf.wiki/images/b/b0/Npc_zoom_3030261000_02.png'),
+  (fire, 'https://gbf.wiki/images/1/1e/Npc_zoom_3040110000_01.png'),
+  (fire, 'https://gbf.wiki/images/4/4c/Npc_zoom_3040110000_02.png'),
+  (grey, 'https://gbf.wiki/images/6/62/Blue_Pride.png'),
+  (grey, 'https://gbf.wiki/images/2/2b/Beatrix_Racing_Suit.png'),
+  (grey, 'https://gbf.wiki/images/6/6d/Skyfall_Blue_Kimono_%28Beatrix%29.png')
   ],
-  '' : [
-
+  'blackknight' : [
+  (dark, 'https://gbf.wiki/images/0/05/Npc_zoom_3040082000_01.png'),
+  (dark, 'https://gbf.wiki/images/4/48/Npc_zoom_3040082000_02.png'),
+  (dark, 'https://gbf.wiki/images/5/55/Npc_zoom_3040082000_03.png'),
+  (dark, 'https://gbf.wiki/images/b/bc/Npc_zoom_3040082000_81.png')
   ],
-  '' : [
-
+  'bridgette' : [
+  (water, 'https://gbf.wiki/images/6/62/Npc_zoom_3020048000_01.png'),
+  (water, 'https://gbf.wiki/images/2/23/Npc_zoom_3020048000_02.png'),
+  (light, 'https://gbf.wiki/images/a/a6/Npc_zoom_3030269000_01.png'),
+  (light, 'https://gbf.wiki/images/f/f9/Npc_zoom_3030269000_02.png')
   ],
   'monika' : [
   (wind,'https://i.imgur.com/3g2iFbF.png'), # fix links
