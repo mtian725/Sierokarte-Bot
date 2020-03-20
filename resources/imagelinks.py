@@ -25,7 +25,7 @@ images = {
   (water,'https://gbf.wiki/images/f/f1/Aglovale%2C_Lord_of_Frost_NPC.png'),
   (grey,'https://gbf.wiki/images/d/d4/House_of_Wales_Dress_Uniform_%28Aglovale%29.png'),
   ],
-  'airitotoki' : [
+  'airi totoki' : [
   (earth, 'https://gbf.wiki/images/c/cf/AiriTotoki_A.png'),
   (earth, 'https://gbf.wiki/images/b/b5/AiriTotoki_B.png')
   ],
@@ -156,14 +156,14 @@ images = {
   (fire, 'https://gbf.wiki/images/c/c6/Npc_zoom_3040076000_01.png'),
   (fire, 'https://gbf.wiki/images/1/1d/Npc_zoom_3040076000_02.png')
   ],
-  'aqoursfirst-years' : [
+  'aqours first-years' : [
   (earth, 'https://gbf.wiki/images/a/a4/Npc_zoom_3040184000_01.png'),
   (earth, 'https://gbf.wiki/images/5/5c/Yoshiko_Tsushima_A.png'),
   (earth, 'https://gbf.wiki/images/6/6d/Hanamaru_Kunikida_A.png'),
   (earth, 'https://gbf.wiki/images/3/33/Ruby_Kurosawa_A.png'),
   (earth, 'https://gbf.wiki/images/2/22/Npc_zoom_3040184000_02.png')
   ],
-  'aqourssecond-years' : [
+  'aqours second-years' : [
   (water, 'https://gbf.wiki/images/7/76/Npc_zoom_3040183000_01.png'),
   (water, 'https://gbf.wiki/images/a/ae/Riko_Sakurauchi_A.png'),
   (water, 'https://gbf.wiki/images/0/0a/Chika_Takami_A.png'),
@@ -171,7 +171,7 @@ images = {
   (water, 'https://gbf.wiki/images/7/75/Npc_zoom_3040183000_02.png'),
   (water, 'https://gbf.wiki/images/f/fe/Npc_zoom_3040183000_03.png')
   ],
-  'aqoursthird-years' : [
+  'aqours third-years' : [
   (fire, 'https://gbf.wiki/images/3/37/Npc_zoom_3040185000_01.png'),
   (fire, 'https://gbf.wiki/images/0/06/Kanan_Matsuura_A.png'),
   (fire, 'https://gbf.wiki/images/f/f2/Dia_Kurosawa_A.png'),
@@ -272,7 +272,7 @@ images = {
   (grey, 'https://gbf.wiki/images/2/2b/Beatrix_Racing_Suit.png'),
   (grey, 'https://gbf.wiki/images/6/6d/Skyfall_Blue_Kimono_%28Beatrix%29.png')
   ],
-  'blackknight' : [
+  'black knight' : [
   (dark, 'https://gbf.wiki/images/0/05/Npc_zoom_3040082000_01.png'),
   (dark, 'https://gbf.wiki/images/4/48/Npc_zoom_3040082000_02.png'),
   (dark, 'https://gbf.wiki/images/5/55/Npc_zoom_3040082000_03.png'),
@@ -367,7 +367,7 @@ images = {
   (light, 'https://gbf.wiki/images/c/ce/Npc_zoom_3030074000_01.png'),
   (light, 'https://gbf.wiki/images/d/dc/Npc_zoom_3030074000_02.png')
   ],
-  'chariocexvii' : [
+  'charioce xvii' : [
   (fire, 'https://gbf.wiki/images/1/16/Npc_zoom_3040144000_01.png'),
   (fire, 'https://gbf.wiki/images/9/91/Npc_zoom_3040144000_02.png'),
   (fire, 'https://gbf.wiki/images/e/e7/Npc_zoom_3040144000_81.png')
@@ -387,7 +387,7 @@ images = {
   (water, 'https://gbf.wiki/images/2/28/Npc_zoom_3030198000_02.png'),
   (grey, 'https://gbf.wiki/images/f/f2/Charlotta_Petalfall_Kimono.png')
   ],
-  'chatnoir' : [
+  'chat noir' : [
   (water, 'https://gbf.wiki/images/7/71/Npc_zoom_3040093000_01.png'),
   (water, 'https://gbf.wiki/images/3/3a/Npc_zoom_3040093000_02.png'),
   (water, 'https://gbf.wiki/images/4/4d/Npc_zoom_3040093000_81.png')
@@ -447,7 +447,7 @@ images = {
   (water, 'https://gbf.wiki/images/f/f8/Npc_zoom_3040159000_81.png'),
   (grey, 'https://gbf.wiki/images/5/50/Cucouroux_Gunsmith_Workwear.png')
   ],
-  'cureblackandcurewhite' : [
+  'cure black and cure white' : [
   (light, 'https://gbf.wiki/images/b/b9/Npc_zoom_3040188000_01.png'),
   (light, 'https://gbf.wiki/images/3/39/Cure_Black_A.png'),
   (light, 'https://gbf.wiki/images/3/3f/Cure_White_A.png'),

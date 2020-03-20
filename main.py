@@ -286,7 +286,7 @@ async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
-        name = ''.join(args).lower()
+        name = ' '.join(args).lower()
 
         # finds the name/closest match
         chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
@@ -297,7 +297,7 @@ async def art(ctx, *args):
 
         # the embed
         display = discord.Embed(
-            title = ' '.join(args).upper(),
+            title = name,
             color = imagelinks.images[name][0][0]
         )
         display.set_image(url = imagelinks.images[name][0][1])
