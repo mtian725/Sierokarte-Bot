@@ -4,6 +4,7 @@ import asyncio
 from datetime import datetime
 from pytz import timezone
 import pytz
+import bisect
 # Google library
 from googlesearch import search
 # Discord libraries
