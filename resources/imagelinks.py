@@ -662,7 +662,7 @@ images = {
   (light, 'https://gbf.wiki/images/d/d8/Fif_Wicked_Witch_of_the_Sweet.png')
   ],
   'flesselles' : [
-  (fire,.'https://gbf.wiki/images/f/fb/Npc_zoom_3020049000_01.png'),
+  (fire, 'https://gbf.wiki/images/f/fb/Npc_zoom_3020049000_01.png'),
   (fire, 'https://gbf.wiki/images/6/6f/Npc_zoom_3020049000_02.png')
   ],
   'forte' : [
