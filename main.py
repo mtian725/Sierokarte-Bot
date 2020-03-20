@@ -23,6 +23,7 @@ jp_tz = timezone('Japan')
 uncap_targets = {}
 global_teams = {}
 
+# use if testing locally, current code uses heroku env config vars
 #with open("config.json", "r") as read_file:
 #    env = json.load(read_file)
 
@@ -535,6 +536,5 @@ async def clearteam(ctx):
 
 
 # Actual bot ID do NOT change
-print(os.environ['token'])
 client.run(os.environ['token'])
 #env['token'])
