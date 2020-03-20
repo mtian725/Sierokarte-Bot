@@ -32,6 +32,7 @@ async def on_ready():
 
 @client.command(aliases=['h'])
 async def help(ctx, *args):
+    # sends a private message to the author with the help embed
     if not args:
         await ctx.author.send(embed=messages.help)
     else:
@@ -42,6 +43,7 @@ async def wiki(ctx, *args):
     if not args:
         await ctx.send('https://gbf.wiki/Main_Page')
     else:
+        # using googlesearch module
         query = 'gbf.wiki ' + '/'.join(args)
         for j in search(query, tld='com', num=1, stop=1, pause=0.0):
             await ctx.send(j)
@@ -245,6 +247,7 @@ async def eternals(ctx, *args):
 @client.command(aliases=['t'])
 async def time(ctx, *args):
     if not args:
+        # current time in japan
         jp_dt = datetime.now(jp_tz)
         hour = jp_dt.hour
         minute = jp_dt.minute
@@ -252,6 +255,7 @@ async def time(ctx, *args):
         reset_hr = 29 - hour
         reset_min = 60 - minute
 
+        # have to add a 0 because if you don't format the string :05 will be :5
         if jp_dt.minute < 10:
             minutes_str = '0' + str(jp_dt.minute)
         else:
@@ -287,41 +291,43 @@ async def art(ctx, *args):
         # finds the name/closest match
         chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
-        await ctx.send(chara)
-        # num_images = len(imagelinks.images[name])
-        # pos = 0
-        #
-        # display = discord.Embed(
-        #     title = ' '.join(args).upper(),
-        #     color = imagelinks.images[name][0][0]
-        # )
-        # display.set_image(url = imagelinks.images[name][0][1])
-        # display.set_footer(text = 'click image for large display')
-        # sent = await ctx.send(embed=display)
-        #
-        # await sent.add_reaction('⬅️')
-        # await sent.add_reaction('➡️')
-        #
-        # author = ctx.author
-        #
-        # while True:
-        #     try:
-        #         def react_check(reaction, user):
-        #             return (user == author and reaction.message.id == sent.id and
-        #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
-        #
-        #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-        #     except asyncio.TimeoutError:
-        #         break
-        #     else:
-        #         if str(reaction.emoji) == '⬅️':
-        #             pos = pos - 1
-        #         if str(reaction.emoji) == '➡️':
-        #             pos = pos + 1
-        #
-        #         display.set_image(url = imagelinks.images[name][pos % num_images][1])
-        #         display.color = imagelinks.images[name][pos % num_images][0]
-        #         await sent.edit(embed=display)
+        name = chara
+        num_images = len(imagelinks.images[name])
+        pos = 0
+
+        # the embed
+        display = discord.Embed(
+            title = ' '.join(args).upper(),
+            color = imagelinks.images[name][0][0]
+        )
+        display.set_image(url = imagelinks.images[name][0][1])
+        display.set_footer(text = 'click image for large display')
+        sent = await ctx.send(embed=display)
+
+        await sent.add_reaction('⬅️')
+        await sent.add_reaction('➡️')
+
+        author = ctx.author
+
+        while True:
+            try:
+                # if a user clicks on a react then the image changes
+                def react_check(reaction, user):
+                    return (user == author and reaction.message.id == sent.id and
+                    (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+
+                reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+            except asyncio.TimeoutError:
+                break
+            else:
+                if str(reaction.emoji) == '⬅️':
+                    pos = pos - 1
+                if str(reaction.emoji) == '➡️':
+                    pos = pos + 1
+
+                display.set_image(url = imagelinks.images[name][pos % num_images][1])
+                display.color = imagelinks.images[name][pos % num_images][0]
+                await sent.edit(embed=display)
 
         return
 
