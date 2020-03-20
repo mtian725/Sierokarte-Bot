@@ -287,7 +287,7 @@ async def art(ctx, *args):
             pos = 0
 
             display = discord.Embed(
-                title = name.upper(),
+                title = ' '.join(args).upper(),
                 color = imagelinks.images[name][0][0]
             )
             display.set_image(url = imagelinks.images[name][0][1])
