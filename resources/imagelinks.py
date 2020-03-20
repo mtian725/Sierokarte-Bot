@@ -681,6 +681,160 @@ images = {
   (fire, 'https://gbf.wiki/images/9/93/Npc_zoom_3030271000_01.png'),
   (fire, 'https://gbf.wiki/images/e/e1/Npc_zoom_3030271000_02.png')
   ],
+  'gachapin' : [
+  (wind, 'https://gbf.wiki/images/7/7b/Npc_zoom_3040248000_01.png'),
+  (wind, 'https://gbf.wiki/images/9/9a/Npc_zoom_3040248000_02.png'),
+  (grey, 'https://gbf.wiki/images/3/32/Gachapin_%26_Mukku_%28Gachapin%29.png')
+  ],
+  'galadar' : [
+  (earth, 'https://gbf.wiki/images/1/13/Npc_zoom_3020004000_01.png'),
+  (earth, 'https://gbf.wiki/images/f/f0/Npc_zoom_3020004000_02.png'),
+  (earth, 'https://gbf.wiki/images/0/07/Npc_zoom_3030094000_01.png'),
+  (earth, 'https://gbf.wiki/images/4/4d/Npc_zoom_3030094000_02.png')
+  ],
+  'garma' : [
+  (earth, 'https://gbf.wiki/images/4/47/Npc_zoom_3020027000_01.png'),
+  (earth, 'https://gbf.wiki/images/9/94/Npc_zoom_3020027000_02.png')
+  ],
+  'gawain' : [
+  (wind, 'https://gbf.wiki/images/3/3d/Npc_zoom_3040000000_01.png'),
+  (wind, 'https://gbf.wiki/images/6/63/Npc_zoom_3040000000_02.png'),
+  (wind, 'https://gbf.wiki/images/6/69/Npc_zoom_3040000000_03.png'),
+  (wind, 'https://gbf.wiki/images/0/09/Npc_zoom_3040000000_81.png')
+  ],
+  'gayne' : [
+  (earth, 'https://gbf.wiki/images/3/3d/Npc_zoom_3030009000_01.png'),
+  (earth, 'https://gbf.wiki/images/3/3e/Npc_zoom_3030009000_02.png'),
+  (earth, 'https://gbf.wiki/images/4/48/Npc_zoom_3030009000_03.png')
+  ],
+  'geisenborger' : [
+  (light, 'https://gbf.wiki/images/f/f1/Npc_zoom_3040162000_01.png'),
+  (light, 'https://gbf.wiki/images/f/ff/Npc_zoom_3040162000_02.png')
+  ],
+  'gemini sunrise' : [
+  (fire, 'https://gbf.wiki/images/5/53/GeminiSunrise_A.png'),
+  (fire, 'https://gbf.wiki/images/e/e5/GeminiSunrise_B.png')
+  ],
+  'ghandagoza' : [
+  (fire, 'https://gbf.wiki/images/4/4c/Npc_zoom_3040052000_01.png'),
+  (fire, 'https://gbf.wiki/images/0/09/Npc_zoom_3040052000_02.png'),
+  (fire, 'https://gbf.wiki/images/5/51/Npc_zoom_3040052000_03.png'),
+  (fire, 'https://gbf.wiki/images/7/73/Npc_zoom_3030201000_01.png'),
+  (fire, 'https://gbf.wiki/images/d/d3/Npc_zoom_3030201000_02.png')
+  ],
+  'goblin mage' : [
+  (wind, 'https://gbf.wiki/images/7/7e/Npc_zoom_3030100000_01.png'),
+  (wind, 'https://gbf.wiki/images/b/b5/Npc_zoom_3030100000_02.png'),
+  (wind, 'https://gbf.wiki/images/1/17/Npc_zoom_3030100000_81.png')
+  ],
+  'grea' : [
+  (fire, 'https://gbf.wiki/images/2/22/Npc_zoom_3040130000_01.png'),
+  (fire, 'https://gbf.wiki/images/b/ba/Npc_zoom_3040130000_02.png'),
+  (fire, 'https://gbf.wiki/images/4/4f/Npc_zoom_3030204000_01.png'),
+  (fire, 'https://gbf.wiki/images/6/62/Npc_zoom_3030204000_02.png'),
+  (water, 'https://gbf.wiki/images/5/55/Npc_zoom_3040179000_01.png'),
+  (water, 'https://gbf.wiki/images/1/15/Npc_zoom_3040179000_02.png')
+  ],
+  'grimnir' : [
+  (wind, 'https://gbf.wiki/images/a/aa/Npc_zoom_3040212000_01.png'),
+  (wind, 'https://gbf.wiki/images/a/a1/Npc_zoom_3040212000_02.png'),
+  (wind, 'https://gbf.wiki/images/9/93/Npc_zoom_3040212000_81.png'),
+  (wind, 'https://gbf.wiki/images/d/dc/Npc_zoom_3040261000_01.png'),
+  (wind, 'https://gbf.wiki/images/0/06/Npc_zoom_3040261000_02.png'),
+  (wind, 'https://gbf.wiki/images/f/ff/Npc_zoom_3040261000_02_1.png')
+  ],
+  'haaselia' : [
+  (water, 'https://gbf.wiki/images/c/ce/Npc_zoom_3040168000_01.png'),
+  (water, 'https://gbf.wiki/images/4/47/Npc_zoom_3040168000_02.png')
+  ],
+  'hallessena' : [
+  (earth, 'https://gbf.wiki/images/6/6d/Npc_zoom_3040079000_01.png'),
+  (earth, 'https://gbf.wiki/images/1/1a/Npc_zoom_3040079000_02.png'),
+  (earth, 'https://gbf.wiki/images/1/10/Npc_zoom_3040079000_03.png'),
+  (light, 'https://gbf.wiki/images/9/97/Npc_zoom_3040240000_01.png'),
+  (light, 'https://gbf.wiki/images/b/b4/Npc_zoom_3040240000_02.png'),
+  (light, 'https://gbf.wiki/images/e/e1/Npc_zoom_3040240000_81.png')
+  ],
+  'halluel and malluel' : [
+  (light, 'https://gbf.wiki/images/6/6a/Halluel_and_Malluel_%28Summer%29_A.png'),
+  (light, 'https://gbf.wiki/images/6/6d/Halluel_and_Malluel_%28Summer%29_B.png')
+  ],
+  'haohmaru' : [
+  (wind, 'https://gbf.wiki/images/7/77/Npc_zoom_3030173000_01.png'),
+  (wind, 'https://gbf.wiki/images/a/aa/Npc_zoom_3030173000_02.png')
+  ],
+  'hazen' : [
+  (wind, 'https://gbf.wiki/images/f/f0/Npc_zoom_3020009000_01.png'),
+  (wind, 'https://gbf.wiki/images/7/71/Npc_zoom_3020009000_02.png'),
+  (wind, 'https://gbf.wiki/images/0/0c/Npc_zoom_3030066000_01.png'),
+  (wind, 'https://gbf.wiki/images/2/29/Npc_zoom_3030066000_02.png')
+  ],
+  'helel ben shalem' : [
+  (dark, 'https://gbf.wiki/images/c/cf/Npc_zoom_3040251000_01.png'),
+  (dark, 'https://gbf.wiki/images/3/3a/Npc_zoom_3040251000_02.png')
+  ],
+  'heles' : [
+  (fire, 'https://gbf.wiki/images/e/e1/Npc_zoom_3040060000_01.png'),
+  (fire, 'https://gbf.wiki/images/5/50/Npc_zoom_3040060000_02.png'),
+  (light, 'https://gbf.wiki/images/c/c2/Npc_zoom_3040091000_01.png'),
+  (light, 'https://gbf.wiki/images/7/79/Npc_zoom_3040091000_02.png'),
+  (light, 'https://gbf.wiki/images/8/8d/Npc_zoom_3040091000_91.png'),
+  (wind, 'https://gbf.wiki/images/2/23/Npc_zoom_3040208000_01.png'),
+  (wind, 'https://gbf.wiki/images/7/7d/Npc_zoom_3040208000_02.png'),
+  (grey, 'https://gbf.wiki/images/1/11/Heles_Irestill_Evening_Dress.png')
+  ],
+  'helnar' : [
+  (wind, 'https://gbf.wiki/images/a/a7/Npc_zoom_3030004000_01.png'),
+  (wind, 'https://gbf.wiki/images/c/c5/Npc_zoom_3030004000_02.png'),
+  (wind, 'https://gbf.wiki/images/5/5f/Npc_zoom_3030004000_03.png'),
+  (wind, 'https://gbf.wiki/images/d/d4/Npc_zoom_3030031000_01.png'),
+  (wind, 'https://gbf.wiki/images/8/8f/Npc_zoom_3030031000_02.png')
+  ],
+  'herja' : [
+  (earth, 'https://gbf.wiki/images/4/44/Npc_zoom_3020001000_01.png'),
+  (earth, 'https://gbf.wiki/images/b/b6/Npc_zoom_3020001000_02.png'),
+  (earth, 'https://gbf.wiki/images/c/c5/Npc_zoom_3030175000_01.png'),
+  (earth, 'https://gbf.wiki/images/8/81/Npc_zoom_3030175000_02.png')
+  ],
+  'ilsa' : [
+  (earth, 'https://gbf.wiki/images/a/af/Npc_zoom_3040148000_01.png'),
+  (earth, 'https://gbf.wiki/images/4/4d/Npc_zoom_3040148000_02.png'),
+  (light, 'https://gbf.wiki/images/4/4e/Npc_zoom_3040258000_01.png'),
+  (light, 'https://gbf.wiki/images/8/87/Npc_zoom_3040258000_02.png'),
+  (fire, 'https://gbf.wiki/images/b/b6/Npc_zoom_3040177000_01.png'),
+  (fire, 'https://gbf.wiki/images/6/68/Npc_zoom_3040177000_02.png')
+  ],
+  'io' : [
+  (water, 'https://gbf.wiki/images/8/8e/Npc_zoom_3030006000_01.png'),
+  (water, 'https://gbf.wiki/images/a/a1/Npc_zoom_3030006000_02.png'),
+  (water, 'https://gbf.wiki/images/4/4b/Npc_zoom_3030006000_03.png'),
+  (water, 'https://gbf.wiki/images/f/f5/Npc_zoom_3030006000_81.png'),
+  (light, 'https://gbf.wiki/images/f/f6/Npc_zoom_3040065000_01.png'),
+  (light, 'https://gbf.wiki/images/0/01/Npc_zoom_3040065000_02.png'),
+  (fire, 'https://gbf.wiki/images/7/78/Npc_zoom_3040015000_01.png'),
+  (fire, 'https://gbf.wiki/images/0/01/Npc_zoom_3040015000_02.png'),
+  (fire, 'https://gbf.wiki/images/5/56/Npc_zoom_3040015000_91.png'),
+  (grey, 'https://gbf.wiki/images/b/b1/IoKimono.png'),
+  (grey, 'https://gbf.wiki/images/f/ff/Io_Rainbow_Roller.png'),
+  ],
+  'ippatsu' : [
+  (fire, 'https://gbf.wiki/images/9/98/Npc_zoom_3020038000_01.png'),
+  (fire, 'https://gbf.wiki/images/d/de/Npc_zoom_3020038000_02.png'),
+  (fire, 'https://gbf.wiki/images/b/b1/Npc_zoom_3030232000_01.png'),
+  (fire, 'https://gbf.wiki/images/3/3c/Npc_zoom_3030232000_02.png'),
+  (fire, 'https://gbf.wiki/images/9/9b/Npc_zoom_3020060000_01.png'),
+  (fire, 'https://gbf.wiki/images/7/76/Npc_zoom_3020060000_02.png')
+  ],
+  'izmir' : [
+  (water, 'https://gbf.wiki/images/2/2c/Npc_zoom_3040100000_01.png'),
+  (water, 'https://gbf.wiki/images/b/b8/Npc_zoom_3040100000_02.png'),
+  (water, 'https://gbf.wiki/images/8/86/Npc_zoom_3040126000_01.png'),
+  (water, 'https://gbf.wiki/images/0/04/Npc_zoom_3040126000_02.png')
+  ],
+  'izuminokami kanesada' : [
+  (fire, 'https://gbf.wiki/images/3/33/Npc_zoom_3030205000_01.png'),
+  (fire, 'https://gbf.wiki/images/6/68/Npc_zoom_3030205000_02.png')
+  ],
   'monika' : [
   (wind,'https://i.imgur.com/3g2iFbF.png'), # fix links
   (wind,'https://i.imgur.com/qKCZeDu.png'),
