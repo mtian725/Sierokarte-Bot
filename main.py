@@ -1,5 +1,5 @@
 # Python libraries
-import json
+# import json
 import asyncio
 from datetime import datetime
 from pytz import timezone
@@ -21,8 +21,8 @@ jp_tz = timezone('Japan')
 uncap_targets = {}
 global_teams = {}
 
-with open("config.json", "r") as read_file:
-    env = json.load(read_file)
+#with open("config.json", "r") as read_file:
+#    env = json.load(read_file)
 
 client = commands.Bot(command_prefix='!')
 client.remove_command('help')
@@ -535,4 +535,4 @@ async def clearteam(ctx):
 
 
 # Actual bot ID do NOT change
-client.run(env['token'])
+client.run(token) #env['token'])
