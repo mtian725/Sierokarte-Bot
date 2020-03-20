@@ -289,6 +289,7 @@ async def art(ctx, *args):
         name = ' '.join(args).lower()
 
         # finds the name/closest match
+        await ctx.send(bisect.bisect_left(imagelinks.names, name))
         chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
         name = chara
