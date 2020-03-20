@@ -4,8 +4,10 @@ import asyncio
 from datetime import datetime
 from pytz import timezone
 import pytz
+import os
 import bisect
 import random
+import os
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -535,4 +537,4 @@ async def clearteam(ctx):
 
 
 # Actual bot ID do NOT change
-client.run(token) #env['token'])
+client.run(os.environ['token']) #env['token'])
