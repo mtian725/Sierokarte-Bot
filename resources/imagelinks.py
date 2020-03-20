@@ -431,7 +431,7 @@ images = {
   (light, 'https://gbf.wiki/images/3/3e/Conan_Edogawa_A.png'),
   (light, 'https://gbf.wiki/images/5/5d/Npc_zoom_3040157000_02.png')
   ],
-  '' : [
+  'cordelia' : [
   (light, 'https://gbf.wiki/images/8/82/Npc_zoom_3020064000_01.png'),
   (light, 'https://gbf.wiki/images/b/bd/Npc_zoom_3020064000_02.png'),
   (light, 'https://gbf.wiki/images/a/a6/Npc_zoom_3030269000_01.png'),
