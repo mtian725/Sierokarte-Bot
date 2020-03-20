@@ -534,7 +534,7 @@ async def clearteam(ctx):
     sent = await ctx.send("Cleared your team!")
 
 
-
-
 # Actual bot ID do NOT change
-client.run(os.environ['token']) #env['token'])
+print(os.environ['token'])
+client.run(os.environ['token'])
+#env['token'])
