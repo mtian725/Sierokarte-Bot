@@ -5,6 +5,7 @@ from datetime import datetime
 from pytz import timezone
 import pytz
 import bisect
+import random
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -288,8 +289,11 @@ async def art(ctx, *args):
     else:
         name = ' '.join(args).lower()
 
-        # finds the name/closest match
-        chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
+        if name == 'random':
+            chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
+        else:
+            # finds the name/closest match
+            chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
         name = chara
         num_images = len(imagelinks.images[name])
