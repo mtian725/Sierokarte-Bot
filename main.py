@@ -282,14 +282,14 @@ async def time(ctx, *args):
     else:
         return
 
-@client.command(aliases=['a'])
+@client.command(aliases=['a']) # add tag feature ie !a primals -> list all primals only display/create embed if there only one source
 async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
         name = ' '.join(args).lower()
 
-        if name == 'random':
+        if name == 'random': # turn this into a function ^ put in same file as tags
             chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
         else:
             # finds the name/closest match
