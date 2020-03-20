@@ -228,6 +228,42 @@ images = {
   (dark, 'https://gbf.wiki/images/e/e5/Npc_zoom_3040137000_01.png'),
   (dark, 'https://gbf.wiki/images/6/68/Npc_zoom_3040137000_02.png')
   ],
+  'baal' : [
+  (earth, 'https://gbf.wiki/images/f/f2/Npc_zoom_3040215000_01.png'),
+  (earth, 'https://gbf.wiki/images/c/cc/Npc_zoom_3040215000_02.png'),
+  (earth, 'https://gbf.wiki/images/c/cb/Npc_zoom_3040215000_81.png')
+  ],
+  'bakura' : [
+  (dark, 'https://gbf.wiki/images/1/1c/Npc_zoom_3020066000_01.png'),
+  (dark, 'https://gbf.wiki/images/6/6b/Npc_zoom_3020066000_02.png')
+  ],
+  'balurga' : [
+  (earth, 'https://gbf.wiki/images/7/79/Npc_zoom_3020055000_01.png'),
+  (earth, 'https://gbf.wiki/images/b/b6/Npc_zoom_3020055000_02.png')
+  ],
+  'baotorda' : [
+  (light, 'https://gbf.wiki/images/0/04/Npc_zoom_3030053000_01.png'),
+  (light, 'https://gbf.wiki/images/4/40/Npc_zoom_3030053000_02.png'),
+  (light, 'https://gbf.wiki/images/2/21/Npc_zoom_3040124000_01.png'),
+  (light, 'https://gbf.wiki/images/f/fc/Npc_zoom_3040124000_02.png')
+  ],
+  'barawa' : [
+  (fire, ''),
+  (fire, ''),
+  (fire, ''),
+  (fire, ''),
+  (light, ''),
+  (light, '')
+  ],
+  '' : [
+
+  ],
+  '' : [
+
+  ],
+  '' : [
+
+  ],
   'monika' : [
   (wind,'https://i.imgur.com/3g2iFbF.png'), # fix links
   (wind,'https://i.imgur.com/qKCZeDu.png'),
