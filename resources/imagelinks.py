@@ -282,6 +282,175 @@ images = {
   (light, 'https://gbf.wiki/images/a/a6/Npc_zoom_3030269000_01.png'),
   (light, 'https://gbf.wiki/images/f/f9/Npc_zoom_3030269000_02.png')
   ],
+  'cagliostro' : [
+  (earth, 'https://gbf.wiki/images/f/ff/Npc_zoom_3040009000_01.png'),
+  (earth, 'https://gbf.wiki/images/b/b5/Npc_zoom_3040009000_02.png'),
+  (earth, 'https://gbf.wiki/images/0/04/Npc_zoom_3040009000_03.png'),
+  (dark, 'https://gbf.wiki/images/8/88/Npc_zoom_3040120000_01.png'),
+  (dark, 'https://gbf.wiki/images/3/39/Npc_zoom_3040120000_02.png'),
+  (dark, 'https://gbf.wiki/images/8/8a/Npc_zoom_3030189000_01.png'),
+  (dark, 'https://gbf.wiki/images/c/c3/Npc_zoom_3030189000_02.png'),
+  (dark, 'https://gbf.wiki/images/a/a9/Npc_zoom_3040062000_01.png'),
+  (dark, 'https://gbf.wiki/images/3/34/Npc_zoom_3040062000_02.png'),
+  (water, 'https://gbf.wiki/images/a/af/Npc_zoom_3040225000_01.png'),
+  (water, 'https://gbf.wiki/images/3/36/Npc_zoom_3040225000_02.png'),
+  (water, 'https://gbf.wiki/images/b/ba/Npc_zoom_3040225000_81.png'),
+  (grey, 'https://gbf.wiki/images/5/58/Cagliostro_Alchemic_Gothica.png'),
+  (grey, 'https://gbf.wiki/images/1/1d/Cagliosled.png'),
+  (grey, 'https://gbf.wiki/images/4/48/CagliostroIdol.png'),
+  (grey, 'https://gbf.wiki/images/7/72/Cagliostro_Super_Jolly_Pretty_Alchemist.png'),
+  (grey, 'https://gbf.wiki/images/1/1e/CagliostroUniform.png'),
+  ],
+  'cailana' : [
+  (water, 'https://gbf.wiki/images/1/15/Npc_zoom_3020062000_01.png'),
+  (water, 'https://gbf.wiki/images/e/ed/Npc_zoom_3020062000_02.png'),
+  (water, 'https://gbf.wiki/images/a/a4/Npc_zoom_3030251000_01.png'),
+  (water, 'https://gbf.wiki/images/3/3a/Npc_zoom_3030251000_02.png')
+  ],
+  'caim' : [
+  (earth, 'https://gbf.wiki/images/d/d3/Npc_zoom_3040164000_01.png'),
+  (earth, 'https://gbf.wiki/images/4/45/Npc_zoom_3040164000_02.png')
+  ],
+  'cain' : [
+  (earth, 'https://gbf.wiki/images/4/4c/Npc_zoom_3030184000_01.png'),
+  (earth, 'https://gbf.wiki/images/b/bc/Npc_zoom_3030184000_02.png'),
+  (earth, 'https://gbf.wiki/images/5/57/Npc_zoom_3030184000_81.png'),
+  (earth, 'https://gbf.wiki/images/9/9f/Npc_zoom_3040171000_01.png'),
+  (earth, 'https://gbf.wiki/images/1/15/Npc_zoom_3040171000_02.png')
+  ],
+  'camieux' : [
+  (fire, 'https://gbf.wiki/images/7/7d/Npc_zoom_3020032000_01.png'),
+  (fire, 'https://gbf.wiki/images/6/6f/Npc_zoom_3020032000_02.png'),
+  (earth, 'https://gbf.wiki/images/2/27/Npc_zoom_3020047000_01.png'),
+  (earth, 'https://gbf.wiki/images/c/ca/Npc_zoom_3020047000_02.png'),
+  (water, 'https://gbf.wiki/images/7/7c/Npc_zoom_3030152000_01.png'),
+  (water, 'https://gbf.wiki/images/8/87/Npc_zoom_3030152000_02.png')
+  ],
+  'carmelina' : [
+  (wind, 'https://gbf.wiki/images/1/1d/Npc_zoom_3040042000_01.png'),
+  (wind, 'https://gbf.wiki/images/8/88/Npc_zoom_3040042000_02.png'),
+  (earth, 'https://gbf.wiki/images/6/6a/Npc_zoom_3030240000_01.png'),
+  (earth, 'https://gbf.wiki/images/0/03/Npc_zoom_3030240000_02.png')
+  ],
+  'carren' : [
+  (fire, 'https://gbf.wiki/images/c/cb/Npc_zoom_3030046000_01.png'),
+  (fire, 'https://gbf.wiki/images/d/dc/Npc_zoom_3030046000_02.png'),
+  (fire, 'https://gbf.wiki/images/6/66/Npc_zoom_3030200000_01.png'),
+  (fire, 'https://gbf.wiki/images/9/90/Npc_zoom_3030200000_02.png'),
+  (fire, 'https://gbf.wiki/images/7/70/Npc_zoom_3030200000_81.png')
+  ],
+  'cassius' : [
+  (dark, 'https://gbf.wiki/images/2/22/Npc_zoom_3030262000_01.png'),
+  (dark, 'https://gbf.wiki/images/1/1d/Npc_zoom_3030262000_02.png'),
+  (fire, 'https://gbf.wiki/images/c/cb/Npc_zoom_3030273000_01.png'),
+  (fire, 'https://gbf.wiki/images/0/04/Npc_zoom_3030273000_02.png'),
+  (fire, 'https://gbf.wiki/images/d/d7/Npc_zoom_3030273000_81.png')
+  ],
+  'catherine' : [
+  (earth, 'https://gbf.wiki/images/f/f4/Npc_zoom_3040074000_01.png'),
+  (earth, 'https://gbf.wiki/images/e/e6/Npc_zoom_3040074000_02.png'),
+  (earth, 'https://gbf.wiki/images/c/c4/Npc_zoom_3030264000_01.png'),
+  (earth, 'https://gbf.wiki/images/f/f1/Npc_zoom_3030264000_02.png')
+  ],
+  'cecile' : [
+  (fire, 'https://gbf.wiki/images/0/0e/Npc_zoom_3030146000_01.png'),
+  (fire, 'https://gbf.wiki/images/a/a4/Npc_zoom_3030146000_02.png'),
+  (fire, 'https://gbf.wiki/images/d/d5/Npc_zoom_3030146000_81.png')
+  ],
+  'cerberus' : [
+  (dark, 'https://gbf.wiki/images/9/9e/Npc_zoom_3040016000_01.png'),
+  (dark, 'https://gbf.wiki/images/4/46/Npc_zoom_3040016000_02.png')
+  ],
+  'ceylan' : [
+  (light, 'https://gbf.wiki/images/c/ce/Npc_zoom_3030074000_01.png'),
+  (light, 'https://gbf.wiki/images/d/dc/Npc_zoom_3030074000_02.png')
+  ],
+  'chariocexvii' : [
+  (fire, 'https://gbf.wiki/images/1/16/Npc_zoom_3040144000_01.png'),
+  (fire, 'https://gbf.wiki/images/9/91/Npc_zoom_3040144000_02.png'),
+  (fire, 'https://gbf.wiki/images/e/e7/Npc_zoom_3040144000_81.png')
+  ],
+  'charlotta' : [
+  (water, 'https://gbf.wiki/images/b/b6/Npc_zoom_3040010000_01.png'),
+  (water, 'https://gbf.wiki/images/1/1d/Npc_zoom_3040010000_02.png'),
+  (water, 'https://gbf.wiki/images/d/dd/Npc_zoom_3040010000_03.png'),
+  (water, 'https://gbf.wiki/images/9/91/Npc_zoom_3040010000_81.png'),
+  (wind, 'https://gbf.wiki/images/9/95/Npc_zoom_3030192000_01.png'),
+  (wind, 'https://gbf.wiki/images/c/ce/Npc_zoom_3030192000_02.png'),
+  (light, 'https://gbf.wiki/images/f/f1/Npc_zoom_3040020000_01.png'),
+  (light, 'https://gbf.wiki/images/3/32/Npc_zoom_3040020000_02.png'),
+  (light, 'https://gbf.wiki/images/0/09/Npc_zoom_3040194000_01.png'),
+  (light, 'https://gbf.wiki/images/9/94/Npc_zoom_3040194000_02.png'),
+  (water, 'https://gbf.wiki/images/2/22/Npc_zoom_3030198000_01.png'),
+  (water, 'https://gbf.wiki/images/2/28/Npc_zoom_3030198000_02.png'),
+  (grey, 'https://gbf.wiki/images/f/f2/Charlotta_Petalfall_Kimono.png')
+  ],
+  'chatnoir' : [
+  (water, 'https://gbf.wiki/images/7/71/Npc_zoom_3040093000_01.png'),
+  (water, 'https://gbf.wiki/images/3/3a/Npc_zoom_3040093000_02.png'),
+  (water, 'https://gbf.wiki/images/4/4d/Npc_zoom_3040093000_81.png')
+  ],
+  'chloe' : [
+  (wind, 'https://gbf.wiki/images/c/c2/Npc_zoom_3020059000_01.png'),
+  (wind, 'https://gbf.wiki/images/4/4e/Npc_zoom_3020059000_02.png'),
+  (wind, 'https://gbf.wiki/images/d/d0/Npc_zoom_3030202000_01.png'),
+  (wind, 'https://gbf.wiki/images/8/88/Npc_zoom_3030202000_02.png')
+  ],
+  'christina' : [
+  (wind, 'https://gbf.wiki/images/9/95/Npc_zoom_3040018000_01.png'),
+  (wind, 'https://gbf.wiki/images/3/34/Npc_zoom_3040018000_02.png')
+  ],
+  'chun-li' : [
+  (water, 'https://gbf.wiki/images/3/3e/ChunLi_A.png'),
+  (water, 'https://gbf.wiki/images/b/b8/ChunLi_B.png')
+  ],
+  'clarisse' : [
+  (fire, 'https://gbf.wiki/images/9/9a/Npc_zoom_3040046000_01.png'),
+  (fire, 'https://gbf.wiki/images/c/cd/Npc_zoom_3040046000_02.png'),
+  (fire, 'https://gbf.wiki/images/c/c3/Npc_zoom_3040046000_81.png'),
+  (earth, 'https://gbf.wiki/images/5/54/Npc_zoom_3040067000_01.png'),
+  (earth, 'https://gbf.wiki/images/a/ac/Npc_zoom_3040067000_02.png'),
+  (light, 'https://gbf.wiki/images/8/8d/Npc_zoom_3040121000_01.png'),
+  (light, 'https://gbf.wiki/images/9/98/Npc_zoom_3040121000_02.png'),
+  (dark, 'https://gbf.wiki/images/4/47/Npc_zoom_3040206000_01.png'),
+  (dark, 'https://gbf.wiki/images/b/b6/Npc_zoom_3040206000_02.png'),
+  (dark, 'https://gbf.wiki/images/2/21/Npc_zoom_3040206000_81.png'),
+  (grey, 'https://gbf.wiki/images/f/f1/Soleil_Blanc_%28Clarisse%29.png')
+  ],
+  'claudia' : [
+  (earth, 'https://gbf.wiki/images/b/b8/Npc_zoom_3030057000_01.png'),
+  (earth, 'https://gbf.wiki/images/a/a0/Npc_zoom_3030057000_02.png'),
+  (light, 'https://gbf.wiki/images/9/9a/Npc_zoom_3040134000_01.png'),
+  (light, 'https://gbf.wiki/images/6/66/Npc_zoom_3040134000_02.png')
+  ],
+  'colossus' : [
+  (fire, 'https://gbf.wiki/images/6/69/Npc_zoom_3040235000_01.png'),
+  (fire, 'https://gbf.wiki/images/e/e3/Npc_zoom_3040235000_02.png')
+  ],
+  'conanedogawa' : [
+  (light, 'https://gbf.wiki/images/3/3e/Conan_Edogawa_A.png'),
+  (light, 'https://gbf.wiki/images/5/5d/Npc_zoom_3040157000_02.png')
+  ],
+  '' : [
+  (light, 'https://gbf.wiki/images/8/82/Npc_zoom_3020064000_01.png'),
+  (light, 'https://gbf.wiki/images/b/bd/Npc_zoom_3020064000_02.png'),
+  (light, 'https://gbf.wiki/images/a/a6/Npc_zoom_3030269000_01.png'),
+  (light, 'https://gbf.wiki/images/f/f9/Npc_zoom_3030269000_02.png')
+  ],
+  'cucouroux' : [
+  (fire, 'https://gbf.wiki/images/7/76/Npc_zoom_3030155000_01.png'),
+  (fire, 'https://gbf.wiki/images/5/5e/Npc_zoom_3030155000_02.png'),
+  (water, 'https://gbf.wiki/images/9/9d/Npc_zoom_3040159000_01.png'),
+  (water, 'https://gbf.wiki/images/d/d1/Npc_zoom_3040159000_02.png'),
+  (water, 'https://gbf.wiki/images/f/f8/Npc_zoom_3040159000_81.png'),
+  (grey, 'https://gbf.wiki/images/5/50/Cucouroux_Gunsmith_Workwear.png')
+  ],
+  'cureblackandcurewhite' : [
+  (light, 'https://gbf.wiki/images/b/b9/Npc_zoom_3040188000_01.png'),
+  (light, 'https://gbf.wiki/images/3/39/Cure_Black_A.png'),
+  (light, 'https://gbf.wiki/images/3/3f/Cure_White_A.png'),
+  (light, 'https://gbf.wiki/images/d/dd/Npc_zoom_3040188000_02.png')
+  ],
   'monika' : [
   (wind,'https://i.imgur.com/3g2iFbF.png'), # fix links
   (wind,'https://i.imgur.com/qKCZeDu.png'),
