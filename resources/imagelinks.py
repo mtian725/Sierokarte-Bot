@@ -462,4 +462,4 @@ images = {
   ]
 }
 
-names = list(test_dict.keys())
+names = list(images.keys())
