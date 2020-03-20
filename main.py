@@ -282,45 +282,47 @@ async def art(ctx, *args):
         await ctx.send('Syntax: **!art <character name>**')
     else:
         name = ''.join(args).lower()
-        if name in imagelinks.images:
-            num_images = len(imagelinks.images[name])
-            pos = 0
 
-            display = discord.Embed(
-                title = ' '.join(args).upper(),
-                color = imagelinks.images[name][0][0]
-            )
-            display.set_image(url = imagelinks.images[name][0][1])
-            display.set_footer(text = 'click image for large display')
-            sent = await ctx.send(embed=display)
+        # finds the name/closest match
+        chara = imagelinks[bisect.bisect_left(imagelinks.names, name)]
 
-            await sent.add_reaction('⬅️')
-            await sent.add_reaction('➡️')
+        await ctx.send(chara)
+        # num_images = len(imagelinks.images[name])
+        # pos = 0
+        #
+        # display = discord.Embed(
+        #     title = ' '.join(args).upper(),
+        #     color = imagelinks.images[name][0][0]
+        # )
+        # display.set_image(url = imagelinks.images[name][0][1])
+        # display.set_footer(text = 'click image for large display')
+        # sent = await ctx.send(embed=display)
+        #
+        # await sent.add_reaction('⬅️')
+        # await sent.add_reaction('➡️')
+        #
+        # author = ctx.author
+        #
+        # while True:
+        #     try:
+        #         def react_check(reaction, user):
+        #             return (user == author and reaction.message.id == sent.id and
+        #             (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+        #
+        #         reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+        #     except asyncio.TimeoutError:
+        #         break
+        #     else:
+        #         if str(reaction.emoji) == '⬅️':
+        #             pos = pos - 1
+        #         if str(reaction.emoji) == '➡️':
+        #             pos = pos + 1
+        #
+        #         display.set_image(url = imagelinks.images[name][pos % num_images][1])
+        #         display.color = imagelinks.images[name][pos % num_images][0]
+        #         await sent.edit(embed=display)
 
-            author = ctx.author
-
-            while True:
-                try:
-                    def react_check(reaction, user):
-                        return (user == author and reaction.message.id == sent.id and
-                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
-
-                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
-                except asyncio.TimeoutError:
-                    break
-                else:
-                    if str(reaction.emoji) == '⬅️':
-                        pos = pos - 1
-                    if str(reaction.emoji) == '➡️':
-                        pos = pos + 1
-
-                    display.set_image(url = imagelinks.images[name][pos % num_images][1])
-                    display.color = imagelinks.images[name][pos % num_images][0]
-                    await sent.edit(embed=display)
-
-            return
-        else:
-            await ctx.send('*Character not found*')
+        return
 
 @client.command()
 async def team(ctx):
