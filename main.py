@@ -286,7 +286,7 @@ async def time(ctx, *args):
         return
 
 @client.command(aliases=['a']) # add tag feature ie !a primals -> list all primals only display/create embed if there only one source
-async def art(ctx, *args):
+async def art(ctx, *args): # catch out of bounds error
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
