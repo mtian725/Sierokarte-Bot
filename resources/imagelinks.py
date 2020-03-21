@@ -1537,7 +1537,7 @@ images = {
   (fire, 'https://gbf.wiki/images/a/aa/Npc_zoom_3040059000_03.png'),
   (earth, 'https://gbf.wiki/images/f/fc/Npc_zoom_3030048000_01.png'),
   (earth, 'https://gbf.wiki/images/1/17/Npc_zoom_3030048000_02.png'),
-  (grey, 'https://gbf.wiki/images/2/2c/RackamHakama.png').
+  (grey, 'https://gbf.wiki/images/2/2c/RackamHakama.png'),
   (grey, 'https://gbf.wiki/images/3/34/Rackam_BachaRackam.png')
   ],
   'randall' : [
