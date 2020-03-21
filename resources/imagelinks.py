@@ -2219,21 +2219,21 @@ images = {
   (grey, 'https://gbf.wiki/images/1/17/Zooey_Duel_Cosmos.png'),
   (grey, 'https://gbf.wiki/images/5/53/Keeper_on_a_Mission.png'),
   ],
-  'm\'s first-years' : [
+  'muse first-years' : [
   (wind, 'https://gbf.wiki/images/0/06/Npc_zoom_3040229000_01.png'),
   (wind, 'https://gbf.wiki/images/3/32/Rin_Hoshizora_A.png'),
   (wind, 'https://gbf.wiki/images/0/0e/Hanayo_Koizumi_A.png'),
   (wind, 'https://gbf.wiki/images/9/97/Maki_Nishikino_A.png'),
   (wind, 'https://gbf.wiki/images/0/05/Npc_zoom_3040229000_02.png')
-  ],
-  'm\'s second-years' : [
+  ], # make sure you can ge it with all ways to reference
+  'muse second-years' : [
   (light, 'https://gbf.wiki/images/d/d7/Npc_zoom_3040230000_01.png'),
   (light, 'https://gbf.wiki/images/9/9a/Umi_Sonoda_A.png'),
   (light, 'https://gbf.wiki/images/a/ac/Honoka_Kosaka_A.png'),
   (light, 'https://gbf.wiki/images/2/22/Kotori_Minami_A.png'),
   (light, 'https://gbf.wiki/images/f/f2/Npc_zoom_3040230000_02.png')
   ],
-  'm\'s third-years' : [
+  'muse third-years' : [
   (dark, 'https://gbf.wiki/images/0/0d/Npc_zoom_3040231000_01.png'),
   (dark, 'https://gbf.wiki/images/5/56/Eli_Ayase_A.png'),
   (dark, 'https://gbf.wiki/images/4/4d/Nico_Yazawa_A.png'),
