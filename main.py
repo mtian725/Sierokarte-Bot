@@ -285,6 +285,7 @@ async def time(ctx, *args):
     else:
         return
 
+#revise once you get search working
 @client.command(aliases=['a']) # add tag feature ie !a primals -> list all primals only display/create embed if there only one source
 async def art(ctx, *args): # catch out of bounds error
     if not args:
@@ -337,6 +338,11 @@ async def art(ctx, *args): # catch out of bounds error
                 await sent.edit(embed=display)
 
         return
+
+@client.command()
+async def test(ctx, *args):
+    
+    return
 
 @client.command()
 async def team(ctx):
