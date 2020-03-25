@@ -352,7 +352,7 @@ async def test(ctx, *args):
 
     msg = msg + '\n'
     for i in list:
-        msg = msg + list + '\n'
+        msg = msg + i + '\n'
 
     await ctx.send(msg)
     return
