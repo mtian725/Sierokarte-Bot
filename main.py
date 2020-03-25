@@ -14,7 +14,7 @@ from googlesearch import search
 import discord
 from discord.ext import commands
 # Our libraries
-from resources import (exceptions, messages, uncap, imagelinks)
+from resources import (exceptions, messages, uncap, imagelinks, traits)
 import calculator
 #Add mode modules as we add more
 
@@ -341,7 +341,7 @@ async def art(ctx, *args): # catch out of bounds error
 
 @client.command()
 async def test(ctx, *args):
-    
+
     return
 
 @client.command()

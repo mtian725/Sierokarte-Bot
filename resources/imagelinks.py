@@ -2007,6 +2007,7 @@ images = {
   (water, 'https://gbf.wiki/images/d/d7/Npc_zoom_3030047000_02.png'),
   (water, 'https://gbf.wiki/images/6/66/Npc_zoom_3040117000_01.png'),
   (water, 'https://gbf.wiki/images/c/c9/Npc_zoom_3040117000_02.png'),
+  (water, 'https://gbf.wiki/images/e/e6/Npc_zoom_3040117000_03.png'),
   (water, 'https://gbf.wiki/images/3/3d/Npc_zoom_3040117000_81.png'),
   (earth, 'https://gbf.wiki/images/1/16/Npc_zoom_3030272000_01.png'),
   (earth, 'https://gbf.wiki/images/6/60/Npc_zoom_3030272000_02.png'),
