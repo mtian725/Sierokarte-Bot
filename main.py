@@ -340,15 +340,22 @@ async def art(ctx, *args): # catch out of bounds error
         return
 
 @client.command()
-async def test(ctx, *args):
+async def traits(ctx, *args):
     list = {}
+    msg = 'Characters that are : '
     for i in args:
         if list == {}:
             list = traits.tags[i]
         else:
             list = list & traits.tags[i]
 
-    await ctx.send(str(list))
+        msg = msg + '**' + i + '** '
+
+    msg = msg + '\n'
+    for i in list:
+        msg = msg + list + '\n'
+
+    await ctx.send(msg)
     return
 
 @client.command()
