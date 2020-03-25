@@ -365,7 +365,7 @@ tags = {
     'Jamil',
     'Jamil (Dark)',
     'Jasmine (SR)',
-    'Jeanne d'Arc (SR)',
+    'Jeanne d\'Arc (SR)',
     'Jessica',
     'Jessica (Event)',
     'Jessica (Summer)',
