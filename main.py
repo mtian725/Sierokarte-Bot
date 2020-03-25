@@ -343,7 +343,7 @@ async def art(ctx, *args): # catch out of bounds error
 async def test(ctx, *args):
     list = {}
     for i in args:
-        if list = {}:
+        if list == {}:
             list = traits.tags[i]
         else:
             list = list & traits.tags[i]
