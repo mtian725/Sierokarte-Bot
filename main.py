@@ -7,7 +7,6 @@ import pytz
 import os
 import bisect
 import random
-import os
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -340,7 +339,7 @@ async def art(ctx, *args): # catch out of bounds error
         return
 
 @client.command()
-async def trait(ctx, *args):
+async def test(ctx, *args):
     list = {}
     msg = 'Characters that are : '
     for i in args:
