@@ -1,5 +1,5 @@
 # Python libraries
-# import json
+import json
 import asyncio
 from datetime import datetime
 from pytz import timezone
@@ -24,8 +24,8 @@ uncap_targets = {}
 global_teams = {}
 
 # use if testing locally, current code uses heroku env config vars
-#with open("config.json", "r") as read_file:
-#    env = json.load(read_file)
+with open("config.json", "r") as read_file:
+   env = json.load(read_file)
 
 client = commands.Bot(command_prefix='!')
 client.remove_command('help')
@@ -554,7 +554,14 @@ async def clearteam(ctx):
     global_teams[author] = [[None], [None], [None]]
     sent = await ctx.send("Cleared your team!")
 
+#raidfinder stuff
+@client.command(aliases=['r'])
+async def raid(ctx, *args):
+    if not args:
+        await ctx.send('Syntax: **!art <character name>**')
+    else:
+        print(args)
 
 # Actual bot ID do NOT change
-client.run(os.environ['token'])
-#env['token'])
+#client.run(os.environ['token'])
+env['token']
