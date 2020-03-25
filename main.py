@@ -340,7 +340,7 @@ async def art(ctx, *args): # catch out of bounds error
         return
 
 @client.command()
-async def traits(ctx, *args):
+async def trait(ctx, *args):
     list = {}
     msg = 'Characters that are : '
     for i in args:
