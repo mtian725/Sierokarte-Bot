@@ -1,5 +1,5 @@
 # Python libraries
-import json
+#import json
 import asyncio
 from datetime import datetime
 from pytz import timezone
@@ -33,8 +33,8 @@ auth.set_access_token(TWITTER_KEY, TWITTER_SECRET)
 api = tweepy.API(auth)
 
 # use if testing locally, current code uses heroku env config vars
-with open("config.json", "r") as read_file:
-   env = json.load(read_file)
+#with open("config.json", "r") as read_file:
+#   env = json.load(read_file)
 
 client = commands.Bot(command_prefix='!')
 client.remove_command('help')
@@ -577,17 +577,6 @@ async def raid(ctx, *args):
         for listener in raid_listeners:
             print(listener, raid_listeners[listener])
         await get_rf(ctx)
-        # try:
-        #     numTimes = int(args[1])
-        #     await ctx.send('looking for ' + args[0] + ' ' + str(numTimes) + ' times')
-        #     if args[0] not in raid_listeners:
-        #         raid_listeners[args[0]] = []
-        #     raid_listeners[args[0]].append(ctx.author)
-        #     if rf is None:
-        #         rf = raidfinder.Raidfinder(api, ctx, raid_listeners)
-        #     await ctx.send('added ' + str(ctx.author) + ' to ' + args[0] + ' list')
-        # except ValueError:
-        #     await ctx.send('Syntax: **!r <boss name> <number of raids (optional, must be an integer)>**')
 
 async def get_rf(ctx):
     global rf
@@ -613,5 +602,5 @@ async def removeraid(ctx, *args):
             await ctx.send(str(ctx.author) + ' has been unsubscribed from **' + raid_name + '**.')
 
 # Actual bot ID do NOT change
-#client.run(os.environ['token'])
-client.run(env['token'])
+client.run(os.environ['token'])
+#client.run(env['token'])
