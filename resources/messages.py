@@ -25,7 +25,7 @@ value = '**!art** or **!a** \n Returns an embed with all the art associated ' +
 inline=False)
 help.add_field(name='FIND',
 value = '**!find** or **!f** \n Returns a list of characters that matches the' +
-'trait(s) listed \n Syntax: !find <trait1> <trait2> ...'
+'trait(s) listed \n Syntax: !find <trait1> <trait2> ...',
 inline=False)
 
 arc_thumbnails = {
