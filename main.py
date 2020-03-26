@@ -301,8 +301,8 @@ async def art(ctx, *args): # catch out of bounds error
         #     chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
 
-        chara = process.extractOne(name, imagelinks.names)
-        
+        chara = process.extractOne(name, imagelinks.names)[0]
+
         name = chara
         num_images = len(imagelinks.images[name])
         pos = 0
