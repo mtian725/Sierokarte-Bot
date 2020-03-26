@@ -434,7 +434,7 @@ async def removerole(ctx, *args):
 
 @client.command(aliases=['lr'])
 async def listrole(ctx, *args):
-    await ctx.send(ctx.Guild.roles)
+    await ctx.send(discord.util.get(ctx.guild.roles))
     return
 
 @client.command()
