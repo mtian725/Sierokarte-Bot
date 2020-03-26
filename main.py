@@ -338,23 +338,38 @@ async def art(ctx, *args): # catch out of bounds error
 
         return
 
-@client.command()
-async def test(ctx, *args):
-    list = {}
+@client.command(aliases=['f'])
+async def filter(ctx, *args):
+    matches = {}
     msg = 'Characters that are : '
     for i in args:
-        if list == {}:
-            list = traits.tags[i]
+        lw = i.lower()
+
+        if not lw in traits.tags:
+            await ctx.send('**' + lw.upper() + '** is not a regeistered tag')
+
+        if matches == {}:
+            matches = traits.tags[lw]
         else:
-            list = list & traits.tags[i]
+            matches = matches & traits.tags[lw]
 
-        msg = msg + '**' + i + '** '
+        msg = msg + '**' + lw.upper() + '** '
 
-    msg = msg + '\n'
-    for i in list:
-        msg = msg + i + '\n'
+    # the embed
+    display = discord.Embed(
+        title = msg,
+        color = discord.Color.red()
+    )
 
-    await ctx.send(msg)
+    matches = list(matches)
+    page = 0
+
+    text = ''
+    for i in range((page * 15), ((page+1)*15)):
+        text = text + matches[i] + '\n'
+
+    display.description = text
+    await ctx.send(embed=display)
     return
 
 @client.command()
