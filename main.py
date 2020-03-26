@@ -366,15 +366,24 @@ async def filter(ctx, *args):
 
         matches = list(matches)
         matches.sort()
+        num_matches = len(matches)
         page = 0
 
         text = ''
-        for i in range((page * 15), ((page+1)*15)):
-            text = text + matches[i] + '\n'
+        if num_matches < 15:
+            for i in matches:
+                text = text + matches + '\n'
 
-        display.description = text
-        await ctx.send(embed=display)
-        return
+            display.description = text
+            await ctx.send(embed=display)
+            return
+        else:
+            for i in range(15):
+                text = text + matches[i] + '\n'
+
+            display.description = text
+            await ctx.send(embed=display)
+            return
 
 @client.command()
 async def team(ctx):
