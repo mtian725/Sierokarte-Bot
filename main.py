@@ -375,7 +375,7 @@ async def filter(ctx, *args):
         text = ''
         if num_matches < 15:
             for i in matches:
-                text = text + matches + '\n'
+                text = text + i + '\n'
 
             display.description = text
             await ctx.send(embed=display)
