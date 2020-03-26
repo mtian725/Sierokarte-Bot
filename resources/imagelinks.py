@@ -1,5 +1,4 @@
 import discord
-import collections
 
 wind = discord.Color.from_rgb(141, 229, 95)
 fire = discord.Color.from_rgb(195, 59, 35)
@@ -9,7 +8,6 @@ light = discord.Color.from_rgb(254, 236, 109)
 dark = discord.Color.from_rgb(139, 82, 212)
 grey = discord.Color.from_rgb(169, 167, 165)
 
-images = collections.OrderedDict()
 images = {
   'abby' : [
   (fire,'https://gbf.wiki/images/5/50/Npc_zoom_3030011000_01.png'),

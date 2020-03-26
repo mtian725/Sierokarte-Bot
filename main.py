@@ -5,7 +5,6 @@ from datetime import datetime
 from pytz import timezone
 import pytz
 import os
-import bisect
 import random
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
@@ -294,12 +293,8 @@ async def art(ctx, *args): # catch out of bounds error
     else:
         name = ' '.join(args).lower()
 
-        # if name == 'random': # turn this into a function ^ put in same file as tags
-        #     chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
-        # else:
-        #     # finds the name/closest match
-        #     chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
-
+        await ctx.send(process.extract(name, imagelinks.names, limit=5))
+        return
 
         chara = process.extractOne(name, imagelinks.names)[0]
 
