@@ -350,6 +350,7 @@ async def filter(ctx, *args):
 
             if not lw in traits.tags:
                 await ctx.send('**' + lw.upper() + '** is not a regeistered tag')
+                return
 
             if matches == {}:
                 matches = traits.tags[lw]
@@ -368,6 +369,8 @@ async def filter(ctx, *args):
         matches.sort()
         num_matches = len(matches)
         page = 0
+
+        await ctx.send(matches) # debugging
 
         text = ''
         if num_matches < 15:
