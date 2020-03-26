@@ -2,3 +2,4 @@ discord
 pytz
 google
 tweepy
+fuzzywuzzy[speedup]

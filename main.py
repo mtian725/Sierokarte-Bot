@@ -5,8 +5,9 @@ from datetime import datetime
 from pytz import timezone
 import pytz
 import os
-import bisect
 import random
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -294,19 +295,17 @@ async def time(ctx, *args):
     else:
         return
 
-#revise once you get search working
-@client.command(aliases=['a']) # add tag feature ie !a primals -> list all primals only display/create embed if there only one source
-async def art(ctx, *args): # catch out of bounds error
+@client.command(aliases=['a'])
+async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
         name = ' '.join(args).lower()
 
-        if name == 'random': # turn this into a function ^ put in same file as tags
-            chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
-        else:
-            # finds the name/closest match
-            chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
+        await ctx.send(process.extract(name, imagelinks.names, limit=5))
+        return
+
+        chara = process.extractOne(name, imagelinks.names)[0]
 
         name = chara
         num_images = len(imagelinks.images[name])
@@ -348,24 +347,92 @@ async def art(ctx, *args): # catch out of bounds error
 
         return
 
-@client.command()
-async def test(ctx, *args):
-    list = {}
-    msg = 'Characters that are : '
-    for i in args:
-        if list == {}:
-            list = traits.tags[i]
+@client.command(aliases=['f'])
+async def find(ctx, *args):
+    if not args:
+        await ctx.send('Syntax: **!filter <trait1> <trait2> ...**')
+    else:
+        matches = {}
+        msg = 'Characters that are : '
+        for i in args:
+            lw = i.lower()
+
+            if not lw in traits.tags:
+                await ctx.send('**' + lw.upper() + '** is not a registered tag.'
+                                + '**!help** has the registered tags.')
+                return
+
+            if matches == {}:
+                matches = traits.tags[lw]
+            else:
+                matches = matches & traits.tags[lw]
+
+            msg = msg + '**' + lw.upper() + '** '
+
+        # the embed
+        display = discord.Embed(
+            title = msg,
+            color = discord.Color.red()
+        )
+
+        matches = list(matches)
+        matches.sort()
+        num_matches = len(matches)
+        page = 0
+
+        text = ''
+        if num_matches < 15:
+            for i in matches:
+                text = text + i + '\n'
+
+            display.description = text
+            await ctx.send(embed=display)
+            return
         else:
-            list = list & traits.tags[i]
+            for i in range(15):
+                text = text + matches[i] + '\n'
 
-        msg = msg + '**' + i + '** '
+            display.description = text
+            sent = await ctx.send(embed=display)
 
-    msg = msg + '\n'
-    for i in list:
-        msg = msg + i + '\n'
+            await sent.add_reaction('⬅️')
+            await sent.add_reaction('➡️')
 
-    await ctx.send(msg)
-    return
+            author = ctx.author
+
+            max_pages = int(num_matches/15)
+
+            while True:
+                try:
+                    # if a user clicks on a react then the image changes
+                    def react_check(reaction, user):
+                        return (user == author and reaction.message.id == sent.id and
+                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+
+                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+                except asyncio.TimeoutError:
+                    break
+                else:
+                    if str(reaction.emoji) == '⬅️':
+                        page = page - 1
+                    if str(reaction.emoji) == '➡️':
+                        page = page + 1
+
+                    if (page > max_pages):
+                        page = 0
+                    if (page < 0):
+                        page = max_pages
+
+                    text = ''
+                    for i in range((page*15),((page+1)*15)):
+                        if (i < num_matches):
+                            text = text + matches[i] + '\n'
+
+                    display.description = text
+
+                    await sent.edit(embed=display)
+
+            return
 
 @client.command()
 async def team(ctx):
