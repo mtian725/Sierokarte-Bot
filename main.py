@@ -370,8 +370,6 @@ async def filter(ctx, *args):
         num_matches = len(matches)
         page = 0
 
-        await ctx.send(matches) # debugging
-
         text = ''
         if num_matches < 15:
             for i in matches:
@@ -385,7 +383,40 @@ async def filter(ctx, *args):
                 text = text + matches[i] + '\n'
 
             display.description = text
-            await ctx.send(embed=display)
+            sent = await ctx.send(embed=display)
+
+            await sent.add_reaction('⬅️')
+            await sent.add_reaction('➡️')
+
+            author = ctx.author
+
+            max_pages = int(num_matches/15)
+
+            while True:
+                try:
+                    # if a user clicks on a react then the image changes
+                    def react_check(reaction, user):
+                        return (user == author and reaction.message.id == sent.id and
+                        (str(reaction.emoji) == '⬅️' or str(reaction.emoji) == '➡️'))
+
+                    reaction, user = await client.wait_for('reaction_add', timeout=25.0,check=react_check)
+                except asyncio.TimeoutError:
+                    break
+                else:
+                    if str(reaction.emoji) == '⬅️':
+                        page = page - 1
+                    if str(reaction.emoji) == '➡️':
+                        page = page + 1
+
+                    text = ''
+                    for i in range((page*15),((page+1)*15)):
+                        if (i < num_matches):
+                            text = text + matches[i] + '\n'
+
+                    display.description = text
+
+                    await sent.edit(embed=display)
+
             return
 
 @client.command()
