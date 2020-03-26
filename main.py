@@ -15,12 +15,22 @@ from discord.ext import commands
 # Our libraries
 from resources import (exceptions, messages, uncap, imagelinks, traits)
 import calculator
+import raidfinder, tweepy
 #Add mode modules as we add more
 
 jp_tz = timezone('Japan')
 
 uncap_targets = {}
 global_teams = {}
+raid_listeners = {} # map of raids to users listening for those raids
+rf = None
+TWITTER_APP_KEY = 'ZDS57sqDWzSbZQoVDyqc0t6EN'
+TWITTER_APP_SECRET = 'ZppyVjPedv7wzy2WnHlWWZ29GWYAH1fig0tJkInLPLNl6BUk6d'
+TWITTER_KEY = '905698903734943745-vDZJR2vaaMoyNYmz1jIZMMAaJChaZ8U'
+TWITTER_SECRET = 'zpJ3GI6nZlWYrc7qaUKfNfB9a8BwBHFhUSe5jCBGjWEjI'
+auth = tweepy.OAuthHandler(TWITTER_APP_KEY, TWITTER_APP_SECRET)
+auth.set_access_token(TWITTER_KEY, TWITTER_SECRET)
+api = tweepy.API(auth)
 
 # use if testing locally, current code uses heroku env config vars
 with open("config.json", "r") as read_file:
@@ -557,10 +567,51 @@ async def clearteam(ctx):
 @client.command(aliases=['r'])
 async def raid(ctx, *args):
     if not args:
-        await ctx.send('Syntax: **!art <character name>**')
+        await ctx.send('Syntax: **!r <boss name> <number of raids (does not work yet)>**')
     else:
-        print(args)
+        raid_name = ' '.join(args)
+        if raid_name not in raid_listeners:
+            raid_listeners[raid_name] = []
+        raid_listeners[raid_name].append(ctx.author)
+        await ctx.send('added ' + str(ctx.author) + ' to ' + raid_name + ' list')
+        for listener in raid_listeners:
+            print(listener, raid_listeners[listener])
+        await get_rf(ctx)
+        # try:
+        #     numTimes = int(args[1])
+        #     await ctx.send('looking for ' + args[0] + ' ' + str(numTimes) + ' times')
+        #     if args[0] not in raid_listeners:
+        #         raid_listeners[args[0]] = []
+        #     raid_listeners[args[0]].append(ctx.author)
+        #     if rf is None:
+        #         rf = raidfinder.Raidfinder(api, ctx, raid_listeners)
+        #     await ctx.send('added ' + str(ctx.author) + ' to ' + args[0] + ' list')
+        # except ValueError:
+        #     await ctx.send('Syntax: **!r <boss name> <number of raids (optional, must be an integer)>**')
+
+async def get_rf(ctx):
+    global rf
+    global raid_listeners
+    if rf is None:
+        rf = raidfinder.Raidfinder(api, ctx, raid_listeners, asyncio.get_event_loop())
+    return rf
+
+@client.command(aliases=['rr'])
+async def removeraid(ctx, *args):
+    if not args:
+        await ctx.send('Syntax: **!rr <boss name to unsubscribe from>')
+    else:
+        raid_name = ' '.join(args)
+        if raid_name not in raid_listeners:
+            await ctx.send('**' + raid_name + '** is either invalid or has no current subscribers.')
+        elif ctx.author not in raid_listeners[raid_name]:
+            await ctx.send(str(ctx.author) + ' is already unsubscribed from **' + raid_name + '**!')
+        else:
+            raid_listeners[raid_name].remove(ctx.author)
+            if len(raid_listeners[raid_name]) == 0:
+                del raid_listeners[raid_name]
+            await ctx.send(str(ctx.author) + ' has been unsubscribed from **' + raid_name + '**.')
 
 # Actual bot ID do NOT change
 #client.run(os.environ['token'])
-env['token']
+client.run(env['token'])

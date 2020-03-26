@@ -1,2 +1,4 @@
 # ignore these files
 config.json
+__pycache__
+resources/__pycache__/*
