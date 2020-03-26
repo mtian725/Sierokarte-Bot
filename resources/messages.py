@@ -4,11 +4,11 @@ help = discord.Embed(
     title = '__Sierokarte Bot Help__',
     color = discord.Color.blue(),
 )
-help.add_field(name='CALCARCARUM',
+help.add_field(name='CALCARCARUM (will remove or edit)',
 value='**!calcarcarum** or **!ca** \n Respond to the prompts given and it will'+
         ' generate a list of recources needed',
 inline=False)
-help.add_field(name='ETERNALS',
+help.add_field(name='ETERNALS (will remove or edit)',
 value='**!eternals** or **!e** \n Follow the initial prompt and click on the '+
         'reacts to change pages',
 inline=False)
@@ -18,6 +18,14 @@ value='**!wiki** or **!w** \n Searches the item after the command and returns '+
 inline=False)
 help.add_field(name='TIME',
 value='**!time** or **!t** \n gives the time in JST',
+inline=False)
+help.add_field(name='ART',
+value = '**!art** or **!a** \n Returns an embed with all the art associated ' +
+'with the character \n Syntax: !art <character name>',
+inline=False)
+help.add_field(name='FIND',
+value = '**!find** or **!f** \n Returns a list of characters that matches the' +
+'trait(s) listed \n Syntax: !find <trait1> <trait2> ...'
 inline=False)
 
 arc_thumbnails = {

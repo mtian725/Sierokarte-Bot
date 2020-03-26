@@ -285,9 +285,8 @@ async def time(ctx, *args):
     else:
         return
 
-#revise once you get search working
 @client.command(aliases=['a'])
-async def art(ctx, *args): # catch out of bounds error
+async def art(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
@@ -424,6 +423,18 @@ async def find(ctx, *args):
                     await sent.edit(embed=display)
 
             return
+
+@client.command(aliases=['ar'])
+async def addrole(ctx, *args):
+    return
+
+@client.command(aliases=['rr'])
+async def removerole(ctx, *args):
+    return
+
+@client.command(aliases=['lr'])
+async def listrole(ctx, *args):
+    return
 
 @client.command()
 async def team(ctx):
