@@ -7,6 +7,8 @@ import pytz
 import os
 import bisect
 import random
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 # Google library
 from googlesearch import search
 # Discord libraries
@@ -285,19 +287,22 @@ async def time(ctx, *args):
         return
 
 #revise once you get search working
-@client.command(aliases=['a']) # add tag feature ie !a primals -> list all primals only display/create embed if there only one source
+@client.command(aliases=['a'])
 async def art(ctx, *args): # catch out of bounds error
     if not args:
         await ctx.send('Syntax: **!art <character name>**')
     else:
         name = ' '.join(args).lower()
 
-        if name == 'random': # turn this into a function ^ put in same file as tags
-            chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
-        else:
-            # finds the name/closest match
-            chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
+        # if name == 'random': # turn this into a function ^ put in same file as tags
+        #     chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
+        # else:
+        #     # finds the name/closest match
+        #     chara = imagelinks.names[bisect.bisect_left(imagelinks.names, name)]
 
+
+        chara = process.extractOne(name, imagelinks.names)
+        
         name = chara
         num_images = len(imagelinks.images[name])
         pos = 0
@@ -339,7 +344,7 @@ async def art(ctx, *args): # catch out of bounds error
         return
 
 @client.command(aliases=['f'])
-async def filter(ctx, *args):
+async def find(ctx, *args):
     if not args:
         await ctx.send('Syntax: **!filter <trait1> <trait2> ...**')
     else:
@@ -349,7 +354,8 @@ async def filter(ctx, *args):
             lw = i.lower()
 
             if not lw in traits.tags:
-                await ctx.send('**' + lw.upper() + '** is not a regeistered tag')
+                await ctx.send('**' + lw.upper() + '** is not a registered tag.'
+                                + '**!help** has the registered tags.')
                 return
 
             if matches == {}:
