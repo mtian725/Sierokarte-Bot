@@ -424,19 +424,6 @@ async def find(ctx, *args):
 
             return
 
-@client.command(aliases=['ar'])
-async def addrole(ctx, *args):
-    return
-
-@client.command(aliases=['rr'])
-async def removerole(ctx, *args):
-    return
-
-@client.command(aliases=['lr'])
-async def listrole(ctx, *args):
-    await ctx.send(discord.util.get(ctx.guild.roles))
-    return
-
 @client.command()
 async def team(ctx):
     await asyncio.sleep(1)
