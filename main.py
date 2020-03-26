@@ -408,6 +408,11 @@ async def filter(ctx, *args):
                     if str(reaction.emoji) == '➡️':
                         page = page + 1
 
+                    if (page > max_pages):
+                        page = 0
+                    if (page < 0):
+                        page = max_pages
+
                     text = ''
                     for i in range((page*15),((page+1)*15)):
                         if (i < num_matches):
