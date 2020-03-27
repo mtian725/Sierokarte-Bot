@@ -7,7 +7,7 @@ backup_msg_jp = " :参戦ID\n参加者募集！\nLv"
 id_length = 8
 
 async def send_msg(ctx, msg):
-    await sent = ctx.send(msg)
+    sent = await ctx.send(msg)
     await sent.add_reaction('🇨')
     return
 
