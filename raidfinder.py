@@ -9,6 +9,16 @@ id_length = 8
 async def send_msg(ctx, msg):
     sent = await ctx.send(msg)
     await sent.add_reaction('🇨')
+    try:
+        # if a user clicks on a react then the image changes
+        def react_check(reaction, user):
+            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
+
+        reaction, user = await client.wait_for('reaction_add', timeout=5.0,check=react_check)
+    except asyncio.TimeoutError:
+        await ctx.send('did not get react')
+    else:
+        await ctx.send('got react')
     return
 
 class Raidfinder(tweepy.StreamListener):
