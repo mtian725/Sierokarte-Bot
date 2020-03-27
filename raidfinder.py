@@ -23,7 +23,9 @@ async def send_msg(ctx, msg, bot_client):
         except asyncio.TimeoutError:
             break
         else:
+            await ctx.send(msg[len(msg)-8:])
             pyperclip.copy(msg[len(msg)-8:])
+            await ctx.send(pyperclip.paste())
     return
 
 class Raidfinder(tweepy.StreamListener):
