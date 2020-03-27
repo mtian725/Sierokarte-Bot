@@ -2,6 +2,8 @@
 # https://www.pyxll.com/blog/a-real-time-twitter-feed-in-excel/
 
 import tweepy, asyncio
+import pyperclip
+
 backup_msg_en = " :Battle Id\nI need backup!\nLvl"
 backup_msg_jp = " :参戦ID\n参加者募集！\nLv"
 id_length = 8
@@ -9,18 +11,19 @@ id_length = 8
 async def send_msg(ctx, msg, bot_client):
     sent = await ctx.send(msg)
     await sent.add_reaction('🇨')
-    await asyncio.sleep(1)
-    try:
-        # if a user clicks on a react then the image changes
-        def react_check(reaction, user):
-            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
+    await asyncio.sleep(0.5)
 
-        await ctx.send('waiting')
-        reaction, user = await bot_client.wait_for('reaction_add', timeout=20.0,check=react_check)
-    except asyncio.TimeoutError:
-        await ctx.send('did not get react')
-    else:
-        await ctx.send(user)
+    while True:
+        try:
+            # if a user clicks on a react then the image changes
+            def react_check(reaction, user):
+                return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
+
+            reaction, user = await bot_client.wait_for('reaction_add', timeout=20.0,check=react_check)
+        except asyncio.TimeoutError:
+            break
+        else:
+            pyperclip.copy(msg[len(msg)-8:])
     return
 
 class Raidfinder(tweepy.StreamListener):
