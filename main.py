@@ -432,6 +432,11 @@ async def find(ctx, *args):
             return
 
 @client.command()
+async def test(ctx):
+    await ctx.send(client.self_bot)
+    return
+
+@client.command()
 async def team(ctx):
     await asyncio.sleep(1)
     channel = ctx.channel
