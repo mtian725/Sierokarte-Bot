@@ -14,6 +14,7 @@ async def send_msg(ctx, msg):
         def react_check(reaction, user):
             return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
 
+        await ctx.send('waiting')
         reaction, user = await client.wait_for('reaction_add', timeout=5.0,check=react_check)
     except asyncio.TimeoutError:
         await ctx.send('did not get react')
