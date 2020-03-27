@@ -12,7 +12,8 @@ async def send_msg(ctx, msg, bot_client):
     try:
         # if a user clicks on a react then the image changes
         def react_check(reaction, user):
-            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
+            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨'
+                    and (not user == 'Sierokarte Bot#5823')
 
         await bot_client.wait_for('reaction_add', timeout=5.0,check=react_check)
     except asyncio.TimeoutError:
