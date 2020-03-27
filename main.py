@@ -302,9 +302,6 @@ async def art(ctx, *args):
     else:
         name = ' '.join(args).lower()
 
-        await ctx.send(process.extract(name, imagelinks.names, limit=5))
-        return
-
         chara = process.extractOne(name, imagelinks.names)[0]
 
         name = chara

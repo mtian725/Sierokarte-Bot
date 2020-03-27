@@ -30,4 +30,10 @@ class Raidfinder(tweepy.StreamListener):
         full_msg = ' '.join([user.mention for user in self.raid_listeners[raid_name]])
         full_msg += ' **' + raid_name + '** ' + raid_id
 
-        asyncio.run_coroutine_threadsafe(self.ctx.send(full_msg), self.loop)
+        # asyncio.run_coroutine_threadsafe(ctx.send(full_msg), self.loop)
+        asyncio.run_coroutine_threadsafe(send_msg(ctx, full_msg), self.loop)
+
+    async def send_msg(ctx, msg):
+        sent = ctx.send(msg)
+        await sent.add_reaction('🇨')
+        return
