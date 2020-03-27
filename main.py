@@ -432,7 +432,7 @@ async def find(ctx, *args):
             return
 
 @client.command()
-async def test(ctx):
+async def test(ctx): #delete later
     await ctx.send(client.user)
     return
 
