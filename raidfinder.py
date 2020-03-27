@@ -9,6 +9,7 @@ id_length = 8
 async def send_msg(ctx, msg, bot_client):
     sent = await ctx.send(msg)
     await sent.add_reaction('🇨')
+    await sleep(1)
     try:
         # if a user clicks on a react then the image changes
         def react_check(reaction, user):
