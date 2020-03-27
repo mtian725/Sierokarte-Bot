@@ -433,7 +433,7 @@ async def find(ctx, *args):
 
 @client.command()
 async def test(ctx):
-    await ctx.send(client.self_bot)
+    await ctx.send(client.self_bot())
     return
 
 @client.command()
