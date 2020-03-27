@@ -20,7 +20,7 @@ async def send_msg(ctx, msg, bot_client):
     except asyncio.TimeoutError:
         await ctx.send('did not get react')
     else:
-        await ctx.send('got react')
+        await ctx.send(user)
     return
 
 class Raidfinder(tweepy.StreamListener):
