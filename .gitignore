@@ -2,3 +2,4 @@
 config.json
 __pycache__
 resources/__pycache__/*
+resources/gbf.csv
