@@ -48,5 +48,4 @@ class Raidfinder(tweepy.StreamListener):
         full_msg += ' **' + raid_name + '** ' + raid_id
 
         # asyncio.run_coroutine_threadsafe(self.ctx.send(full_msg), self.loop)
-        # what the fuck
-        asyncio.run_coroutine_threadsafe(await send_msg(self.ctx, full_msg, self.bot_client), self.loop)
+        asyncio.run_coroutine_threadsafe(send_msg(self.ctx, full_msg, self.bot_client), self.loop)
