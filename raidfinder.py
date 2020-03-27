@@ -6,6 +6,11 @@ backup_msg_en = " :Battle Id\nI need backup!\nLvl"
 backup_msg_jp = " :参戦ID\n参加者募集！\nLv"
 id_length = 8
 
+async def send_msg(ctx, msg):
+    sent = ctx.send(msg)
+    await sent.add_reaction('🇨')
+    return
+
 class Raidfinder(tweepy.StreamListener):
   def __init__(self, api, ctx, raid_listeners, loop):
     tweepy.StreamListener.__init__(self, api)
@@ -32,8 +37,3 @@ class Raidfinder(tweepy.StreamListener):
 
         # asyncio.run_coroutine_threadsafe(ctx.send(full_msg), self.loop)
         asyncio.run_coroutine_threadsafe(send_msg(ctx, full_msg), self.loop)
-
-    async def send_msg(ctx, msg):
-        sent = ctx.send(msg)
-        await sent.add_reaction('🇨')
-        return
