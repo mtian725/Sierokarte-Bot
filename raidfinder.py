@@ -12,7 +12,7 @@ async def send_msg(ctx, msg, bot_client):
     try:
         # if a user clicks on a react then the image changes
         def react_check(reaction, user):
-            await ctx.send(str(user))
+            print(str(user))
             return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨'
                     and (not user == 'Sierokarte Bot#5823'))
 
