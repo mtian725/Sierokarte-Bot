@@ -17,10 +17,9 @@ async def send_msg(ctx, msg, bot_client):
             print((user != 'Sierokarte Bot#5823'))
             print((reaction.message.id == sent.id and str(reaction.emoji) == '🇨'
                     and (not user == 'Sierokarte Bot#5823')))
-            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨'
-                    and (user != 'Sierokarte Bot#5823'))
+            return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
 
-        reaction, user = await bot_client.wait_for('reaction_add', timeout=5.0,check=react_check)
+        reaction, user = await bot_client.wait_for('reaction_add', timeout=20.0,check=react_check)
     except asyncio.TimeoutError:
         await ctx.send('did not get react')
     else:
