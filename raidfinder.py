@@ -6,16 +6,15 @@ backup_msg_en = " :Battle Id\nI need backup!\nLvl"
 backup_msg_jp = " :参戦ID\n参加者募集！\nLv"
 id_length = 8
 
-async def send_msg(ctx, msg):
+async def send_msg(ctx, msg, bot_client):
     sent = await ctx.send(msg)
     await sent.add_reaction('🇨')
     try:
         # if a user clicks on a react then the image changes
         def react_check(reaction, user):
-            await ctx.send('waiting')
             return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
 
-        reaction, user = await client.wait_for('reaction_add', timeout=5.0,check=react_check)
+        await bot_client.wait_for('reaction_add', timeout=5.0,check=react_check)
     except asyncio.TimeoutError:
         await ctx.send('did not get react')
     else:
@@ -23,13 +22,14 @@ async def send_msg(ctx, msg):
     return
 
 class Raidfinder(tweepy.StreamListener):
-  def __init__(self, api, ctx, raid_listeners, loop):
+  def __init__(self, api, ctx, raid_listeners, loop, bot_client):
     tweepy.StreamListener.__init__(self, api)
     self.ctx = ctx
     self.raid_listeners = raid_listeners
     self.loop = loop
     self.stream = tweepy.Stream(auth=api.auth, listener=self)
     self.stream.filter(track=[backup_msg_en, backup_msg_jp], is_async=True)
+    self.bot_client = bot_client
 
   def on_status(self, status):
     if status.source_url == 'http://granbluefantasy.jp/':
@@ -47,4 +47,4 @@ class Raidfinder(tweepy.StreamListener):
         full_msg += ' **' + raid_name + '** ' + raid_id
 
         # asyncio.run_coroutine_threadsafe(self.ctx.send(full_msg), self.loop)
-        asyncio.run_coroutine_threadsafe(send_msg(self.ctx, full_msg), self.loop)
+        asyncio.run_coroutine_threadsafe(send_msg(self.ctx, full_msg, self.bot_client), self.loop)

@@ -646,7 +646,7 @@ async def get_rf(ctx):
     global rf
     global raid_listeners
     if rf is None:
-        rf = raidfinder.Raidfinder(api, ctx, raid_listeners, asyncio.get_event_loop())
+        rf = raidfinder.Raidfinder(api, ctx, raid_listeners, asyncio.get_event_loop(), client)
     return rf
 
 @client.command(aliases=['rr'])
