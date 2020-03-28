@@ -283,7 +283,7 @@ async def time(ctx, *args):
                         ' JST (12 Hour Clock)')
         if reset_hr == 24:
             reset_hr = 0
-        if reset_min == 60:
+        elif reset_min == 60:
             reset_min = 0
         else:
             reset_hr = reset_hr - 1
