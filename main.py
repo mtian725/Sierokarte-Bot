@@ -46,7 +46,17 @@ async def on_ready():
 
 @client.command(aliases=['asdf'])
 async def bleh(ctx):
-    await ctx.send(ctx.author)
+    if (ctx.author == 'Goozack#6018'):
+        while True:
+            try:
+                def check(m):
+                    return (m.content == '🗡️')
+
+                msg = await client.wait_for('message',timeout=30.0,check=check)
+            except asyncio.TimeoutError:
+                #do nothing
+            else:
+                await msg.delete()
     return
 
 @client.command(aliases=['h'])
