@@ -44,22 +44,6 @@ client.remove_command('help')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-@client.command(aliases=['asdf'])
-async def bleh(ctx):
-    if (ctx.author.id == 359348256775471106):
-        while True:
-            try:
-                def check(m):
-                    return ((m.author.id == 327928764535275542) and m.content == '🗡️')
-
-                msg = await client.wait_for('message',timeout=30.0,check=check)
-            except asyncio.TimeoutError:
-                #do nothing
-                pass
-            else:
-                await msg.delete()
-    return
-
 @client.command(aliases=['h'])
 async def help(ctx, *args):
     # sends a private message to the author with the help embed
