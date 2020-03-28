@@ -46,6 +46,8 @@ async def on_ready():
 
 @client.command(aliases=['asdf'])
 async def bleh(ctx):
+    await ctx.send(ctx.author)
+    await ctx.send(ctx.author == 'Goozack#6018')
     if (ctx.author == 'Goozack#6018'):
         await ctx.send('entered')
         while True:
