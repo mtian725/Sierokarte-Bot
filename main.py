@@ -47,19 +47,17 @@ async def on_ready():
 @client.command(aliases=['asdf'])
 async def bleh(ctx):
     if (ctx.author.id == 359348256775471106):
-        await ctx.send('entered')
         while True:
             try:
                 def check(m):
-                    return ((m.author.id == 327928764535275542 or ctx.author.id == 359348256775471106) and m.content == '🗡️')
+                    return ((m.author.id == 327928764535275542) and m.content == '🗡️')
 
                 msg = await client.wait_for('message',timeout=30.0,check=check)
             except asyncio.TimeoutError:
                 #do nothing
                 pass
             else:
-                await ctx.send('found it')
-                msg.delete()
+                await msg.delete()
     return
 
 @client.command(aliases=['h'])
