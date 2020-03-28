@@ -59,6 +59,7 @@ async def bleh(ctx):
                 pass
             else:
                 await ctx.send('found it')
+                msg.delete()
     return
 
 @client.command(aliases=['h'])
