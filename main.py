@@ -44,6 +44,11 @@ client.remove_command('help')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
+@client.command(aliases=['asdf']):
+async def bleh(ctx):
+    await ctx.send(ctx.author)
+    return
+
 @client.command(aliases=['h'])
 async def help(ctx, *args):
     # sends a private message to the author with the help embed
@@ -302,7 +307,10 @@ async def art(ctx, *args):
     else:
         name = ' '.join(args).lower()
 
-        chara = process.extractOne(name, imagelinks.names)[0]
+        if name == 'random':
+            chara = imagelinks.names[int(random.random() * len(imagelinks.names))]
+        else:
+            chara = process.extractOne(name, imagelinks.names)[0]
 
         name = chara
         num_images = len(imagelinks.images[name])
