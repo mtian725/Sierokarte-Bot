@@ -55,6 +55,7 @@ async def bleh(ctx):
                 msg = await client.wait_for('message',timeout=30.0,check=check)
             except asyncio.TimeoutError:
                 #do nothing
+                pass
             else:
                 await msg.delete()
     return
