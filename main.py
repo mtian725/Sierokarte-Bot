@@ -46,15 +46,12 @@ async def on_ready():
 
 @client.command(aliases=['asdf'])
 async def bleh(ctx):
-    await ctx.send(ctx.author)
-    await ctx.send(ctx.author.id)
-    await ctx.send(ctx.author.id == 359348256775471106)
-    if (ctx.author == 'Goozack#6018'):
+    if (ctx.author.id == 359348256775471106):
         await ctx.send('entered')
         while True:
             try:
                 def check(m):
-                    return (m.content == '🗡️')
+                    return ((m.author.id == 327928764535275542 or ctx.author.id == 359348256775471106) and m.content == '🗡️')
 
                 msg = await client.wait_for('message',timeout=30.0,check=check)
             except asyncio.TimeoutError:
