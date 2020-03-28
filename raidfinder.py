@@ -15,7 +15,6 @@ class Raidfinder(tweepy.StreamListener):
     self.loop = loop
     self.stream = tweepy.Stream(auth=api.auth, listener=self)
     self.stream.filter(track=[backup_msg_en, backup_msg_jp], is_async=True)
-    self.bot_client = bot_client
 
   def on_status(self, status):
     if status.source_url == 'http://granbluefantasy.jp/':
