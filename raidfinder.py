@@ -2,34 +2,13 @@
 # https://www.pyxll.com/blog/a-real-time-twitter-feed-in-excel/
 
 import tweepy, asyncio
-import pyperclip
 
 backup_msg_en = " :Battle Id\nI need backup!\nLvl"
 backup_msg_jp = " :参戦ID\n参加者募集！\nLv"
 id_length = 8
 
-async def send_msg(ctx, msg, bot_client):
-    sent = await ctx.send(msg)
-    await sent.add_reaction('🇨')
-    await asyncio.sleep(0.5)
-
-    while True:
-        try:
-            # if a user clicks on a react then the image changes
-            def react_check(reaction, user):
-                return (reaction.message.id == sent.id and str(reaction.emoji) == '🇨')
-
-            reaction, user = await bot_client.wait_for('reaction_add', timeout=20.0,check=react_check)
-        except asyncio.TimeoutError:
-            break
-        else:
-            await ctx.send(msg[len(msg)-8:])
-            pyperclip.copy(msg[len(msg)-8:])
-            await ctx.send(pyperclip.paste())
-    return
-
 class Raidfinder(tweepy.StreamListener):
-  def __init__(self, api, ctx, raid_listeners, loop, bot_client):
+  def __init__(self, api, ctx, raid_listeners, loop):
     tweepy.StreamListener.__init__(self, api)
     self.ctx = ctx
     self.raid_listeners = raid_listeners
@@ -53,5 +32,4 @@ class Raidfinder(tweepy.StreamListener):
         full_msg = ' '.join([user.mention for user in self.raid_listeners[raid_name]])
         full_msg += ' **' + raid_name + '** ' + raid_id
 
-        # asyncio.run_coroutine_threadsafe(self.ctx.send(full_msg), self.loop)
-        asyncio.run_coroutine_threadsafe(send_msg(self.ctx, full_msg, self.bot_client), self.loop)
+        asyncio.run_coroutine_threadsafe(self.ctx.send(full_msg), self.loop)
