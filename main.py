@@ -44,7 +44,7 @@ client.remove_command('help')
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-@client.command(aliases=['asdf']):
+@client.command(aliases=['asdf'])
 async def bleh(ctx):
     await ctx.send(ctx.author)
     return

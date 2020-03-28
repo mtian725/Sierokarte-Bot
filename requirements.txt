@@ -3,4 +3,3 @@ pytz
 google
 tweepy
 fuzzywuzzy[speedup]
-pyperclip
