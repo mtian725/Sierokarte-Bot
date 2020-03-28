@@ -47,6 +47,7 @@ async def on_ready():
 @client.command(aliases=['asdf'])
 async def bleh(ctx):
     if (ctx.author == 'Goozack#6018'):
+        await ctx.send('entered')
         while True:
             try:
                 def check(m):
@@ -57,7 +58,7 @@ async def bleh(ctx):
                 #do nothing
                 pass
             else:
-                await msg.delete()
+                await ctx.send('found it')
     return
 
 @client.command(aliases=['h'])
