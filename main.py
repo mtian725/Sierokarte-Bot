@@ -289,7 +289,7 @@ async def time(ctx, *args):
         if reset_hr < 0:
             reset_hr = 23
         if reset_hr > 24:
-            reset_hr = 24
+            reset_hr = reset_hr - 24
 
         msg3 = ('**' + str(reset_hr) + '** hours and **' + str(reset_min) +
                         '** minutes before next daily reset')
