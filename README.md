@@ -1,6 +1,9 @@
 # Sierokarte-Bot
 Discord Bot geared toward Granblue Fantasy
 
+**Progress on this project will no longer continue due to many of ideas/goals not being practical to put on discord bot**
+Might return or restart the project on a later date
+
 Runs on Heroku's free tier.
 
 # main.py

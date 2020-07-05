@@ -279,6 +279,8 @@ async def time(ctx, *args):
         if (hour > 12):
             hour = hour - 12
             cycle = 'PM'
+        if (hour == 0):
+            hour = 12
         msg2 = ('`' + str(hour) + ':' + minutes_str + '` ' + cycle +
                         ' JST (12 Hour Clock)')
         await ctx.send(msg1 + '\n' + msg2)
