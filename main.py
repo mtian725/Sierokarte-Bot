@@ -292,14 +292,49 @@ async def time(ctx, *args):
             reset_hr = reset_hr - 24
         else:
             reset_hr = 0
-            
+
         msg3 = ('**' + str(reset_hr) + '** hours and **' + str(reset_min) +
                         '** minutes before next daily reset')
         await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
-
-
     else:
-        return
+        await ctx.send(args[0]);
+        await ctx.send(args[1]);
+        # # current time in japan
+        # jp_dt = datetime.now(jp_tz)
+        # hour = jp_dt.hour
+        # minute = jp_dt.minute
+        # cycle = 'AM'
+        # reset_hr = 29 - hour
+        # reset_min = 60 - minute
+        #
+        # # have to add a 0 because if you don't format the string :05 will be :5
+        # if jp_dt.minute < 10:
+        #     minutes_str = '0' + str(jp_dt.minute)
+        # else:
+        #     minutes_str = str(jp_dt.minute)
+        #
+        # msg1 = ('`' + str(hour) + ':' + minutes_str + '` JST (24 Hour Clock)')
+        # if (hour > 12):
+        #     hour = hour - 12
+        #     cycle = 'PM'
+        # msg2 = ('`' + str(hour) + ':' + minutes_str + '` ' + cycle +
+        #                 ' JST (12 Hour Clock)')
+        # if reset_min == 60:
+        #     reset_min = 0
+        # else:
+        #     reset_hr = reset_hr - 1
+        #
+        # if reset_hr < 0:
+        #     reset_hr = 23
+        # elif reset_hr > 24:
+        #     reset_hr = reset_hr - 24
+        # else:
+        #     reset_hr = 0
+        #
+        # msg3 = ('**' + str(reset_hr) + '** hours and **' + str(reset_min) +
+        #                 '** minutes before next daily reset')
+        # await ctx.send(msg1 + '\n' + msg2 + '\n' + msg3)
+        #return
 
 @client.command(aliases=['a'])
 async def art(ctx, *args):
