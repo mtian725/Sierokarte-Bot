@@ -25,10 +25,6 @@ uncap_targets = {}
 global_teams = {}
 raid_listeners = {} # map of raids to users listening for those raids
 rf = None
-TWITTER_APP_KEY = 'ZDS57sqDWzSbZQoVDyqc0t6EN'
-TWITTER_APP_SECRET = 'ZppyVjPedv7wzy2WnHlWWZ29GWYAH1fig0tJkInLPLNl6BUk6d'
-TWITTER_KEY = '905698903734943745-vDZJR2vaaMoyNYmz1jIZMMAaJChaZ8U'
-TWITTER_SECRET = 'zpJ3GI6nZlWYrc7qaUKfNfB9a8BwBHFhUSe5jCBGjWEjI'
 auth = tweepy.OAuthHandler(TWITTER_APP_KEY, TWITTER_APP_SECRET)
 auth.set_access_token(TWITTER_KEY, TWITTER_SECRET)
 api = tweepy.API(auth)
